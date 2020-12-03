@@ -1,0 +1,232 @@
+{
+  "CarrierBookingConfirmation": {
+    "GeneralInformation": [
+      {
+        "TransportMove": "30"
+      }
+    ], 
+    "MessageContact": [
+      {
+        "ContactEmail": "XXXXXXX@cma-cgm.com", 
+        "ContactName": "JNOTARESCHI"
+      }
+    ], 
+    "Transports": [
+      {
+        "Transport": [
+          {
+            "TransportStage": "20", 
+            "ETS": "202008130700", 
+            "LoadingCode": "NLRTM", 
+            "VesselNationality": "MT", 
+            "DestinationName": "NEW YORK", 
+            "ETA": "202008250500", 
+            "ModeOfTransport": "1", 
+            "CarrierCode": "CMDU", 
+            "CYClosingFormat": "203", 
+            "CYClosing": "202008110400", 
+            "LoadingName": "ROTTERDAM", 
+            "DestinationCode": "USNYC", 
+            "VoyageNo": "0RP89S1MA", 
+            "ETAFormat": "203", 
+            "Vessel": "CMA CGM L'ETOILE", 
+            "ImoNumber": "9301469", 
+            "ETSFormat": "203"
+          }
+        ]
+      }
+    ], 
+    "BookingHeader": [
+      {
+        "BookingStatus": "6", 
+        "SCAC": "CMDU", 
+        "CarrierResponseType": "AP"
+      }
+    ], 
+    "References": [
+      {
+        "Reference": [
+          {
+            "ReferenceValue": "99-9999", 
+            "ReferenceCode": "AGB"
+          }, 
+          {
+            "ReferenceValue": "MRS0832103", 
+            "ReferenceCode": "BN"
+          }, 
+          {
+            "ReferenceValue": "MRS0832103", 
+            "ReferenceCode": "BM"
+          }
+        ]
+      }
+    ], 
+    "Remarks": [
+      {
+        "Remark": [
+          {
+            "Code": "AAI", 
+            "Text": "VGM CUTOFF DATE : 10/08/2020 20:00"
+          }
+        ]
+      }
+    ], 
+    "Messageinfos": [
+      {
+        "Sender": "CMACGM", 
+        "Receiver": "COMSUP", 
+        "IntegrationId": "3627743", 
+        "MessageDate": "202008070849", 
+        "MessageId": "CONF-MRS0832103"
+      }
+    ], 
+    "Containers": [
+      {
+        "Container": [
+          {
+            "Count": "1", 
+            "Addresses": [
+              {
+                "Address": [
+                  {
+                    "AddressLine4": "ROTTERDAM", 
+                    "NameLine1": "UNIPORT MULTIPURPOSE TERMINAL", 
+                    "AddressFunction": "TR", 
+                    "AddressLine1": "ZALTBOMMELSTRAAT 10", 
+                    "DateTimes": [
+                      {
+                        "DateTime": [
+                          {
+                            "DateCode": "180", 
+                            "DateValue": "202008110400"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ], 
+            "ContainerUnitDescription": "GP WITHOUT VENTILATI", 
+            "ContainerLoadIndicator": "5", 
+            "References": [
+              {
+                "Reference": [
+                  {
+                    "ReferenceValue": "MRS0832103", 
+                    "ReferenceCode": "RE"
+                  }
+                ]
+              }
+            ], 
+            "ContainerOwner": "2", 
+            "ContainerUnit": "22G1", 
+            "ContainerNumber": "GESU1395506"
+          }, 
+          {
+            "Count": "1", 
+            "Addresses": [
+              {
+                "Address": [
+                  {
+                    "AddressLine4": "ROTTERDAM", 
+                    "NameLine1": "UNIPORT MULTIPURPOSE TERMINAL", 
+                    "AddressFunction": "TR", 
+                    "AddressLine1": "ZALTBOMMELSTRAAT 10", 
+                    "DateTimes": [
+                      {
+                        "DateTime": [
+                          {
+                            "DateCode": "180", 
+                            "DateValue": "202008110400"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ], 
+            "ContainerUnitDescription": "GP WITHOUT VENTILATI", 
+            "ContainerLoadIndicator": "5", 
+            "References": [
+              {
+                "Reference": [
+                  {
+                    "ReferenceValue": "MRS0832103", 
+                    "ReferenceCode": "RE"
+                  }
+                ]
+              }
+            ], 
+            "ContainerOwner": "2", 
+            "ContainerUnit": "22G1", 
+            "ContainerNumber": "FCIU4562109"
+          }, 
+          {
+            "Count": "1", 
+            "ContainerUnit": "22G1", 
+            "Addresses": [
+              {
+                "Address": [
+                  {
+                    "AddressLine4": "ROTTERDAM", 
+                    "NameLine1": "UNIPORT MULTIPURPOSE TERMINAL", 
+                    "AddressFunction": "TR", 
+                    "AddressLine1": "ZALTBOMMELSTRAAT 10", 
+                    "DateTimes": [
+                      {
+                        "DateTime": [
+                          {
+                            "DateCode": "180", 
+                            "DateValue": "202008110400"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }, 
+          {
+            "Count": "1", 
+            "ContainerUnit": "22G1", 
+            "Addresses": [
+              {
+                "Address": [
+                  {
+                    "AddressLine4": "ROTTERDAM", 
+                    "NameLine1": "UNIPORT MULTIPURPOSE TERMINAL", 
+                    "AddressFunction": "TR", 
+                    "AddressLine1": "ZALTBOMMELSTRAAT 10", 
+                    "DateTimes": [
+                      {
+                        "DateTime": [
+                          {
+                            "DateCode": "180", 
+                            "DateValue": "202008110400"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ], 
+    "Addresses": [
+      {
+        "Address": [
+          {
+            "AddressFunction": "CA", 
+            "NameLine1": "CMA-CGM"
+          }
+        ]
+      }
+    ]
+  }
+}
