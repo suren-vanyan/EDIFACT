@@ -11,9 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EdiWeave.Convertor", "EdiWe
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EdiWeave.Templates", "EdiWeave.Templates", "{10510752-F6DB-48AD-AD58-6E6FCB6F7BCE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EdiWeave.Edifact.Templates.D99B", "EdiWeave.Edifact.Templates.D99B\EdiWeave.Edifact.Templates.D99B.csproj", "{CBBD138A-D532-4117-825D-AE1890B3FC5B}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiWeave.Edifact.UN.D99B", "EdiWeave.Edifact.UN.D99B\EdiWeave.Edifact.UN.D99B.csproj", "{F4CA7029-B4D2-4892-93EB-A1710CD741BE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EdiWeave.Edifact.Templates.D99B", "EdiWeave.Edifact.Templates.D98B\EdiWeave.Edifact.Templates.D99B.csproj", "{CBF9862B-AB63-4356-9C50-2E149F73664C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,21 +31,16 @@ Global
 		{F3B2DA1C-1ABF-45D1-801B-4E526AAAFC83}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F3B2DA1C-1ABF-45D1-801B-4E526AAAFC83}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F3B2DA1C-1ABF-45D1-801B-4E526AAAFC83}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CBBD138A-D532-4117-825D-AE1890B3FC5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CBBD138A-D532-4117-825D-AE1890B3FC5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CBBD138A-D532-4117-825D-AE1890B3FC5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CBBD138A-D532-4117-825D-AE1890B3FC5B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F4CA7029-B4D2-4892-93EB-A1710CD741BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F4CA7029-B4D2-4892-93EB-A1710CD741BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F4CA7029-B4D2-4892-93EB-A1710CD741BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F4CA7029-B4D2-4892-93EB-A1710CD741BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CBF9862B-AB63-4356-9C50-2E149F73664C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBF9862B-AB63-4356-9C50-2E149F73664C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBF9862B-AB63-4356-9C50-2E149F73664C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBF9862B-AB63-4356-9C50-2E149F73664C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{CBBD138A-D532-4117-825D-AE1890B3FC5B} = {10510752-F6DB-48AD-AD58-6E6FCB6F7BCE}
-		{F4CA7029-B4D2-4892-93EB-A1710CD741BE} = {10510752-F6DB-48AD-AD58-6E6FCB6F7BCE}
+		{CBF9862B-AB63-4356-9C50-2E149F73664C} = {10510752-F6DB-48AD-AD58-6E6FCB6F7BCE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3C91834B-FF42-4B96-8F79-0EEA09ADC0A4}
