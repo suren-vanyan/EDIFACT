@@ -1,4 +1,5 @@
 ﻿using EdiWeave.Core.Model.Edi;
+using EdiWeave.Core.Model.Edi.ErrorContexts;
 using EdiWeave.Framework.Readers;
 using Newtonsoft.Json;
 using System.Collections.Generic;
@@ -22,7 +23,7 @@ namespace EdiWeave.Convertor
             var ediStream = CommonHelper.GenerateStreamFromString(sample);
 
             var assembley = Assembly.Load(new AssemblyName("EdiWeave.Edifact.UN.D99B"));
-            
+
 
             // ACT Rules.Edifact   EdiFabric.Templates.Edifact
             using (var ediReader = new EdifactReader(ediStream, "EdiWeave.Edifact.UN.D99B"))
@@ -30,8 +31,12 @@ namespace EdiWeave.Convertor
                 ediItems = ediReader.ReadToEnd().ToList();
             }
 
-           var models= ediItems.OfType<EdiWeave.Edifact.UN.D99B.TSIFTMBC>().ToList();
-            var model = JsonConvert.SerializeObject(models[0], new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+
+            var model1 = ediItems.OfType<EdiWeave.Edifact.UN.D99B.TSIFTMBC>().SingleOrDefault();
+            var errrors = ediItems.OfType<ErrorContext>().SingleOrDefault();
+            MessageErrorContext messageError = null;
+            model1.IsValid(out messageError);
+            var model = JsonConvert.SerializeObject(model1, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
 
         }
     }

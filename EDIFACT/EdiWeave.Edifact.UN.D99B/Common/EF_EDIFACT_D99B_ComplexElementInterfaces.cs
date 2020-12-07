@@ -2,11 +2,13 @@ namespace EdiWeave.Edifact.UN.D99B
 {
     public interface I_C002
     {
-        
-        string Documentmessagenamecoded_01 { get; set; }
-        string Codelistqualifier_02 { get; set; }
-        string Codelistresponsibleagencycoded_03 { get; set; }
-        string Documentmessagename_04 { get; set; }
+        public string Documentnamecode_01 { get; set; }
+
+        public string Codelistidentificationcode_02 { get; set; }
+
+        public string Codelistresponsibleagencycode_03 { get; set; }
+
+        public string Documentname_04 { get; set; }
     }
     
     public interface I_C040
@@ -101,7 +103,14 @@ namespace EdiWeave.Edifact.UN.D99B
         string Termsofdeliveryortransport_04 { get; set; }
         string Termsofdeliveryortransport_05 { get; set; }
     }
-    
+
+    public interface I_C106
+    {
+        string Documentidentifier_01 { get; set; }
+        string Versionidentifier_02 { get; set; }
+        string Revisionidentifier_03 { get; set; }
+    }
+
     public interface I_C107
     {
         

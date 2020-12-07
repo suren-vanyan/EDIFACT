@@ -1,4 +1,6 @@
 using EdiWeave.Core.Annotations.Edi;
+using EdiWeave.Core.Annotations.Validation;
+using EdiWeave.Core.Model.Edi.Edifact;
 using System;
 using System.Runtime.Serialization;
 
@@ -13,29 +15,34 @@ namespace EdiWeave.Edifact.UN.D99B
     public class C002 : I_C002
     {
         /// <summary>
-        /// Document/message name, coded
+        /// Document name code
         /// </summary>
         [DataMember]
+        [DataElement("1001", typeof(EDIFACT_ID_1001))]
         [Pos(1)]
-        public string Documentmessagenamecoded_01 { get; set; }
+        public string Documentnamecode_01 { get; set; }
         /// <summary>
-        /// Code list qualifier
+        /// Code list identification code
         /// </summary>
         [DataMember]
+        [DataElement("1131", typeof(EDIFACT_ID_1131))]
         [Pos(2)]
-        public string Codelistqualifier_02 { get; set; }
+        public string Codelistidentificationcode_02 { get; set; }
         /// <summary>
-        /// Code list responsible agency, coded
+        /// Code list responsible agency code
         /// </summary>
         [DataMember]
+        [DataElement("3055", typeof(EDIFACT_ID_3055))]
         [Pos(3)]
-        public string Codelistresponsibleagencycoded_03 { get; set; }
+        public string Codelistresponsibleagencycode_03 { get; set; }
         /// <summary>
-        /// Document/message name
+        /// Document name
         /// </summary>
         [DataMember]
+        [StringLength(1, 35)]
+        [DataElement("1000", typeof(EDIFACT_AN))]
         [Pos(4)]
-        public string Documentmessagename_04 { get; set; }
+        public string Documentname_04 { get; set; }
     }
 
     /// <summary>
@@ -84,12 +91,16 @@ namespace EdiWeave.Edifact.UN.D99B
         /// Department or employee identification
         /// </summary>
         [DataMember]
+        [StringLength(1, 17)]
+        [DataElement("3413", typeof(EDIFACT_AN))]
         [Pos(1)]
         public string Departmentoremployeeidentification_01 { get; set; }
         /// <summary>
         /// Department or employee
         /// </summary>
         [DataMember]
+        [StringLength(1, 35)]
+        [DataElement("3412", typeof(EDIFACT_AN))]
         [Pos(2)]
         public string Departmentoremployee_02 { get; set; }
     }
@@ -404,6 +415,7 @@ namespace EdiWeave.Edifact.UN.D99B
         public string Termsofdeliveryortransport_05 { get; set; }
     }
 
+
     /// <summary>
     /// TEXT REFERENCE
     /// </summary>
@@ -431,6 +443,40 @@ namespace EdiWeave.Edifact.UN.D99B
         [DataMember]
         [Pos(3)]
         public string Codelistresponsibleagencycoded_03 { get; set; }
+    }
+
+    /// <summary>
+    /// DOCUMENT/MESSAGE IDENTIFICATION
+    /// </summary>
+    [Serializable()]
+    [DataContract()]
+    [Composite("C106")]
+    public class C106 : I_C106
+    {
+        /// <summary>
+        /// Document identifier
+        /// </summary>
+        [DataMember]
+        [StringLength(1, 35)]
+        [DataElement("1004", typeof(EDIFACT_AN))]
+        [Pos(1)]
+        public string Documentidentifier_01 { get; set; }
+        /// <summary>
+        /// Version identifier
+        /// </summary>
+        [DataMember]
+        [StringLength(1, 9)]
+        [DataElement("1056", typeof(EDIFACT_AN))]
+        [Pos(2)]
+        public string Versionidentifier_02 { get; set; }
+        /// <summary>
+        /// Revision identifier
+        /// </summary>
+        [DataMember]
+        [StringLength(1, 6)]
+        [DataElement("1060", typeof(EDIFACT_AN))]
+        [Pos(3)]
+        public string Revisionidentifier_03 { get; set; }
     }
 
     /// <summary>

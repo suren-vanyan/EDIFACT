@@ -1,6 +1,9 @@
 using EdiWeave.Core.Annotations.Edi;
+using EdiWeave.Core.Annotations.Validation;
+using EdiWeave.Core.Model.Edi.Edifact;
 using System;
 using System.Runtime.Serialization;
+using System.Xml.Serialization;
 
 namespace EdiWeave.Edifact.UN.D99B
 {
@@ -156,9 +159,8 @@ namespace EdiWeave.Edifact.UN.D99B
     [Serializable()]
     [DataContract()]
     [Segment("BGM")]
-    public class BGM : I_BGM<C002>
+    public class BGM : I_BGM<C002,C106>
     {
-
         /// <summary>
         /// DOCUMENT/MESSAGE NAME
         /// </summary>
@@ -170,19 +172,21 @@ namespace EdiWeave.Edifact.UN.D99B
         /// </summary>
         [DataMember]
         [Pos(2)]
-        public string Documentmessagenumber_02 { get; set; }
+        public C106 DOCUMENTMESSAGEIDENTIFICATION_02 { get; set; }
         /// <summary>
         /// Message function, coded
         /// </summary>
         [DataMember]
+        [DataElement("1225", typeof(EDIFACT_ID_1225))]
         [Pos(3)]
-        public string Messagefunctioncoded_03 { get; set; }
+        public string MessageFunctionCode_03 { get; set; }
         /// <summary>
         /// Response type, coded
         /// </summary>
         [DataMember]
+        [DataElement("4343", typeof(EDIFACT_ID_4343))]
         [Pos(4)]
-        public string Responsetypecoded_04 { get; set; }
+        public string ResponseTypeCode_04 { get; set; }
     }
 
     /// <summary>
@@ -360,11 +364,11 @@ namespace EdiWeave.Edifact.UN.D99B
     [Segment("CTA")]
     public class CTA : I_CTA<C056>
     {
-
         /// <summary>
         /// Contact function, coded
         /// </summary>
         [DataMember]
+        [DataElement("3139", typeof(EDIFACT_ID_3139))]
         [Pos(1)]
         public string Contactfunctioncoded_01 { get; set; }
         /// <summary>

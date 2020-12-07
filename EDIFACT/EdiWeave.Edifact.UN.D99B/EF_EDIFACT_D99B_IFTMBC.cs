@@ -20,6 +20,7 @@ namespace EdiWeave.Edifact.UN.D99B
         [DataMember]
         [Pos(1)]
         public virtual UNH UNH { get; set; }
+        [Required]
         [DataMember]
         [Pos(2)]
         public virtual BGM BGM { get; set; }
