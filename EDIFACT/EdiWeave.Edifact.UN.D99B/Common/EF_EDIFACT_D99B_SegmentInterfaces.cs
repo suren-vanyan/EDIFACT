@@ -234,11 +234,12 @@ namespace EdiWeave.Edifact.UN.D99B
         where T2 : I_C108
     {
 
-        string Textsubjectqualifier_01 { get; set; }
+        string Textsubjectcodequalifier_01 { get; set; }
         string Textfunctioncoded_02 { get; set; }
         T1 TEXTREFERENCE_03 { get; set; }
         T2 TEXTLITERAL_04 { get; set; }
         string Languagecoded_05 { get; set; }
+        string Textformattingcoded_06 { get; set; }
     }
 
     public interface I_GDS<T1>
@@ -356,7 +357,7 @@ namespace EdiWeave.Edifact.UN.D99B
         where T3 : I_C553
     {
 
-        string Placelocationqualifier_01 { get; set; }
+        string Locationfunctioncodequalifier_01 { get; set; }
         T1 LOCATIONIDENTIFICATION_02 { get; set; }
         T2 RELATEDLOCATIONONEIDENTIFICATION_03 { get; set; }
         T3 RELATEDLOCATIONTWOIDENTIFICATION_04 { get; set; }

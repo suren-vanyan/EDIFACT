@@ -16,61 +16,72 @@ using System.Runtime.Serialization;
 namespace EdiWeave.Core.Model.Edi.Edifact
 {
     [Serializable()]
+    [DataContract()]
     public class EDIFACT_N
     {
     }
 
     [Serializable()]
+    [DataContract()]
     public class EDIFACT_A
     {
     }
 
     [Serializable()]
+    [DataContract()]
     public class EDIFACT_AN
     {
     }
 
     [Serializable()]
+    [DataContract()]
     public class EDIFACT_DT
     {
     }
 
     [Serializable()]
+    [DataContract()]
     public class EDIFACT_TM
     {
     }
 
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",UNOA,UNOB,UNOC,UNOD,UNOE,UNOF,UNOG,UNOH,UNOI,UNOJ,UNOX,UNOY,KECA,")]
     public class EDIFACT_ID_0001
     {
     }
 
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",1,2,3,4,5,6,7,8,ZZZ,")]
     public class EDIFACT_ID_0133
     {
     }
 
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",AA,BB,")]
     public class EDIFACT_ID_0025
     {
     }
 
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",A,")]
     public class EDIFACT_ID_0029
     {
     }
 
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",1,2,3,4,")]
     public class EDIFACT_ID_0035
     {
     }
 
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,31,32,33,34" +
         ",35,36,37,38,39,4,40,41,42,43,44,45,46,47,48,5,6,7,8,9,")]
     public class EDIFACT_ID_0085
@@ -78,12 +89,14 @@ namespace EdiWeave.Core.Model.Edi.Edifact
     }
 
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",1,2,3,4,5,6,7,8,")]
     public class EDIFACT_ID_0083
     {
     }
 
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",UCD,UCF,UCI,UCM,UCS,UGH,UGT,UIB,UIH,UIR,UIT,UIZ,UNB,UNE,UNG,UNH,UNO,UNP,UNS,UNT," +
         "UNZ,USA,USB,USC,USD,USE,USF,USH,USL,USR,UST,USU,USX,USY,")]
     public class EDIFACT_ID_0135
@@ -91,6 +104,7 @@ namespace EdiWeave.Core.Model.Edi.Edifact
     }
 
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",1,2,")]
     public class EDIFACT_ID_0813
     {
@@ -98,18 +112,21 @@ namespace EdiWeave.Core.Model.Edi.Edifact
 
 
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",AA,AB,AC,AD,AE,AF,AG,AH,AI,CC,CE,EC,ED,EE,EN,ER,EU,EW,EX,IA,KE,LI,OD,RI,RT,UN,")]
     public class EDIFACT_ID_0051
     {
     }
 
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",AA,AB,AC,AD,AE,AF,AG,AH,AI,AJ,AK,AL,AM,AN,AO,AP,AQ,AR,AS,SECACK,SECAUT,")]
     public class EDIFACT_ID_0113
     {
     }
 
     [Serializable()]
+    [DataContract()]
     [EdiCodes(
         ",1,4,5,8,9,14,18,22,30,31,33,34,51,52,53,54,55,57,58,59,61,63,65,80,82,84,85,86,87,88,89,90,91,92,103,128,129,144,145,146,147,148,Z01,ZZZ,"
         )]
@@ -118,6 +135,7 @@ namespace EdiWeave.Core.Model.Edi.Edifact
     }
 
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",1,10,100,101,102,103,104,105,106,107,108,109,11,110,111,112,113,114,115,116,117," +
     "118,119,12,120,121,122,123,124,125,126,127,128,129,13,130,131,132,133,134,135,13" +
     "6,137,138,139,14,140,141,142,143,144,145,146,147,148,149,15,150,151,152,153,154," +
@@ -198,6 +216,7 @@ namespace EdiWeave.Core.Model.Edi.Edifact
     /// Communication number code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",AA,AB,AC,AD,AE,AF,AG,AH,AI,AJ,AK,AL,AM,AN,CA,EI,EM,EX,FT,FX,GM,IE,IM,MA,PB,PS,SW" +
     ",TE,TG,TL,TM,TT,TX,XF,")]
     public class EDIFACT_ID_3155
@@ -241,6 +260,7 @@ namespace EdiWeave.Core.Model.Edi.Edifact
     /// Date/time/period format code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(@",2,3,4,5,101,102,103,105,106,107,108,109,110,201,202,203,204,
                 301,302,303,304,305,306,401,402,404,405,501,502,503,600,601,
                 602,603,604,608,609,610,613,614,615,616,701,702,703,704,705,706,
@@ -250,4 +270,144 @@ namespace EdiWeave.Core.Model.Edi.Edifact
     {
     }
 
+    /// <summary>
+    /// Contract and carriage condition code
+    /// </summary>
+    [Serializable()]
+    [DataContract()]
+    [EdiCodes(",1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,31,32,33,34" +
+        ",35,36,4,5,6,7,8,9,")]
+    public class EDIFACT_ID_4065
+    {
+    }
+
+    /// <summary>
+    /// Service requirement code
+    /// </summary>
+    [Serializable()]
+    [DataContract()]
+    [EdiCodes(@",1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,
+                23,24,25,26,27,28,29,3,30,31,32,33,34,35,36,
+                37,38,39,4,40,41,42,43,44,6,7,8,9,")]
+    public class EDIFACT_ID_7273
+    {
+    }
+
+    /// <summary>
+    /// Transport priority, coded
+    /// </summary>
+    [Serializable()]
+    [DataContract()]
+    [EdiCodes(",1,2,3,4,")]
+    public class EDIFACT_ID_4219
+    {
+
+    }
+
+    /// <summary>
+    /// Nature of cargo, coded
+    /// </summary>
+    [Serializable()]
+    [DataContract()]
+    [EdiCodes(",1,10,11,12,13,14,15,16,3,4,5,6,7,8,9,")]
+    public class EDIFACT_ID_7085
+    {
+    }
+
+    /// <summary>
+    /// TEXT FORMATTING, CODED
+    /// </summary>
+    [Serializable()]
+    [DataContract()]
+    [EdiCodes(",1,10,11,2,3,4,5,6,7,8,9,")]
+    public class EDIFACT_ID_4447
+    {
+    }
+
+
+    /// <summary>
+    /// TEXT SUBJECT CODE QUALIFIER
+    /// </summary>
+    [Serializable()]
+    [DataContract()]
+    [EdiCodes(@",AAA,AAB,AAC,AAD,AAE,AAF,AAG,AAH,AAI,AAJ,AAK,AAL,AAM,AAN,AAO,AAP,AAQ,AAR,AAS,AAT,AAU,AAV,AAW,AAX,AAY,AAZ,ABA,ABC,ABD,ABE,ABF,ABG,ABH,ABI,ABJ,ABK,ABL,ABM,ABN,ABO,ABP,ABQ,ABR,ABS,ABT,ABU,ABV,ABW,ABX,ABY,ABZ,ACA,ACB,ACC,ACD,ACE,ACF,ACG,ACH,ACI,ACJ,ACK,ACL,ACM,ACN,ACO,ACP,ACQ,ACR,ACS,ACT,ACU,ACV,ACW,ACX,ACY,ACZ,ADA,ADB,ADC,ADD,ADE,ADF,ADG,ADH,ADI,ADJ,ADK,ADL,ADM,ADN,ADO,ADP,ADQ,ADR,ADS,ADT,ADU,ADV,ADW,ADX,ADY,ADZ,AEA,AEB,AEC,AED,AEE,AEF,AEG,AEH,AEI,AEJ,AEK,AEL,AEM,AEN,AEO,AEP,AEQ,AER,AES,AET,AEU,AEV,AEW,AEX,AEY,AEZ,AFA,AFB,AFC,AFD,AFE,AFF,AFG,AFH,AFI,AFJ,AFK,AFL,AFM,AFN,AFO,AFP,AFQ,AFR,AFS,AFT,AFU,AFV,AFW,AFX,AFY,AFZ,AGA,AGB,AGC,AGD,AGE,AGF,AGG,AGH,AGI,AGJ,AGK,AGL,AGM,AGN,AGO,AGP,AGQ,AGR,AGS,AGT,AGU,AGV,AGW,AGX,AGY,AGZ,AHA,AHB,AHC,AHD,AHE,AHF,AHG,AHH,AHI,AHJ,AHK,AHL,AHM,AHN,AHO,AHP,AHQ,AHR,AHS,AHT,AHU,AHV,AHW,AHX,AHY,AHZ,AIA,AIB,AIC,AID,AIE,AIF,AIG,AIH,AII,AIJ,AIK,AIL,AIM,AIN,AIO,AIP,AIQ,AIR,AIS,AIT,AIU,AIV,AIW,AIX,AIY,AIZ,ALC,ALL,ARR,AUT,BLC,BLR,CCI,CEX,CHG,CIP,CLP,CLR,COI,CUR,CUS,DAR,DCL,DEL,DIN,DOC,DUT,EUR,FBC,GBL,GEN,GS7,HAN,HAZ,ICN,IIN,IMI,IND,INS,INV,IRP,ITR,ITS,LIN,LOI,MCO,MKS,ORI,OSI,PAC,PAI,PAY,PKG,PKT,PMD,PMT,PRD,PRF,PRI,PUR,QIN,QQD,QUT,RAH,REG,RET,REV,RQR,RQT,SAF,SIC,SIN,SLR,SPA,SPG,SPH,SPP,SPT,SRN,SSR,SUR,TCA,TDT,TRA,TRR,TXD,WHI,ZZZ,")]
+    public class EDIFACT_ID_4451
+    {
+    }
+
+    /// <summary>
+    /// TEXT FUNCTION, CODED
+    /// </summary>
+    [Serializable()]
+    [DataContract()]
+    [EdiCodes(",1,2,3,4,5,6,7,")]
+    public class EDIFACT_ID_4453
+    {
+    }
+
+    /// <summary>
+    /// Control total type code qualifier
+    /// </summary>
+    [Serializable()]
+    [DataContract()]
+    [EdiCodes(",1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,31,32,33,34" +
+        ",35,36,37,38,39,4,40,41,42,43,44,45,46,47,48,49,5,50,51,52,53,54,55,6,7,8,9,")]
+    public class EDIFACT_ID_6069
+    {
+    }
+
+    /// <summary>
+    /// LOCATION FUNCTION CODE QUALIFIER
+    /// </summary>
+    [Serializable()]
+    [DataContract()]
+    [EdiCodes(@",1,10,100,101,102,103,104,105,106,107,108,109,11,110,111,112,113,114,115,116,117,118,119,12,120,121,122,123,124,125,126,127,128,129,13,130,131,132,133,134,135,136,137,138,139,14,140,141,142,143,144,145,146,147,148,149,15,150,151,152,153,154,155,156,157,158,159,16,160,161,162,163,164,165,166,167,168,169,17,170,171,172,173,174,175,176,177,178,179,18,180,181,182,183,184,185,186,187,188,189,19,190,191,192,193,194,195,196,197,198,199,2,20,200,201,202,203,204,205,206,207,208,209,21,210,211,212,213,214,215,216,217,218,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,4,40,41,42,43,44,45,46,47,48,49,5,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,7,70,71,72,73,74,75,76,77,78,79,8,80,81,82,83,84,85,86,87,88,89,9,90,91,92,93,94,95,96,97,98,99,ZZZ,")]
+    public class EDIFACT_ID_3227
+    {
+    }
+
+
+    /// <summary>
+    /// LOCATION FUNCTION CODE QUALIFIER
+    /// </summary>
+    [Serializable()]
+    [DataContract()]
+    [EdiCodes(",AAA,AAB,AAC,AAD,AAE,AAF,AAG,AAH,AAI,AAJ,AAK,AAL,AAM,AAN,AAO,AAP,AAQ,AAR,AAS,AAT," +
+    "AAU,AAV,AAW,AAX,AAY,AAZ,ABA,ABB,ABC,ABD,ABE,ABF,ABG,ABH,ABI,ABJ,ABK,ABL,ABM,ABN," +
+    "ABO,ABP,ABQ,ABR,ABS,ABT,ABU,ABV,ABW,ABX,ABY,ABZ,AC,ACA,ACB,ACC,ACD,ACE,ACF,ACG,A" +
+    "CH,ACI,ACJ,ACK,ACL,ACM,ACN,ACO,ACP,ACQ,ACR,ACS,ACT,ACU,ACV,ACW,ACX,ACY,ACZ,ADA,A" +
+    "DB,ADC,ADD,ADE,ADF,ADG,ADH,ADI,ADJ,ADK,ADL,ADM,ADN,ADO,ADP,ADQ,ADR,ADS,ADT,ADU,A" +
+    "DV,ADW,ADY,ADZ,AE,AEA,AEB,AEC,AED,AEE,AEF,AEG,AEH,AEI,AEJ,AEK,AEL,AEM,AEN,AEO,AE" +
+    "P,AEQ,AER,AES,AET,AEU,AEV,AEW,AEX,AEY,AEZ,AF,AFA,AFB,AFC,AFD,AFE,AFF,AFG,AFH,AFI" +
+    ",AFJ,AFK,AFL,AFM,AFN,AFO,AFP,AFQ,AFR,AFS,AFT,AFU,AFV,AFW,AFX,AFY,AFZ,AGA,AGB,AGC" +
+    ",AGD,AGE,AGF,AGG,AGH,AGI,AGJ,AGK,AGL,AGM,AGN,AGO,AGP,AGQ,AGR,AGS,AGT,AGU,AGV,AGW" +
+    ",AGX,AGY,AGZ,AHA,AHB,AHC,AHD,AHE,AHF,AHG,AHH,AHI,AHJ,AHK,AHL,AHM,AHN,AHO,AHP,AHQ" +
+    ",AHR,AHS,AHT,AHU,AHV,AHW,AHX,AHY,AHZ,AIA,AIB,AIC,AID,AIE,AIF,AIG,AIH,AII,AIJ,AIK" +
+    ",AIL,AIM,AIN,AIO,AIP,AIQ,AIR,AIS,AIT,AIU,AIV,AIW,AIX,AIY,AIZ,AJA,AJB,AJC,AJD,AJE" +
+    ",AJF,AJG,AJH,AJI,AJJ,AJK,AJL,AJM,AJN,AJO,AJP,AJQ,AJR,AJS,AJT,AJU,AJV,AJW,AJX,AJY" +
+    ",AJZ,AKA,AKB,AKC,AKD,AKE,AKF,AKG,AKH,AKI,AKJ,AKK,AKL,AKM,AKN,AKO,AKP,AKQ,AKR,AKS" +
+    ",AKT,AKU,AKV,AKW,AKX,AKY,AKZ,ALA,ALB,ALC,ALD,ALE,ALF,ALG,ALH,ALI,ALJ,ALK,ALL,ALM" +
+    ",ALN,ALO,ALP,ALQ,ALR,ALS,ALT,ALU,ALV,ALW,ALX,ALY,ALZ,AMA,AMB,AMC,AMD,AME,AMF,AMG" +
+    ",AMH,AMI,AMJ,AMK,AML,AMM,AMN,AMO,AMP,AMQ,AMR,AMS,AMT,AMU,AMV,AMW,AMX,AMY,AMZ,ANA" +
+    ",ANB,ANC,AND,ANE,ANF,ANG,ANH,ANI,ANJ,ANK,ANL,ANM,ANN,ANO,ANP,ANQ,ANR,ANS,ANT,ANU" +
+    ",ANV,ANW,ANX,ANY,ANZ,AOA,AOB,AOC,AOD,AOE,AOF,AOG,AOH,AOI,AOJ,AOK,AOL,AOM,AON,AOO" +
+    ",AOP,AOQ,AOR,AOS,AOT,AOU,AOV,AOW,AOX,AOY,AOZ,AP,APA,APB,APC,APD,APE,APF,APG,APH," +
+    "API,APJ,APK,APL,APM,APN,APO,APP,APQ,APR,APS,APT,APU,APV,APW,APX,APY,APZ,AQA,AQB," +
+    "AQC,AQD,AQE,AQF,AQG,AQH,AQI,AQJ,AQK,AQL,AQM,AQN,AQO,AQP,AQQ,AQR,AQS,AQT,AQU,AQV," +
+    "AQW,AQX,AQY,AQZ,ARA,ARB,ARC,ARD,ARE,ARF,ARG,ARH,ARI,ARJ,ARK,ARL,ARM,ARN,ARO,ARP," +
+    "ARQ,ARR,ARS,ART,ARU,ARV,ARW,ARX,ARY,ARZ,ASA,ASB,ASC,ASD,ASE,ASF,ASG,ASH,ASI,ASJ," +
+    "ASK,ASL,ASM,ASN,ASO,ASP,ASQ,ASR,ASS,AST,ASU,ASV,ASW,ASX,ASY,ASZ,ATA,ATB,ATC,ATD," +
+    "ATE,ATF,ATG,ATH,ATI,ATJ,ATK,ATL,ATM,ATN,ATO,ATP,ATQ,ATR,ATS,ATT,ATU,ATV,ATW,ATX," +
+    "ATY,ATZ,AU,AUA,AV,AWA,AWB,AWC,AWD,AWE,AWF,AWG,AWH,AWI,BA,BC,BD,BE,BH,BM,BN,BO,BR" +
+    ",BT,BW,CAS,CD,CEC,CFE,CFO,CG,CH,CK,CKN,CM,CMR,CN,CNO,CO,COF,CP,CR,CRN,CS,CST,CT," +
+    "CU,CV,CW,CZ,DA,DAN,DB,DI,DL,DM,DQ,DR,EA,EB,ED,EE,EI,EN,EP,EQ,ER,ERN,ET,EX,FC,FF," +
+    "FI,FLW,FN,FO,FS,FT,FV,FX,GA,GC,GD,GDN,GN,HS,HWB,IA,IB,ICA,ICE,ICO,II,IL,INB,INN," +
+    "INO,IP,IS,IT,IV,JB,JE,LA,LAN,LAR,LB,LC,LI,LO,LS,MA,MB,MF,MG,MH,MR,MRN,MS,MSS,MWB" +
+    ",NA,OH,OI,ON,OP,OR,PB,PC,PD,PE,PF,PI,PK,PL,POR,PP,PQ,PR,PS,PW,PY,RA,RC,RCN,RE,RE" +
+    "N,RF,RR,RT,SA,SB,SD,SE,SF,SH,SI,SM,SN,SP,SQ,SRN,SS,STA,SW,SZ,TB,TE,TF,TI,TL,TN,T" +
+    "P,UAR,UC,UCN,UN,UO,VA,VC,VM,VN,VON,VP,VR,VS,VT,VV,WE,WM,WN,WR,WS,WY,XA,XC,XP,ZZZ" +
+    ",")]
+    public class EDIFACT_ID_1153
+    {
+    }
 }

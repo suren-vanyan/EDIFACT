@@ -272,11 +272,11 @@ namespace EdiWeave.Edifact.UN.D99B
     [Segment("CNT")]
     public class CNT : I_CNT<C270>
     {
-
         /// <summary>
         /// CONTROL
         /// </summary>
         [DataMember]
+        [Required]
         [Pos(1)]
         public virtual C270 CONTROL_01 { get; set; }
     }
@@ -751,17 +751,19 @@ namespace EdiWeave.Edifact.UN.D99B
     [Segment("FTX")]
     public class FTX : I_FTX<C107, C108>
     {
-
         /// <summary>
         /// Text subject qualifier
         /// </summary>
         [DataMember]
+        [Required]
+        [DataElement("4451", typeof(EDIFACT_ID_4451))]
         [Pos(1)]
-        public string Textsubjectqualifier_01 { get; set; }
+        public string Textsubjectcodequalifier_01 { get; set; }
         /// <summary>
         /// Text function, coded
         /// </summary>
         [DataMember]
+        [DataElement("4453", typeof(EDIFACT_ID_4453))]
         [Pos(2)]
         public string Textfunctioncoded_02 { get; set; }
         /// <summary>
@@ -780,8 +782,17 @@ namespace EdiWeave.Edifact.UN.D99B
         /// Language, coded
         /// </summary>
         [DataMember]
+        [StringLength(1,3)]
+        [DataElement("3453", typeof(EDIFACT_AN))]
         [Pos(5)]
         public string Languagecoded_05 { get; set; }
+        /// <summary>
+        /// Text formatting, coded
+        /// </summary>
+        [DataMember]
+        [DataElement("4447", typeof(EDIFACT_ID_4447))]
+        [Pos(5)]
+        public string Textformattingcoded_06 { get; set; }
     }
 
     /// <summary>
@@ -1119,13 +1130,14 @@ namespace EdiWeave.Edifact.UN.D99B
     [Segment("LOC")]
     public class LOC : I_LOC<C517, C519, C553>
     {
-
         /// <summary>
-        /// Place/location qualifier
+        /// LOCATION FUNCTION CODE QUALIFIER
         /// </summary>
         [DataMember]
+        [Required]
+        [DataElement("3227", typeof(EDIFACT_ID_3227))]
         [Pos(1)]
-        public string Placelocationqualifier_01 { get; set; }
+        public string Locationfunctioncodequalifier_01 { get; set; }
         /// <summary>
         /// LOCATION IDENTIFICATION
         /// </summary>
@@ -1148,6 +1160,8 @@ namespace EdiWeave.Edifact.UN.D99B
         /// Relation, coded
         /// </summary>
         [DataMember]
+        [StringLength(1, 3)]
+        [DataElement("5479", typeof(EDIFACT_AN))]
         [Pos(5)]
         public string Relationcoded_05 { get; set; }
     }
@@ -1589,6 +1603,7 @@ namespace EdiWeave.Edifact.UN.D99B
         /// REFERENCE
         /// </summary>
         [DataMember]
+        [Required]
         [Pos(1)]
         public virtual C506 REFERENCE_01 { get; set; }
     }
@@ -2055,7 +2070,6 @@ namespace EdiWeave.Edifact.UN.D99B
     [Segment("TSR")]
     public class TSR : I_TSR<C536, C233, C537, C703>
     {
-
         /// <summary>
         /// CONTRACT AND CARRIAGE CONDITION
         /// </summary>

@@ -184,7 +184,7 @@ namespace EdiWeave.Convertor
             JToken jtoken = JToken.Parse(jModel);
 
             using var writer = new EdifactWriter(@"C:\Users\suren.vanyan\source\repos\EDIFACT\EDIFACT\EdiWeave.Convertor\EdifactWriter.IFTMBC.txt", false,Encoding.UTF8,"\n");
-            writer.Write(EF_EDIFACT_D99B_IFTMBC_Builder.BuildUNB());
+            writer.Write(EF_EDIFACT_D99B_IFTMBC_Builder.BuildUNB(jtoken));
             writer.Write(EF_EDIFACT_D99B_IFTMBC_Builder.BuildIFTMBC("1",jtoken));
 
 

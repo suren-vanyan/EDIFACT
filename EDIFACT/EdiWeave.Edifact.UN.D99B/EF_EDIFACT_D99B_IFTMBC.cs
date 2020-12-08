@@ -412,6 +412,7 @@ namespace EdiWeave.Edifact.UN.D99B
     {
 
         [DataMember]
+        [Required]
         [Pos(1)]
         public virtual LOC LOC { get; set; }
         [DataMember]

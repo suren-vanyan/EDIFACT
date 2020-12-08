@@ -431,23 +431,28 @@ namespace EdiWeave.Edifact.UN.D99B
     {
 
         /// <summary>
-        /// Free text, coded
+        /// Free text value code
         /// </summary>
         [DataMember]
+        [Required]
+        [StringLength(1, 17)]
+        [DataElement("4441", typeof(EDIFACT_AN))]
         [Pos(1)]
-        public string Freetextcoded_01 { get; set; }
+        public string Freetextvaluecode_01 { get; set; }
         /// <summary>
-        /// Code list qualifier
+        /// Code list identification code
         /// </summary>
         [DataMember]
+        [DataElement("1131", typeof(EDIFACT_ID_1131))]
         [Pos(2)]
-        public string Codelistqualifier_02 { get; set; }
+        public string Codelistidentificationcode_02 { get; set; }
         /// <summary>
-        /// Code list responsible agency, coded
+        /// Code list responsible agency code
         /// </summary>
         [DataMember]
+        [DataElement("3055", typeof(EDIFACT_ID_3055))]
         [Pos(3)]
-        public string Codelistresponsibleagencycoded_03 { get; set; }
+        public string Codelistresponsibleagencycode_03 { get; set; }
     }
 
     /// <summary>
@@ -492,35 +497,45 @@ namespace EdiWeave.Edifact.UN.D99B
     [Composite("C108")]
     public class C108 : I_C108
     {
-
         /// <summary>
         /// Free text
         /// </summary>
         [DataMember]
+        [Required]
+        [StringLength(1, 512)]
+        [DataElement("4440", typeof(EDIFACT_AN))]
         [Pos(1)]
         public string Freetext_01 { get; set; }
         /// <summary>
         /// Free text
         /// </summary>
         [DataMember]
+        [StringLength(1, 512)]
+        [DataElement("4440", typeof(EDIFACT_AN))]
         [Pos(2)]
         public string Freetext_02 { get; set; }
         /// <summary>
         /// Free text
         /// </summary>
         [DataMember]
+        [StringLength(1, 512)]
+        [DataElement("4440", typeof(EDIFACT_AN))]
         [Pos(3)]
         public string Freetext_03 { get; set; }
         /// <summary>
         /// Free text
         /// </summary>
         [DataMember]
+        [StringLength(1, 512)]
+        [DataElement("4440", typeof(EDIFACT_AN))]
         [Pos(4)]
         public string Freetext_04 { get; set; }
         /// <summary>
         /// Free text
         /// </summary>
         [DataMember]
+        [StringLength(1, 512)]
+        [DataElement("4440", typeof(EDIFACT_AN))]
         [Pos(5)]
         public string Freetext_05 { get; set; }
     }
@@ -1519,43 +1534,49 @@ namespace EdiWeave.Edifact.UN.D99B
     [Composite("C233")]
     public class C233 : I_C233
     {
-
         /// <summary>
-        /// Service requirement, coded
+        /// Service requirement, code
         /// </summary>
         [DataMember]
+        [Required]
+        [DataElement("7273", typeof(EDIFACT_ID_7273))]
         [Pos(1)]
-        public string Servicerequirementcoded_01 { get; set; }
+        public string Servicerequirementcode_01 { get; set; }
         /// <summary>
-        /// Code list qualifier
+        /// Code list identification code
         /// </summary>
         [DataMember]
+        [DataElement("1131", typeof(EDIFACT_ID_1131))]
         [Pos(2)]
-        public string Codelistqualifier_02 { get; set; }
+        public string Codelistidentificationcode_02 { get; set; }
         /// <summary>
-        /// Code list responsible agency, coded
+        /// Code list responsible agency code
         /// </summary>
         [DataMember]
+        [DataElement("3055", typeof(EDIFACT_ID_3055))]
         [Pos(3)]
-        public string Codelistresponsibleagencycoded_03 { get; set; }
+        public string Codelistresponsibleagencycode_03 { get; set; }
         /// <summary>
-        /// Service requirement, coded
+        /// Service requirement, code
         /// </summary>
         [DataMember]
+        [DataElement("7273", typeof(EDIFACT_ID_7273))]
         [Pos(4)]
-        public string Servicerequirementcoded_04 { get; set; }
+        public string Servicerequirementcode_04 { get; set; }
         /// <summary>
-        /// Code list qualifier
+        /// Code list identification code
         /// </summary>
         [DataMember]
+        [DataElement("1131", typeof(EDIFACT_ID_1131))]
         [Pos(5)]
-        public string Codelistqualifier_05 { get; set; }
+        public string Codelistidentificationcode_05 { get; set; }
         /// <summary>
-        /// Code list responsible agency, coded
+        /// Code list responsible agency, code
         /// </summary>
         [DataMember]
+        [DataElement("3055", typeof(EDIFACT_ID_3055))]
         [Pos(6)]
-        public string Codelistresponsibleagencycoded_06 { get; set; }
+        public string Codelistresponsibleagencycode_06 { get; set; }
     }
 
     /// <summary>
@@ -1828,25 +1849,31 @@ namespace EdiWeave.Edifact.UN.D99B
     [Composite("C270")]
     public class C270 : I_C270
     {
-
         /// <summary>
         /// Control qualifier
         /// </summary>
         [DataMember]
+        [Required]
+        [DataElement("6069", typeof(EDIFACT_ID_6069))]
         [Pos(1)]
-        public string Controlqualifier_01 { get; set; }
+        public string Controltotaltypecodequalifier_01 { get; set; }
         /// <summary>
         /// Control value
         /// </summary>
         [DataMember]
+        [Required]
+        [StringLength(1, 18)]
+        [DataElement("6066", typeof(EDIFACT_N))]
         [Pos(2)]
         public string Controlvalue_02 { get; set; }
         /// <summary>
         /// Measure unit qualifier
         /// </summary>
         [DataMember]
+        [StringLength(1, 3)]
+        [DataElement("6411", typeof(EDIFACT_AN))]
         [Pos(3)]
-        public string Measureunitqualifier_03 { get; set; }
+        public string Measurementunitcode_03 { get; set; }
     }
 
     /// <summary>
@@ -2236,31 +2263,46 @@ namespace EdiWeave.Edifact.UN.D99B
     [Composite("C506")]
     public class C506 : I_C506
     {
-
         /// <summary>
-        /// Reference qualifier
+        /// Reference function code qualifier
         /// </summary>
         [DataMember]
+        [Required]
+        [DataElement("1153", typeof(EDIFACT_ID_1153))]
         [Pos(1)]
-        public string Referencequalifier_01 { get; set; }
+        public string Referencefunctioncodequalifier_01 { get; set; }
         /// <summary>
         /// Reference number
         /// </summary>
         [DataMember]
+        [StringLength(1, 35)]
+        [DataElement("1154", typeof(EDIFACT_AN))]
         [Pos(2)]
-        public string Referencenumber_02 { get; set; }
+        public string Referenceidentifier_02 { get; set; }
         /// <summary>
         /// Line number
         /// </summary>
         [DataMember]
+        [StringLength(1, 6)]
+        [DataElement("1156", typeof(EDIFACT_AN))]
         [Pos(3)]
         public string Linenumber_03 { get; set; }
         /// <summary>
         /// Reference version number
         /// </summary>
         [DataMember]
+        [StringLength(1, 35)]
+        [DataElement("4000", typeof(EDIFACT_AN))]
         [Pos(4)]
         public string Referenceversionnumber_04 { get; set; }
+        /// <summary>
+        /// Revision number
+        /// </summary>
+        [DataMember]
+        [StringLength(1, 6)]
+        [DataElement("1060", typeof(EDIFACT_AN))]
+        [Pos(5)]
+        public string Revisionnumber_05 { get; set; }
     }
 
     /// <summary>
@@ -2273,27 +2315,27 @@ namespace EdiWeave.Edifact.UN.D99B
     {
 
         /// <summary>
-        /// Date/time/period qualifier
+        /// Date/time/period function code qualifier
         /// </summary>
         [DataMember]
         [Required]
         [DataElement("2005", typeof(EDIFACT_ID_2005))]
         [Pos(1)]
-        public string Datetimeperiodqualifier_01 { get; set; }
+        public string Dateortimeorperiodfunctioncodequalifier_01 { get; set; }
         /// <summary>
-        /// Date/time/period
+        /// Date/time/period value
         /// </summary>
         [DataMember]
         [Pos(2)]
         [DataElement("2380", typeof(EDIFACT_AN))]
-        public string Datetimeperiod_02 { get; set; }
+        public string Dateortimeorperiodvalue_02 { get; set; }
         /// <summary>
-        /// Date/time/period format qualifier
+        /// Date/time/period format code
         /// </summary>
         [DataMember]
         [Pos(3)]
         [DataElement("2379", typeof(EDIFACT_ID_2379))]
-        public string Datetimeperiodformatqualifier_03 { get; set; }
+        public string Dateortimeorperiodformatcode_03 { get; set; }
     }
 
     /// <summary>
@@ -2392,31 +2434,36 @@ namespace EdiWeave.Edifact.UN.D99B
     [Composite("C517")]
     public class C517 : I_C517
     {
-
         /// <summary>
-        /// Place/location identification
+        /// Location name code
         /// </summary>
         [DataMember]
+        [StringLength(1, 25)]
+        [DataElement("3225", typeof(EDIFACT_AN))]
         [Pos(1)]
-        public string Placelocationidentification_01 { get; set; }
+        public string Locationnamecode_01 { get; set; }
         /// <summary>
-        /// Code list qualifier
+        /// Location name code
         /// </summary>
         [DataMember]
+        [DataElement("1131", typeof(EDIFACT_ID_1131))]
         [Pos(2)]
-        public string Codelistqualifier_02 { get; set; }
+        public string Codelistidentificationcode_02 { get; set; }
         /// <summary>
-        /// Code list responsible agency, coded
+        /// Location name code
         /// </summary>
         [DataMember]
+        [DataElement("3055", typeof(EDIFACT_ID_3055))]
         [Pos(3)]
-        public string Codelistresponsibleagencycoded_03 { get; set; }
+        public string Codelistresponsibleagencycode_03 { get; set; }
         /// <summary>
-        /// Place/location
+        /// Location name code
         /// </summary>
         [DataMember]
+        [StringLength(1, 256)]
+        [DataElement("3224", typeof(EDIFACT_AN))]
         [Pos(4)]
-        public string Placelocation_04 { get; set; }
+        public string Locationname_04 { get; set; }
     }
 
     /// <summary>
@@ -2427,29 +2474,34 @@ namespace EdiWeave.Edifact.UN.D99B
     [Composite("C519")]
     public class C519 : I_C519
     {
-
         /// <summary>
         /// Related place/location one identification
         /// </summary>
         [DataMember]
+        [StringLength(1, 25)]
+        [DataElement("3223", typeof(EDIFACT_AN))]
         [Pos(1)]
         public string Relatedplacelocationoneidentification_01 { get; set; }
         /// <summary>
-        /// Code list qualifier
+        /// Code list identification code
         /// </summary>
         [DataMember]
+        [DataElement("1131", typeof(EDIFACT_ID_1131))]
         [Pos(2)]
-        public string Codelistqualifier_02 { get; set; }
+        public string Codelistidentificationcode_02 { get; set; }
         /// <summary>
-        /// Code list responsible agency, coded
+        /// Code list responsible agency code
         /// </summary>
         [DataMember]
+        [DataElement("3055", typeof(EDIFACT_ID_3055))]
         [Pos(3)]
-        public string Codelistresponsibleagencycoded_03 { get; set; }
+        public string Codelistresponsibleagencycode_03 { get; set; }
         /// <summary>
         /// Related place/location one
         /// </summary>
         [DataMember]
+        [StringLength(1, 70)]
+        [DataElement("3222", typeof(EDIFACT_AN))]
         [Pos(4)]
         public string Relatedplacelocationone_04 { get; set; }
     }
@@ -2723,18 +2775,21 @@ namespace EdiWeave.Edifact.UN.D99B
         /// Contract and carriage condition, coded
         /// </summary>
         [DataMember]
+        [DataElement("4065", typeof(EDIFACT_ID_4065))]
         [Pos(1)]
-        public string Contractandcarriageconditioncoded_01 { get; set; }
+        public string Contractandcarriageconditioncode_01 { get; set; }
         /// <summary>
         /// Code list qualifier
         /// </summary>
         [DataMember]
+        [DataElement("1131", typeof(EDIFACT_ID_1131))]
         [Pos(2)]
-        public string Codelistqualifier_02 { get; set; }
+        public string Codelistidentificationcode_02 { get; set; }
         /// <summary>
         /// Code list responsible agency, coded
         /// </summary>
         [DataMember]
+        [DataElement("3055", typeof(EDIFACT_ID_3055))]
         [Pos(3)]
         public string Codelistresponsibleagencycoded_03 { get; set; }
     }
@@ -2747,25 +2802,28 @@ namespace EdiWeave.Edifact.UN.D99B
     [Composite("C537")]
     public class C537 : I_C537
     {
-
         /// <summary>
         /// Transport priority, coded
         /// </summary>
         [DataMember]
+        [Required]
+        [DataElement("4219", typeof(EDIFACT_ID_4219))]
         [Pos(1)]
         public string Transportprioritycoded_01 { get; set; }
         /// <summary>
-        /// Code list qualifier
+        /// Code list identification code
         /// </summary>
         [DataMember]
+        [DataElement("1131", typeof(EDIFACT_ID_1131))]
         [Pos(2)]
-        public string Codelistqualifier_02 { get; set; }
+        public string Codelistidentificationcode_02 { get; set; }
         /// <summary>
         /// Code list responsible agency, coded
         /// </summary>
         [DataMember]
+        [DataElement("3055", typeof(EDIFACT_ID_3055))]
         [Pos(3)]
-        public string Codelistresponsibleagencycoded_03 { get; set; }
+        public string Codelistresponsibleagencycode_03 { get; set; }
     }
 
     /// <summary>
@@ -2839,24 +2897,30 @@ namespace EdiWeave.Edifact.UN.D99B
         /// Related place/location two identification
         /// </summary>
         [DataMember]
+        [StringLength(1, 25)]
+        [DataElement("3233", typeof(EDIFACT_AN))]
         [Pos(1)]
         public string Relatedplacelocationtwoidentification_01 { get; set; }
         /// <summary>
-        /// Code list qualifier
+        /// Code list identification code
         /// </summary>
         [DataMember]
+        [DataElement("1131", typeof(EDIFACT_ID_1131))]
         [Pos(2)]
-        public string Codelistqualifier_02 { get; set; }
+        public string Codelistidentificationcode_02 { get; set; }
         /// <summary>
-        /// Code list responsible agency, coded
+        /// Code list responsible agency, code
         /// </summary>
         [DataMember]
+        [DataElement("3055", typeof(EDIFACT_ID_3055))]
         [Pos(3)]
-        public string Codelistresponsibleagencycoded_03 { get; set; }
+        public string Codelistresponsibleagencycode_03 { get; set; }
         /// <summary>
         /// Related place/location two
         /// </summary>
         [DataMember]
+        [StringLength(1, 70)]
+        [DataElement("3232", typeof(EDIFACT_AN))]
         [Pos(4)]
         public string Relatedplacelocationtwo_04 { get; set; }
     }
@@ -2997,25 +3061,28 @@ namespace EdiWeave.Edifact.UN.D99B
     [Composite("C703")]
     public class C703 : I_C703
     {
-
         /// <summary>
         /// Nature of cargo, coded
         /// </summary>
         [DataMember]
+        [Required]
+        [DataElement("7085", typeof(EDIFACT_ID_7085))]
         [Pos(1)]
         public string Natureofcargocoded_01 { get; set; }
         /// <summary>
-        /// Code list qualifier
+        /// Code list identification code
         /// </summary>
         [DataMember]
+        [DataElement("1131", typeof(EDIFACT_ID_1131))]
         [Pos(2)]
-        public string Codelistqualifier_02 { get; set; }
+        public string Codelistidentificationcode_02 { get; set; }
         /// <summary>
         /// Code list responsible agency, coded
         /// </summary>
         [DataMember]
+        [DataElement("3055", typeof(EDIFACT_ID_3055))]
         [Pos(3)]
-        public string Codelistresponsibleagencycoded_03 { get; set; }
+        public string Codelistresponsibleagencycode_03 { get; set; }
     }
 
     /// <summary>

@@ -112,11 +112,10 @@ namespace EdiWeave.Edifact.UN.D99B
     }
 
     public interface I_C107
-    {
-        
-        string Freetextcoded_01 { get; set; }
-        string Codelistqualifier_02 { get; set; }
-        string Codelistresponsibleagencycoded_03 { get; set; }
+    {    
+        string Freetextvaluecode_01 { get; set; }
+        string Codelistidentificationcode_02 { get; set; }
+        string Codelistresponsibleagencycode_03 { get; set; }
     }
     
     public interface I_C108
@@ -384,15 +383,14 @@ namespace EdiWeave.Edifact.UN.D99B
     
     public interface I_C233
     {
-        
-        string Servicerequirementcoded_01 { get; set; }
-        string Codelistqualifier_02 { get; set; }
-        string Codelistresponsibleagencycoded_03 { get; set; }
-        string Servicerequirementcoded_04 { get; set; }
-        string Codelistqualifier_05 { get; set; }
-        string Codelistresponsibleagencycoded_06 { get; set; }
+        public string Servicerequirementcode_01 { get; set; }
+        public string Codelistidentificationcode_02 { get; set; }
+        public string Codelistresponsibleagencycode_03 { get; set; }
+        public string Servicerequirementcode_04 { get; set; }
+        public string Codelistidentificationcode_05 { get; set; }
+        public string Codelistresponsibleagencycode_06 { get; set; }
     }
-    
+
     public interface I_C234
     {
         
@@ -463,11 +461,10 @@ namespace EdiWeave.Edifact.UN.D99B
     }
     
     public interface I_C270
-    {
-        
-        string Controlqualifier_01 { get; set; }
+    {      
+        string Controltotaltypecodequalifier_01 { get; set; }
         string Controlvalue_02 { get; set; }
-        string Measureunitqualifier_03 { get; set; }
+        string Measurementunitcode_03 { get; set; }
     }
     
     public interface I_C273
@@ -570,19 +567,22 @@ namespace EdiWeave.Edifact.UN.D99B
     
     public interface I_C506
     {
-        
-        string Referencequalifier_01 { get; set; }
-        string Referencenumber_02 { get; set; }
-        string Linenumber_03 { get; set; }
-        string Referenceversionnumber_04 { get; set; }
+         string Referencefunctioncodequalifier_01 { get; set; }
+
+         string Referenceidentifier_02 { get; set; }
+
+         string Linenumber_03 { get; set; }
+
+         string Referenceversionnumber_04 { get; set; }
+
+         string Revisionnumber_05 { get; set; }
     }
     
     public interface I_C507
-    {
-        
-        string Datetimeperiodqualifier_01 { get; set; }
-        string Datetimeperiod_02 { get; set; }
-        string Datetimeperiodformatqualifier_03 { get; set; }
+    {        
+        string Dateortimeorperiodfunctioncodequalifier_01 { get; set; }
+        string Dateortimeorperiodvalue_02 { get; set; }
+        string Dateortimeorperiodformatcode_03 { get; set; }
     }
     
     public interface I_C509
@@ -607,20 +607,18 @@ namespace EdiWeave.Edifact.UN.D99B
     }
     
     public interface I_C517
-    {
-        
-        string Placelocationidentification_01 { get; set; }
-        string Codelistqualifier_02 { get; set; }
-        string Codelistresponsibleagencycoded_03 { get; set; }
-        string Placelocation_04 { get; set; }
+    {      
+        string Locationnamecode_01 { get; set; }
+        string Codelistidentificationcode_02 { get; set; }
+        string Codelistresponsibleagencycode_03 { get; set; }
+        string Locationname_04 { get; set; }
     }
     
     public interface I_C519
-    {
-        
+    {    
         string Relatedplacelocationoneidentification_01 { get; set; }
-        string Codelistqualifier_02 { get; set; }
-        string Codelistresponsibleagencycoded_03 { get; set; }
+        string Codelistidentificationcode_02 { get; set; }
+        string Codelistresponsibleagencycode_03 { get; set; }
         string Relatedplacelocationone_04 { get; set; }
     }
     
@@ -682,8 +680,7 @@ namespace EdiWeave.Edifact.UN.D99B
     }
     
     public interface I_C534
-    {
-        
+    {   
         string Paymentconditionscoded_01 { get; set; }
         string Paymentguaranteecoded_02 { get; set; }
         string Paymentmeanscoded_03 { get; set; }
@@ -693,19 +690,17 @@ namespace EdiWeave.Edifact.UN.D99B
     }
     
     public interface I_C536
-    {
-        
-        string Contractandcarriageconditioncoded_01 { get; set; }
-        string Codelistqualifier_02 { get; set; }
+    {       
+        string Contractandcarriageconditioncode_01 { get; set; }
+        string Codelistidentificationcode_02 { get; set; }
         string Codelistresponsibleagencycoded_03 { get; set; }
     }
     
     public interface I_C537
     {
-        
         string Transportprioritycoded_01 { get; set; }
-        string Codelistqualifier_02 { get; set; }
-        string Codelistresponsibleagencycoded_03 { get; set; }
+        string Codelistidentificationcode_02 { get; set; }
+        string Codelistresponsibleagencycode_03 { get; set; }
     }
     
     public interface I_C550
@@ -725,11 +720,10 @@ namespace EdiWeave.Edifact.UN.D99B
     }
     
     public interface I_C553
-    {
-        
+    {   
         string Relatedplacelocationtwoidentification_01 { get; set; }
-        string Codelistqualifier_02 { get; set; }
-        string Codelistresponsibleagencycoded_03 { get; set; }
+        string Codelistidentificationcode_02 { get; set; }
+        string Codelistresponsibleagencycode_03 { get; set; }
         string Relatedplacelocationtwo_04 { get; set; }
     }
     
@@ -769,10 +763,9 @@ namespace EdiWeave.Edifact.UN.D99B
     
     public interface I_C703
     {
-        
         string Natureofcargocoded_01 { get; set; }
-        string Codelistqualifier_02 { get; set; }
-        string Codelistresponsibleagencycoded_03 { get; set; }
+        string Codelistidentificationcode_02 { get; set; }
+        string Codelistresponsibleagencycode_03 { get; set; }
     }
     
     public interface I_C827

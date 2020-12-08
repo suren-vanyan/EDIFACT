@@ -2,14 +2,21 @@
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Text;
 
 namespace EdiWeave.Edifact.UN.D99B
 {
     public class EF_EDIFACT_D99B_IFTMBC_Builder
     {
-        public static UNB BuildUNB()
+        public static UNB BuildUNB(JToken model)
         {
+            var carrierBookingConfirmation = model.SelectToken("CarrierBookingConfirmation");
+            var messageinfos = carrierBookingConfirmation.SelectToken("Messageinfos").First;
+            var res = messageinfos.SelectToken("MessageDate").ToString();
+
+            DateTime.TryParseExact(s: res, format: "yyyyMMddHHmm", provider: CultureInfo.InvariantCulture, style: 0, out var dt);
+
             return new UNB
             {
                 SYNTAXIDENTIFIER_1 = new S001
@@ -22,23 +29,23 @@ namespace EdiWeave.Edifact.UN.D99B
                 INTERCHANGESENDER_2 = new S002
                 {
                     // Interchange sender identification
-                    InterchangeSenderIdentification_1 = "CMACGM",
+                    InterchangeSenderIdentification_1 = messageinfos.SelectToken("Sender").ToString(),
                     // Identification code qualifier
                     IdentificationCodeQualifier_2 = "ZZZ",
                 },
                 INTERCHANGERECIPIENT_3 = new S003
                 {
                     // Interchange recipient identification
-                    InterchangeRecipientIdentification_1 = "COMSUP",
+                    InterchangeRecipientIdentification_1 = messageinfos.SelectToken("Receiver").ToString(),
                     // Identification code qualifier
                     IdentificationCodeQualifier_2 = "ZZZ",
                 },
                 DATEANDTIMEOFPREPARATION_4 = new S004
                 {
                     // Date
-                    Date_1 = "200807",
+                    Date_1 = dt.ToString("yyMMdd"),//"200807",
                     // Time
-                    Time_2 = "0849"
+                    Time_2 = dt.ToString("HHmm")//"0849"
                 },
                 // Interchange control reference
                 // Must be incremented with every interchange
@@ -97,9 +104,17 @@ namespace EdiWeave.Edifact.UN.D99B
 
 
             ////DATE/TIME/PERIOD
-            result.DTM = new List<DTM>();
+            
+            var messageinfos = carrierBookingConfirmation.SelectToken("Messageinfos").First;
 
+            result.DTM = new List<DTM>();
             var dtm1 = new DTM();
+            dtm1.DATETIMEPERIOD_01 = new C507();
+            dtm1.DATETIMEPERIOD_01.Dateortimeorperiodfunctioncodequalifier_01 = "137";
+            dtm1.DATETIMEPERIOD_01.Dateortimeorperiodvalue_02 = messageinfos.SelectToken("MessageDate").ToString();
+            // TODO
+            dtm1.DATETIMEPERIOD_01.Dateortimeorperiodformatcode_03 = "203";
+
 
 
             return result;
