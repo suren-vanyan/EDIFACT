@@ -617,6 +617,7 @@ namespace EdiWeave.Edifact.UN.D99B
         /// </summary>
         [DataMember]
         [Pos(1)]
+        [Required]
         public virtual C507 DATETIMEPERIOD_01 { get; set; }
     }
 

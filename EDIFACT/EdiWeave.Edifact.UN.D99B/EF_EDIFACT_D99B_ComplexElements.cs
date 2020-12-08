@@ -194,12 +194,17 @@ namespace EdiWeave.Edifact.UN.D99B
         /// Communication number
         /// </summary>
         [DataMember]
+        [Required]
+        [StringLength(1, 512)]
+        [DataElement("3148", typeof(EDIFACT_AN))]
         [Pos(1)]
         public string CommunicationNumber_01 { get; set; }
         /// <summary>
         /// Communication channel qualifier
         /// </summary>
         [DataMember]
+        [Required]
+        [DataElement("3155", typeof(EDIFACT_ID_3155))]
         [Pos(2)]
         public string CommunicationChannelQualifier_02 { get; set; }
     }
@@ -2271,6 +2276,8 @@ namespace EdiWeave.Edifact.UN.D99B
         /// Date/time/period qualifier
         /// </summary>
         [DataMember]
+        [Required]
+        [DataElement("2005", typeof(EDIFACT_ID_2005))]
         [Pos(1)]
         public string Datetimeperiodqualifier_01 { get; set; }
         /// <summary>
@@ -2278,12 +2285,14 @@ namespace EdiWeave.Edifact.UN.D99B
         /// </summary>
         [DataMember]
         [Pos(2)]
+        [DataElement("2380", typeof(EDIFACT_AN))]
         public string Datetimeperiod_02 { get; set; }
         /// <summary>
         /// Date/time/period format qualifier
         /// </summary>
         [DataMember]
         [Pos(3)]
+        [DataElement("2379", typeof(EDIFACT_ID_2379))]
         public string Datetimeperiodformatqualifier_03 { get; set; }
     }
 

@@ -22,7 +22,7 @@ namespace EdiFabric.Translate.EDIFACT.Core20
 
             var invoices = ediItems.OfType<TSIFTMBC>().ToList();
 
-            var model = JsonConvert.SerializeObject(invoices[0], new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+            var model = JsonConvert.SerializeObject(ediItems, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
 
             Carrierbookingconfirmation bookingconfirmation = new Carrierbookingconfirmation();
             
