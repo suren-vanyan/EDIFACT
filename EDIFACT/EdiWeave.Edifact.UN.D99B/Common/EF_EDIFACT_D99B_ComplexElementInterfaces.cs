@@ -49,8 +49,8 @@ namespace EdiWeave.Edifact.UN.D99B
     public interface I_C076
     {
         
-        string Communicationnumber_01 { get; set; }
-        string Communicationchannelqualifier_02 { get; set; }
+        string CommunicationNumber_01 { get; set; }
+        string CommunicationChannelQualifier_02 { get; set; }
     }
     
     public interface I_C078

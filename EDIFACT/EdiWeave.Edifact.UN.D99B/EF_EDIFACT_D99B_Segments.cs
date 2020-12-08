@@ -295,6 +295,7 @@ namespace EdiWeave.Edifact.UN.D99B
         /// </summary>
         [DataMember]
         [Pos(1)]
+        [Required]
         public virtual C076 COMMUNICATIONCONTACT_01 { get; set; }
     }
 
@@ -370,7 +371,7 @@ namespace EdiWeave.Edifact.UN.D99B
         [DataMember]
         [DataElement("3139", typeof(EDIFACT_ID_3139))]
         [Pos(1)]
-        public string Contactfunctioncoded_01 { get; set; }
+        public string ContactFunctionCode_01 { get; set; }
         /// <summary>
         /// DEPARTMENT OR EMPLOYEE DETAILS
         /// </summary>

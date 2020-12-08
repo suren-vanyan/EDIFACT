@@ -29,45 +29,59 @@ namespace EdiWeave.Edifact.UN.D99B
         public virtual CTA CTA { get; set; }
         [DataMember]
         [Pos(4)]
+        [ListCount(9)]
         public virtual List<COM> COM { get; set; }
         [DataMember]
         [Pos(5)]
+        [ListCount(9)]
         public virtual List<DTM> DTM { get; set; }
         [DataMember]
         [Pos(6)]
+        [ListCount(9)]
         public virtual List<TSR> TSR { get; set; }
         [DataMember]
         [Pos(7)]
+        [ListCount(99)]
         public virtual List<FTX> FTX { get; set; }
         [DataMember]
         [Pos(8)]
+        [ListCount(9)]
         public virtual List<CNT> CNT { get; set; }
         [DataMember]
         [Pos(8)]
+        [ListCount(9)]
         public virtual List<GDS> GDS { get; set; }
         [DataMember]
         [Pos(9)]
+        [ListCount(99)]
         public virtual List<Loop_LOC_IFTMBC> LOCLoop { get; set; }
         [DataMember]
         [Pos(10)]
+        [ListCount(99)]
         public virtual List<Loop_RFF_IFTMBC> RFFLoop { get; set; }
         [DataMember]
         [Pos(11)]
+        [ListCount(9)]
         public virtual List<TCC> TCC { get; set; }
         [DataMember]
         [Pos(12)]
+        [ListCount(99)]
         public virtual List<Loop_TDT_IFTMBC> TDTLoop { get; set; }
         [DataMember]
         [Pos(13)]
+        [ListCount(99)]
         public virtual List<Loop_NAD_IFTMBC> NADLoop { get; set; }
         [DataMember]
         [Pos(14)]
+        [ListCount(999)]
         public virtual List<Loop_GID_IFTMBC> GIDLoop { get; set; }
         [DataMember]
         [Pos(15)]
+        [ListCount(999)]
         public virtual List<Loop_EQD_IFTMBC> EQDLoop { get; set; }
         [DataMember]
         [Pos(16)]
+        [Required]
         public virtual UNT UNT { get; set; }
     }
 

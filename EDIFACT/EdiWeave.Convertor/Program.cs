@@ -32,11 +32,13 @@ namespace EdiWeave.Convertor
             }
 
 
-            var model1 = ediItems.OfType<EdiWeave.Edifact.UN.D99B.TSIFTMBC>().SingleOrDefault();
-            var errrors = ediItems.OfType<ErrorContext>().SingleOrDefault();
-            MessageErrorContext messageError = null;
-            model1.IsValid(out messageError);
-            var model = JsonConvert.SerializeObject(model1, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+            var tSIFTMBC = ediItems.OfType<EdiWeave.Edifact.UN.D99B.TSIFTMBC>().SingleOrDefault();
+
+            MessageErrorContext result;
+            var validationResult = tSIFTMBC.IsValid(out result);
+
+
+            var model = JsonConvert.SerializeObject(tSIFTMBC, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
 
         }
     }

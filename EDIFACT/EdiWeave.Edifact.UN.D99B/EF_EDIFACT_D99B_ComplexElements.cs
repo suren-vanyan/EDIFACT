@@ -195,13 +195,13 @@ namespace EdiWeave.Edifact.UN.D99B
         /// </summary>
         [DataMember]
         [Pos(1)]
-        public string Communicationnumber_01 { get; set; }
+        public string CommunicationNumber_01 { get; set; }
         /// <summary>
         /// Communication channel qualifier
         /// </summary>
         [DataMember]
         [Pos(2)]
-        public string Communicationchannelqualifier_02 { get; set; }
+        public string CommunicationChannelQualifier_02 { get; set; }
     }
 
     /// <summary>

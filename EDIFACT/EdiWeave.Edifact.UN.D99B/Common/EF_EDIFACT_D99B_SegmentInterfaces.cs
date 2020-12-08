@@ -114,7 +114,7 @@ namespace EdiWeave.Edifact.UN.D99B
         where T1 : I_C056
     {
 
-        string Contactfunctioncoded_01 { get; set; }
+        string ContactFunctionCode_01 { get; set; }
         T1 DEPARTMENTOREMPLOYEEDETAILS_02 { get; set; }
     }
 
