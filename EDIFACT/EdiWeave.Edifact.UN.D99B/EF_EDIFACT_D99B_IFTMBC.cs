@@ -51,10 +51,16 @@ namespace EdiWeave.Edifact.UN.D99B
         [Pos(8)]
         [ListCount(9)]
         public virtual List<GDS> GDS { get; set; }
+        /// <summary>
+        ///GRP1 Segment Group 1: LOC-DTM
+        /// </summary>
         [DataMember]
         [Pos(9)]
         [ListCount(99)]
         public virtual List<Loop_LOC_IFTMBC> LOCLoop { get; set; }
+        /// <summary>
+        ///GRP2 Segment Group 2: RFF-DTM
+        /// </summary>
         [DataMember]
         [Pos(10)]
         [ListCount(99)]
@@ -63,18 +69,30 @@ namespace EdiWeave.Edifact.UN.D99B
         [Pos(11)]
         [ListCount(9)]
         public virtual List<TCC> TCC { get; set; }
+        /// <summary>
+        /// GRP3 Segment Group 3: TDT-DTM-TSR-SG4-SG5
+        /// </summary>
         [DataMember]
         [Pos(12)]
         [ListCount(99)]
         public virtual List<Loop_TDT_IFTMBC> TDTLoop { get; set; }
+        /// <summary>
+        /// GRP6 Segment Group 6: NAD-LOC-SG7-SG8
+        /// </summary>
         [DataMember]
         [Pos(13)]
         [ListCount(99)]
         public virtual List<Loop_NAD_IFTMBC> NADLoop { get; set; }
+        /// <summary>
+        /// GRP9 Segment Group 9:  GID-HAN-TMP-RNG-TMD-LOC-FTX-PCD-SG10-GDS-
+        /// </summary>
         [DataMember]
         [Pos(14)]
         [ListCount(999)]
         public virtual List<Loop_GID_IFTMBC> GIDLoop { get; set; }
+        /// <summary>
+        /// GRP18 Segment Group 18: EQD-EQN-TMD-MEA-DIM-HAN-TMP-RNG-FTX-RFF-SG19-
+        /// </summary>
         [DataMember]
         [Pos(15)]
         [ListCount(999)]
@@ -247,9 +265,11 @@ namespace EdiWeave.Edifact.UN.D99B
     {
 
         [DataMember]
+        [Required]
         [Pos(1)]
         public virtual RFF RFF { get; set; }
         [DataMember]
+        [ListCount(9)]
         [Pos(2)]
         public virtual List<DTM> DTM { get; set; }
     }
@@ -295,14 +315,24 @@ namespace EdiWeave.Edifact.UN.D99B
     public class Loop_NAD_IFTMBC
     {
         [DataMember]
+        [Required]
         [Pos(1)]
         public virtual NAD NAD { get; set; }
+
         [DataMember]
         [Pos(2)]
         public virtual List<LOC> LOC { get; set; }
+
+        /// <summary>
+        /// GRP7  CTA-COM
+        /// </summary>
         [DataMember]
         [Pos(3)]
         public List<Loop_CTA_IFTMBC> CTALoop { get; set; }
+
+        /// <summary>
+        /// GRP8 TSR-RFF-LOC-TPL-FTX
+        /// </summary>
         [DataMember]
         [Pos(4)]
         public virtual List<Loop_TSR_IFTMBC> TSRLoop { get; set; }
@@ -320,12 +350,14 @@ namespace EdiWeave.Edifact.UN.D99B
         /// CONTACT INFORMATION
         /// </summary>
         [DataMember]
+        [Required]
         [Pos(1)]
         public virtual CTA CTA { get; set; }
         /// <summary>
         /// COMMUNICATION CONTACT
         /// </summary>
         [DataMember]
+        [ListCount(9)]
         [Pos(2)]
         public virtual List<COM> COM { get; set; }
     }
@@ -336,6 +368,7 @@ namespace EdiWeave.Edifact.UN.D99B
     {
 
         [DataMember]
+        [Required]
         [Pos(1)]
         public virtual TSR TSR { get; set; }
         [DataMember]
@@ -348,6 +381,7 @@ namespace EdiWeave.Edifact.UN.D99B
         [Pos(4)]
         public virtual TPL TPL { get; set; }
         [DataMember]
+        [ListCount(9)]
         [Pos(5)]
         public virtual List<FTX> FTX { get; set; }
     }
@@ -359,8 +393,8 @@ namespace EdiWeave.Edifact.UN.D99B
     [Group(nameof(TDT))]
     public class Loop_TDT_IFTMBC
     {
-
         [DataMember]
+        [Required]
         [Pos(1)]
         public virtual TDT TDT { get; set; }
         [DataMember]
@@ -383,6 +417,7 @@ namespace EdiWeave.Edifact.UN.D99B
     {
 
         [DataMember]
+        [Required]
         [Pos(1)]
         public virtual LOC LOC { get; set; }
         [DataMember]
@@ -416,6 +451,7 @@ namespace EdiWeave.Edifact.UN.D99B
         [Pos(1)]
         public virtual LOC LOC { get; set; }
         [DataMember]
+        [ListCount(1,9)]
         [Pos(2)]
         public virtual List<DTM> DTM { get; set; }
     }

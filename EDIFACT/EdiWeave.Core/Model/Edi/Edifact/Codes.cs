@@ -167,6 +167,9 @@ namespace EdiWeave.Core.Model.Edi.Edifact
     {
     }
 
+    /// <summary>
+    /// Code list identification code
+    /// </summary>
     [Serializable()]
     [DataContract()]
     [EdiCodes(@",1,10,100,101,102,103,104,105,106,107,108,109,11,110,112,113,114,115,116,117,118,119,12,120,121,122,123,125,126,127,128,129,13,130,131,132,133,134,135,136,137,139,14,140,141,142,143,144,145,146,147,148,149,15,150,151,152,153,154,155,156,157,158,16,160,161,162,163,164,165,166,167,168,169,17,170,172,173,174,175,176,177,178,179,18,180,181,182,183,184,185,186,187,188,189,19,190,191,192,193,194,195,196,197,198,199,2,20,200,201,202,203,204,205,206,207,208,209,21,210,211,212,213,214,215,216,217,218,219,220,221,222,223,224,225,226,227,228,229,23,230,231,232,233,234,235,236,237,238,239,240,241,242,243,244,245,246,247,248,249,25,250,251,252,253,254,255,256,257,258,259,260,261,262,263,264,265,266,267,268,269,270,271,272,273,3,33,34,35,36,37,38,39,4,40,42,43,44,45,46,47,48,49,5,52,53,54,55,56,57,58,59,6,60,61,62,63,64,65,67,68,69,7,70,71,72,73,74,75,76,77,78,79,8,80,81,82,83,84,85,86,9,ZZZ,")]
@@ -174,6 +177,9 @@ namespace EdiWeave.Core.Model.Edi.Edifact
     {
     }
 
+    /// <summary>
+    /// Code list responsible agency code
+    /// </summary>
     [Serializable()]
     [DataContract()]
     [EdiCodes(@",1,10,100,101,102,103,104,105,106,107,108,109,11,110,111,112,113,114,115,116,117,118,119,12,120,121,122,123,124,125,126,127,128,129,13,130,131,132,133,134,135,136,137,138,139,14,140,141,142,143,144,145,146,147,148,149,15,150,151,152,153,154,155,156,157,158,159,16,160,161,162,163,164,165,166,167,168,169,17,170,171,172,173,174,175,176,177,178,179,18,180,181,182,183,184,185,186,187,188,189,19,190,191,192,193,194,195,196,197,198,199,2,20,200,201,202,203,204,205,206,207,208,209,21,210,211,212,213,214,215,216,217,218,219,22,220,221,222,223,224,225,226,227,228,229,23,230,231,233,234,235,236,237,238,239,24,240,241,242,243,244,245,246,247,248,249,25,250,251,252,253,254,255,256,257,258,259,26,260,261,262,263,264,265,266,28,29,3,30,31,32,33,34,35,36,37,38,39,4,40,41,42,43,44,45,46,47,48,49,5,50,51,52,53,54,55,56,57,58,59,6,60,61,62,63,64,65,66,67,68,69,7,70,71,72,73,74,75,76,77,78,79,8,80,81,82,83,84,85,86,87,88,89,9,90,91,92,93,94,95,96,97,98,99,ZZZ,")]
@@ -408,6 +414,143 @@ namespace EdiWeave.Core.Model.Edi.Edifact
     "P,UAR,UC,UCN,UN,UO,VA,VC,VM,VN,VON,VP,VR,VS,VT,VV,WE,WM,WN,WR,WS,WY,XA,XC,XP,ZZZ" +
     ",")]
     public class EDIFACT_ID_1153
+    {
+    }
+
+
+    /// <summary>
+    /// Prepaid/collect indicator, coded
+    /// </summary>
+    [Serializable()]
+    [DataContract()]
+    [EdiCodes(@",A,B,C,P,")]
+    public class EDIFACT_ID_4237
+    {
+    }
+
+    /// <summary>
+    /// Rate/tariff class identification
+    /// </summary>
+    [Serializable()]
+    [DataContract()]
+    [EdiCodes(@",A,B,C,D,E,F,K,M,N,Q,R,S,")]
+    public class EDIFACT_ID_5243
+    {
+    }
+
+    /// <summary>
+    /// TRANSPORT STAGE CODE QUALIFIER
+    /// </summary>
+    [Serializable()]
+    [DataContract()]
+    [EdiCodes(",1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,23,24,25,26,27,28,29,30,31,32,33,")]
+    public class EDIFACT_ID_8051
+    {
+    }
+
+
+    /// <summary>
+    /// Transport means description code
+    /// </summary>
+    [Serializable()]
+    [DataContract()]
+    [EdiCodes(@",1,11,12,13,14,15,16,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,31,32,33,34,35,36,37,38,39,4,40,41,42,43,44,45,46,47,48,49,5,50,51,52,53,54,55,56,57,58,59,6,60,61,62,63,64,65,66,67,68,69,7,70,71,72,73,74,")]
+    public class EDIFACT_ID_8179
+    {
+    }
+
+
+    /// <summary>
+    /// TRANSIT DIRECTION INDICATOR CODE
+    /// </summary>
+    [Serializable()]
+    [DataContract()]
+    [EdiCodes(",BS,SB,SC,SD,SF,SS,ST,SU,ZZZ,")]
+    public class EDIFACT_ID_8101
+    {
+    }
+
+    /// <summary>
+    /// Excess transportation reason, coded
+    /// </summary>
+    [Serializable()]
+    [DataContract()]
+    [EdiCodes(",A,B,C,D,E,F,G,H,I,J,K,L,M,N,P,R,T,U,V,W,X,Y,ZZZ,")]
+    public class EDIFACT_ID_8457
+    {
+    }
+
+    /// <summary>
+    /// Excess transportation responsibility, coded
+    /// </summary>
+    [Serializable()]
+    [DataContract()]
+    [EdiCodes(",A,B,S,X,ZZZ,")]
+    public class EDIFACT_ID_8459
+    {
+    }
+
+    /// <summary>
+    /// TRANSPORT OWNERSHIP, CODED
+    /// </summary>
+    [Serializable()]
+    [DataContract()]
+    [EdiCodes(",1,2,3,")]
+    public class EDIFACT_ID_8281
+    {
+    }
+
+
+    /// <summary>
+    /// PARTY FUNCTION CODE QUALIFIER
+    /// </summary>
+    [Serializable()]
+    [DataContract()]
+    [EdiCodes(@",AA,AB,AE,AF,AG,AH,AI,AJ,AK,AL,AM,AN,AO,AP,AQ,AR,AS,AT,AU,AV,AW,AX,AY,
+                AZ,B1,B2,BA,BB,BC,BD,BE,BF,BG,BH,BI,BJ,BK,BL,BM,BN,BO,BP,BQ,BS,BT,BU,
+                BV,BW,BX,BY,BZ,C1,C2,CA,CB,CC,CD,CE,CF,CG,CH,CI,CJ,CK,CL,CM,CN,CNX,CNY,
+                CNZ,CO,COA,COB,COC,COD,COE,COF,COG,COH,COI,COJ,COK,COL,COM,CON,COO,COP,
+                COQ,COR,COS,COT,COU,COV,COW,COX,COY,COZ,CP,CPA,CPB,CPC,CPD,CPE,CPF,CPG,
+                CQ,CR,CS,CT,CU,CV,CW,CX,CY,CZ,DA,DB,DC,DCP,DD,DE,DF,DG,DH,DI,DJ,DK,DL,DM,
+                DN,DO,DP,DQ,DR,DS,DT,DU,DV,DW,DX,DY,DZ,EA,EB,EC,ED,EE,EF,EG,EH,EI,EJ,EK,
+                EL,EM,EN,EO,EP,EQ,ER,ES,ET,EU,EV,EW,EX,EY,EZ,FA,FB,FC,FD,FE,FF,FG,FH,FI,
+                FJ,FK,FL,FM,FN,FO,FP,FQ,FR,FS,FT,FU,FV,FW,FX,FY,FZ,GA,GB,GC,GD,GE,GF,GG,
+                GH,GI,GJ,GK,GL,GM,GN,GO,GP,GQ,GR,GS,GT,GU,GV,GW,GX,GY,GZ,HA,HB,HC,HD,HE,
+                HF,HG,HH,HI,HJ,HK,HL,HM,HN,HO,HP,HQ,HR,HS,HT,HU,HV,HW,HX,HY,HZ,I1,I2,IB,
+                IC,ID,IE,IF,IG,IH,II,IJ,IL,IM,IN,IO,IP,IQ,IR,IS,IT,IU,IV,IW,IX,IY,IZ,LA,
+                LB,LC,LD,LE,LF,LG,LH,LI,LJ,LK,LL,LM,LN,LO,LP,LQ,LR,LS,LT,LU,LV,MA,MF,MG,
+                MI,MP,MR,MS,MT,N1,N2,NI,OA,OB,OC,OD,OE,OF,OG,OH,OI,OJ,OK,OL,OM,ON,OO,OP,
+                OQ,OR,OS,OT,OU,OV,OW,OX,OY,OZ,P1,P2,P3,P4,PA,PB,PC,PD,PE,PF,PG,PH,PI,PJ,
+                PK,PL,PM,PN,PO,PQ,PR,PS,PT,PW,PX,PY,PZ,RA,RB,RE,RF,RH,RI,RL,RM,RP,RS,RV,
+                RW,SB,SE,SF,SG,SI,SK,SN,SO,SR,SS,ST,SU,SX,SY,SZ,TA,TB,TC,TCP,TD,TE,TF,TG,
+                TH,TI,TJ,TK,TL,TM,TN,TO,TP,TQ,TR,TS,TT,TU,TV,TW,TX,TY,TZ,UA,UB,UC,UD,UE,
+                UF,UG,UH,UHP,UI,UJ,UK,UL,UM,UN,UO,UP,UQ,UR,US,UT,UU,UV,UW,UX,UY,UZ,VA,VB,
+                VC,VE,VF,VG,VH,VI,VJ,VK,VL,VM,VN,VO,VP,VQ,VR,VS,VT,VU,VV,VW,VX,VY,VZ,WA,
+                WB,WC,WD,WE,WF,WG,WH,WI,WJ,WK,WL,WM,WN,WO,WP,WPA,WQ,WR,WS,WT,WU,WV,WW,XX,ZZZ,,")]
+    public class EDIFACT_ID_3035
+    {
+    }
+
+
+    /// <summary>
+    /// Party name format code
+    /// </summary>
+    [Serializable()]
+    [DataContract()]
+    [EdiCodes(",1,2,")]
+    public class EDIFACT_ID_3045
+    {
+    }
+
+    /// <summary>
+    /// Packaging related description code
+    /// </summary>
+    [Serializable()]
+    [DataContract()]
+    [EdiCodes(@",1,2,3,4,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,
+               50,51,52,53,54,55,56,57,58,59,60,61,62,63,66,67,68,69,
+               70,71,72,73,74,75,76,77,")]
+    public class EDIFACT_ID_7233
     {
     }
 }

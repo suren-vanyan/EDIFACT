@@ -249,16 +249,15 @@ namespace EdiWeave.Edifact.UN.D99B
         T1 NATUREOFCARGO_01 { get; set; }
     }
 
-    public interface I_GID<T1, T2, T3>
+    public interface I_GID<T1>
         where T1 : I_C213
-        where T2 : I_C213
-        where T3 : I_C213
     {
-
         string Goodsitemnumber_01 { get; set; }
         T1 NUMBERANDTYPEOFPACKAGES_02 { get; set; }
-        T2 NUMBERANDTYPEOFPACKAGES_03 { get; set; }
-        T3 NUMBERANDTYPEOFPACKAGES_04 { get; set; }
+        T1 NUMBERANDTYPEOFPACKAGES_03 { get; set; }
+        T1 NUMBERANDTYPEOFPACKAGES_04 { get; set; }
+        T1 NUMBERANDTYPEOFPACKAGES_05 { get; set; }
+        T1 NUMBERANDTYPEOFPACKAGES_06 { get; set; }
     }
 
     public interface I_GIN<T1, T2, T3, T4, T5>
@@ -382,11 +381,12 @@ namespace EdiWeave.Edifact.UN.D99B
         T1 MONETARYAMOUNT_01 { get; set; }
     }
 
-    public interface I_NAD<T1, T2, T3, T4>
+    public interface I_NAD<T1, T2, T3, T4, T5>
         where T1 : I_C082
         where T2 : I_C058
         where T3 : I_C080
         where T4 : I_C059
+        where T5 : I_C819
     {
 
         string Partyqualifier_01 { get; set; }
@@ -395,9 +395,9 @@ namespace EdiWeave.Edifact.UN.D99B
         T3 PARTYNAME_04 { get; set; }
         T4 STREET_05 { get; set; }
         string Cityname_06 { get; set; }
-        string Countrysubentityidentification_07 { get; set; }
+        T5 COUNTRYSUBENTITYDETAILS_07 { get; set; }
         string Postcodeidentification_08 { get; set; }
-        string Countrycoded_09 { get; set; }
+        string Countrynamecode_09 { get; set; }
     }
 
     public interface I_PAC<T1, T2, T3, T4>
@@ -623,7 +623,7 @@ namespace EdiWeave.Edifact.UN.D99B
         T1 MODEOFTRANSPORT_03 { get; set; }
         T2 TRANSPORTMEANS_04 { get; set; }
         T3 CARRIER_05 { get; set; }
-        string Transitdirectioncoded_06 { get; set; }
+        string Transitdirectionindicatorcode_06 { get; set; }
         T4 EXCESSTRANSPORTATIONINFORMATION_07 { get; set; }
         T5 TRANSPORTIDENTIFICATION_08 { get; set; }
         string Transportownershipcoded_09 { get; set; }
@@ -641,9 +641,8 @@ namespace EdiWeave.Edifact.UN.D99B
     public interface I_TMP<T1>
         where T1 : I_C239
     {
-
-        string Temperaturequalifier_01 { get; set; }
-        T1 TEMPERATURESETTING_02 { get; set; }
+        string TemperatureQualifier_01 { get; set; }
+        T1  MEASUREMENTUNITCODE_02 { get; set; }
     }
 
     public interface I_TOD<T1>

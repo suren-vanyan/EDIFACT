@@ -818,13 +818,15 @@ namespace EdiWeave.Edifact.UN.D99B
     [Serializable()]
     [DataContract()]
     [Segment("GID")]
-    public class GID : I_GID<C213, C213, C213>
+    public class GID : I_GID<C213>
     {
 
         /// <summary>
         /// Goods item number
         /// </summary>
         [DataMember]
+        [DataElement("1496", typeof(EDIFACT_AN))]
+        [StringLength(1,5)]
         [Pos(1)]
         public string Goodsitemnumber_01 { get; set; }
         /// <summary>
@@ -845,6 +847,18 @@ namespace EdiWeave.Edifact.UN.D99B
         [DataMember]
         [Pos(4)]
         public virtual C213 NUMBERANDTYPEOFPACKAGES_04 { get; set; }
+        /// <summary>
+        /// NUMBER AND TYPE OF PACKAGES
+        /// </summary>
+        [DataMember]
+        [Pos(5)]
+        public virtual C213 NUMBERANDTYPEOFPACKAGES_05 { get; set; }
+        /// <summary>
+        /// NUMBER AND TYPE OF PACKAGES
+        /// </summary>
+        [DataMember]
+        [Pos(6)]
+        public virtual C213 NUMBERANDTYPEOFPACKAGES_06 { get; set; }
     }
 
     /// <summary>
@@ -1224,63 +1238,77 @@ namespace EdiWeave.Edifact.UN.D99B
     [Serializable()]
     [DataContract()]
     [Segment("NAD")]
-    public class NAD : I_NAD<C082, C058, C080, C059>
+    public class NAD : I_NAD<C082, C058, C080, C059,C819>
     {
-
         /// <summary>
         /// Party qualifier
         /// </summary>
         [DataMember]
+        [Required]
+        [DataElement("3035",typeof(EDIFACT_ID_3035))]
         [Pos(1)]
         public string Partyqualifier_01 { get; set; }
+
         /// <summary>
         /// PARTY IDENTIFICATION DETAILS
         /// </summary>
         [DataMember]
         [Pos(2)]
         public virtual C082 PARTYIDENTIFICATIONDETAILS_02 { get; set; }
+
         /// <summary>
         /// NAME AND ADDRESS
         /// </summary>
         [DataMember]
         [Pos(3)]
         public virtual C058 NAMEANDADDRESS_03 { get; set; }
+
         /// <summary>
         /// PARTY NAME
         /// </summary>
         [DataMember]
         [Pos(4)]
         public virtual C080 PARTYNAME_04 { get; set; }
+
         /// <summary>
         /// STREET
         /// </summary>
         [DataMember]
         [Pos(5)]
         public virtual C059 STREET_05 { get; set; }
+
         /// <summary>
         /// City name
         /// </summary>
         [DataMember]
+        [StringLength(1, 35)]
+        [DataElement("3164", typeof(EDIFACT_AN))]
         [Pos(6)]
         public string Cityname_06 { get; set; }
+
         /// <summary>
-        /// Country sub-entity identification
+        /// COUNTRY SUB-ENTITY DETAILS
         /// </summary>
-        [DataMember]
         [Pos(7)]
-        public string Countrysubentityidentification_07 { get; set; }
+        public C819 COUNTRYSUBENTITYDETAILS_07 { get; set; }
+
         /// <summary>
         /// Postcode identification
         /// </summary>
         [DataMember]
+        [DataElement("3251", typeof(EDIFACT_AN))]
+        [StringLength(1, 17)]
         [Pos(8)]
         public string Postcodeidentification_08 { get; set; }
+
         /// <summary>
-        /// Country, coded
+        /// Country,name code
         /// </summary>
         [DataMember]
+        [DataElement("3207", typeof(EDIFACT_AN))]
+        [StringLength(1, 3)]
         [Pos(9)]
-        public string Countrycoded_09 { get; set; }
+        public string Countrynamecode_09 { get; set; }
     }
 
     /// <summary>
@@ -1912,12 +1940,16 @@ namespace EdiWeave.Edifact.UN.D99B
         /// Transport stage qualifier
         /// </summary>
         [DataMember]
+        [Required]
+        [DataElement("8051", typeof(EDIFACT_ID_8051))]
         [Pos(1)]
         public string Transportstagequalifier_01 { get; set; }
         /// <summary>
         /// Conveyance reference number
         /// </summary>
         [DataMember]
+        [StringLength(1,17)]
+        [DataElement("8028", typeof(EDIFACT_AN))]
         [Pos(2)]
         public string Conveyancereferencenumber_02 { get; set; }
         /// <summary>
@@ -1939,11 +1971,12 @@ namespace EdiWeave.Edifact.UN.D99B
         [Pos(5)]
         public virtual C040 CARRIER_05 { get; set; }
         /// <summary>
-        /// Transit direction, coded
+        /// TRANSIT DIRECTION INDICATOR CODE
         /// </summary>
         [DataMember]
+        [DataElement("8101", typeof(EDIFACT_ID_8101))]
         [Pos(6)]
-        public string Transitdirectioncoded_06 { get; set; }
+        public string Transitdirectionindicatorcode_06 { get; set; }
         /// <summary>
         /// EXCESS TRANSPORTATION INFORMATION
         /// </summary>
@@ -1960,6 +1993,7 @@ namespace EdiWeave.Edifact.UN.D99B
         /// Transport ownership, coded
         /// </summary>
         [DataMember]
+        [DataElement("8281", typeof(EDIFACT_ID_8281))]
         [Pos(9)]
         public string Transportownershipcoded_09 { get; set; }
     }
@@ -2001,19 +2035,21 @@ namespace EdiWeave.Edifact.UN.D99B
     [Segment("TMP")]
     public class TMP : I_TMP<C239>
     {
-
         /// <summary>
-        /// Temperature qualifier
+        /// TEMPERATURE QUALIFIER
         /// </summary>
         [DataMember]
+        [Required]
+        [DataElement("6245", typeof(EDIFACT_AN))]
+        [StringLength(1, 3)]
         [Pos(1)]
-        public string Temperaturequalifier_01 { get; set; }
+        public string TemperatureQualifier_01 { get; set; }
         /// <summary>
         /// TEMPERATURE SETTING
         /// </summary>
         [DataMember]
         [Pos(2)]
-        public virtual C239 TEMPERATURESETTING_02 { get; set; }
+        public virtual C239 MEASUREMENTUNITCODE_02 { get; set; }
     }
 
     /// <summary>
@@ -2058,6 +2094,7 @@ namespace EdiWeave.Edifact.UN.D99B
         /// TRANSPORT IDENTIFICATION
         /// </summary>
         [DataMember]
+        [Required]
         [Pos(1)]
         public virtual C222 TRANSPORTIDENTIFICATION_01 { get; set; }
     }
