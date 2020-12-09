@@ -137,7 +137,7 @@ namespace EdiWeave.Edifact.UN.D99B
         where T5 : I_C236
     {
 
-        string Dangerousgoodsregulationscoded_01 { get; set; }
+        string Dangerousgoodsregulationscode_01 { get; set; }
         T1 HAZARDCODE_02 { get; set; }
         T2 UNDGINFORMATION_03 { get; set; }
         T3 DANGEROUSGOODSSHIPMENTFLASHPOINT_04 { get; set; }
@@ -145,7 +145,7 @@ namespace EdiWeave.Edifact.UN.D99B
         string EMSnumber_06 { get; set; }
         string MFAG_07 { get; set; }
         string Tremcardnumber_08 { get; set; }
-        T4 HAZARDIDENTIFICATION_09 { get; set; }
+        T4 HAZARDIDENTIFICATIONPLACARDDETAILS_09 { get; set; }
         T5 DANGEROUSGOODSLABEL_10 { get; set; }
         string Packinginstructioncoded_11 { get; set; }
         string Categoryofmeansoftransportcoded_12 { get; set; }
@@ -202,12 +202,11 @@ namespace EdiWeave.Edifact.UN.D99B
         where T1 : I_C237
         where T2 : I_C224
     {
-
-        string Equipmentqualifier_01 { get; set; }
+        string Equipmenttypecodequalifier_01 { get; set; }
         T1 EQUIPMENTIDENTIFICATION_02 { get; set; }
         T2 EQUIPMENTSIZEANDTYPE_03 { get; set; }
         string Equipmentsuppliercoded_04 { get; set; }
-        string Equipmentstatuscoded_05 { get; set; }
+        string Equipmentstatuscode_05 { get; set; }
         string Fullemptyindicatorcoded_06 { get; set; }
     }
 
@@ -238,7 +237,7 @@ namespace EdiWeave.Edifact.UN.D99B
         string Textfunctioncoded_02 { get; set; }
         T1 TEXTREFERENCE_03 { get; set; }
         T2 TEXTLITERAL_04 { get; set; }
-        string Languagecoded_05 { get; set; }
+        string Languagenamecode_05 { get; set; }
         string Textformattingcoded_06 { get; set; }
     }
 
@@ -367,11 +366,10 @@ namespace EdiWeave.Edifact.UN.D99B
         where T1 : I_C502
         where T2 : I_C174
     {
-
-        string Measurementapplicationqualifier_01 { get; set; }
+        string Measurementattributecode_01 { get; set; }
         T1 MEASUREMENTDETAILS_02 { get; set; }
         T2 VALUERANGE_03 { get; set; }
-        string Surfacelayerindicatorcoded_04 { get; set; }
+        string Surfacelayercode_04 { get; set; }
     }
 
     public interface I_MOA<T1>
@@ -642,7 +640,7 @@ namespace EdiWeave.Edifact.UN.D99B
         where T1 : I_C239
     {
         string TemperatureQualifier_01 { get; set; }
-        T1  MEASUREMENTUNITCODE_02 { get; set; }
+        T1 MEASUREMENTUNITCODE_02 { get; set; }
     }
 
     public interface I_TOD<T1>

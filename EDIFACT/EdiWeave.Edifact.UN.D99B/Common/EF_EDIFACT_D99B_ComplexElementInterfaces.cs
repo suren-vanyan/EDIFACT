@@ -163,7 +163,7 @@ namespace EdiWeave.Edifact.UN.D99B
 
     public interface I_C174
     {
-        string Measureunitqualifier_01 { get; set; }
+        string Measurementunitcode_01 { get; set; }
         string Measurementvalue_02 { get; set; }
         string Rangeminimum_03 { get; set; }
         string Rangemaximum_04 { get; set; }
@@ -249,7 +249,7 @@ namespace EdiWeave.Edifact.UN.D99B
 
     public interface I_C211
     {
-        string Measureunitqualifier_01 { get; set; }
+        string Measureunitcode_01 { get; set; }
         string Lengthdimension_02 { get; set; }
         string Widthdimension_03 { get; set; }
         string Heightdimension_04 { get; set; }
@@ -305,8 +305,8 @@ namespace EdiWeave.Edifact.UN.D99B
 
     public interface I_C219
     {
-        string Movementtypecoded_01 { get; set; }
-        string Movementtype_02 { get; set; }
+        string Movementtypedescriptioncode_01 { get; set; }
+        string Movementtypedescription_02 { get; set; }
     }
 
     public interface I_C220
@@ -327,15 +327,15 @@ namespace EdiWeave.Edifact.UN.D99B
     public interface I_C223
     {
         string Shipmentflashpoint_01 { get; set; }
-        string Measureunitqualifier_02 { get; set; }
+        string Measurementunitcode_02 { get; set; }
     }
 
     public interface I_C224
     {
-        string Equipmentsizeandtypeidentification_01 { get; set; }
-        string Codelistqualifier_02 { get; set; }
-        string Codelistresponsibleagencycoded_03 { get; set; }
-        string Equipmentsizeandtype_04 { get; set; }
+        string Equipmentsizeandtypedescriptioncode_01 { get; set; }
+        string Codelistidentificationcode_02 { get; set; }
+        string Codelistresponsibleagencycode_03 { get; set; }
+        string Equipmentsizeandtypedescription_04 { get; set; }
     }
 
     public interface I_C228
@@ -398,9 +398,9 @@ namespace EdiWeave.Edifact.UN.D99B
     public interface I_C237
     {
         string Equipmentidentificationnumber_01 { get; set; }
-        string Codelistqualifier_02 { get; set; }
-        string Codelistresponsibleagencycoded_03 { get; set; }
-        string Countrycoded_04 { get; set; }
+        string Codelistidentificationcode_02 { get; set; }
+        string Codelistresponsibleagencycode_03 { get; set; }
+        string Countrynamecode_04 { get; set; }
     }
 
     public interface I_C239
@@ -462,7 +462,7 @@ namespace EdiWeave.Edifact.UN.D99B
 
     public interface I_C280
     {
-        string Measureunitqualifier_01 { get; set; }
+        string Measurementunitcode_01 { get; set; }
         string Rangeminimum_02 { get; set; }
         string Rangemaximum_03 { get; set; }
     }
@@ -500,19 +500,19 @@ namespace EdiWeave.Edifact.UN.D99B
 
     public interface I_C501
     {
-        string Percentagequalifier_01 { get; set; }
+        string Percentagetypecodequalifier_01 { get; set; }
         string Percentage_02 { get; set; }
-        string Percentagebasiscoded_03 { get; set; }
-        string Codelistqualifier_04 { get; set; }
-        string Codelistresponsibleagencycoded_05 { get; set; }
+        string Percentagebasisidentificationcode_03 { get; set; }
+        string Codelistidentificationcode_04 { get; set; }
+        string Codelistresponsibleagencycode_05 { get; set; }
     }
 
     public interface I_C502
     {
-        string Measurementdimensioncoded_01 { get; set; }
+        string Measuredattributecode_01 { get; set; }
         string Measurementsignificancecoded_02 { get; set; }
-        string Measurementattributecoded_03 { get; set; }
-        string Measurementattribute_04 { get; set; }
+        string Nondiscretemeasurementnamecode_03 { get; set; }
+        string Nondiscretemeasurementname_04 { get; set; }
     }
 
     public interface I_C503
@@ -598,7 +598,7 @@ namespace EdiWeave.Edifact.UN.D99B
     public interface I_C523
     {
         string Numberofunits_01 { get; set; }
-        string Numberofunitsqualifier_02 { get; set; }
+        string Unittypecodequalifier_02 { get; set; }
     }
 
     public interface I_C524

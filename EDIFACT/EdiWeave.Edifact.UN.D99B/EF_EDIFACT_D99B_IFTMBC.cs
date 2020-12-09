@@ -117,6 +117,7 @@ namespace EdiWeave.Edifact.UN.D99B
         /// GOODS ITEM DETAILS
         /// </summary>
         [DataMember]
+        [Required]
         [Pos(1)]
         public virtual GID GID { get; set; }
         /// <summary>
@@ -147,61 +148,71 @@ namespace EdiWeave.Edifact.UN.D99B
         /// PLACE/LOCATION IDENTIFICATION
         /// </summary>
         [DataMember]
+        [ListCount(9)]
         [Pos(6)]
         public virtual List<LOC> LOC { get; set; }
         /// <summary>
         /// FREE TEXT
         /// </summary>
         [DataMember]
+        [ListCount(9)]
         [Pos(7)]
         public virtual List<FTX> FTX { get; set; }
         /// <summary>
         /// PERCENTAGE DETAILS
         /// </summary>
         [DataMember]
-        [Pos(7)]
+        [ListCount(9)]
+        [Pos(8)]
         public virtual List<PCD> PCD { get; set; }
         /// <summary>
         /// Loop for NAME AND ADDRESS
         /// </summary>
         [DataMember]
-        [Pos(8)]
+        [ListCount(9)]
+        [Pos(9)]
         public virtual List<Loop_NAD_IFTMBC_2> NADLoop { get; set; }
         /// <summary>
         /// NATURE OF CARGO
         /// </summary>
         [DataMember]
-        [Pos(9)]
+        [ListCount(9)]
+        [Pos(10)]
         public virtual List<GDS> GDS { get; set; }
         /// <summary>
         /// Loop for MEASUREMENTS
         /// </summary>
         [DataMember]
-        [Pos(10)]
+        [ListCount(99)]
+        [Pos(11)]
         public virtual List<Loop_MEA_IFTMBC> MEALoop { get; set; }
         /// <summary>
         /// Loop for DIMENSIONS
         /// </summary>
         [DataMember]
-        [Pos(11)]
+        [ListCount(99)]
+        [Pos(12)]
         public virtual List<Loop_DIM_IFTMBC> DIMLoop { get; set; }
         /// <summary>
         /// Loop for REFERENCE
         /// </summary>
         [DataMember]
-        [Pos(12)]
+        [ListCount(9)]
+        [Pos(13)]
         public virtual List<Loop_RFF_IFTMBC> RFFLoop { get; set; }
         /// <summary>
         /// Loop for DOCUMENT/MESSAGE DETAILS
         /// </summary>
         [DataMember]
-        [Pos(13)]
+        [ListCount(9)]
+        [Pos(14)]
         public virtual List<Loop_DOC_IFTMBC> DOCLoop { get; set; }
         /// <summary>
         /// Loop for DANGEROUS GOODS
         /// </summary>
         [DataMember]
-        [Pos(14)]
+        [ListCount(99)]
+        [Pos(15)]
         public virtual List<Loop_DGS_IFTMBC> DGSLoop { get; set; }
     }
 
@@ -213,6 +224,7 @@ namespace EdiWeave.Edifact.UN.D99B
         [Pos(1)]
         public virtual DGS DGS { get; set; }
         [DataMember]
+        [ListCount(99)]
         [Pos(2)]
         public virtual List<FTX> FTX { get; set; }
         [DataMember]
@@ -226,6 +238,7 @@ namespace EdiWeave.Edifact.UN.D99B
     {
 
         [DataMember]
+        [Required]
         [Pos(1)]
         public virtual NAD NAD { get; set; }
         [DataMember]
@@ -237,8 +250,8 @@ namespace EdiWeave.Edifact.UN.D99B
     [Group(nameof(MEA))]
     public class Loop_MEA_IFTMBC
     {
-
         [DataMember]
+        [Required]
         [Pos(1)]
         public virtual MEA MEA { get; set; }
         [DataMember]
@@ -291,17 +304,20 @@ namespace EdiWeave.Edifact.UN.D99B
     [Group(nameof(DGS))]
     public class Loop_DGS_IFTMBC
     {
-
         [DataMember]
+        [Required]
         [Pos(1)]
         public virtual DGS DGS { get; set; }
         [DataMember]
+        [ListCount(99)]
         [Pos(2)]
         public virtual List<FTX> FTX { get; set; }
         [DataMember]
+        [ListCount(9)]
         [Pos(3)]
         public virtual List<Loop_CTA_IFTMBC> CTALoop { get; set; }
         [DataMember]
+        [ListCount(9)]
         [Pos(4)]
         public virtual List<Loop_MEA_IFTMBC> MEALoop { get; set; }
     }
@@ -466,6 +482,7 @@ namespace EdiWeave.Edifact.UN.D99B
     {
 
         [DataMember]
+        [Required]
         [Pos(1)]
         public virtual EQD EQD { get; set; }
         [DataMember]
@@ -475,6 +492,7 @@ namespace EdiWeave.Edifact.UN.D99B
         [Pos(3)]
         public virtual TMD TMD { get; set; }
         [DataMember]
+        [ListCount(9)]
         [Pos(4)]
         public virtual List<MEA> MEA { get; set; }
         [DataMember]
@@ -490,6 +508,7 @@ namespace EdiWeave.Edifact.UN.D99B
         [Pos(8)]
         public virtual List<RNG> RNG { get; set; }
         [DataMember]
+        [ListCount(9)]
         [Pos(9)]
         public virtual List<FTX> FTX { get; set; }
         [DataMember]

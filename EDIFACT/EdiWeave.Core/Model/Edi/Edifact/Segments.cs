@@ -157,25 +157,51 @@ namespace EdiWeave.Core.Model.Edi.Edifact
     [Segment("UNH")]
     public class UNH : EdiSegment
     {
-
+        /// <summary>
+        /// MESSAGE REFERENCE NUMBER
+        /// </summary>
         [Required]
         [StringLength(1, 14)]
         [DataElement("0062", typeof(EDIFACT_AN))]
         [Pos(1)]
         public string MessageReferenceNumber_01 { get; set; }
+
+        /// <summary>
+        /// MESSAGE IDENTIFIER
+        /// </summary>
         [Required]
         [Pos(2)]
         public S009 MessageIdentifier_02 { get; set; }
+
+        /// <summary>
+        /// COMMON ACCESS REFERENCE
+        /// </summary>
         [StringLength(1, 35)]
         [DataElement("0068", typeof(EDIFACT_AN))]
         [Pos(3)]
         public string CommonAccessReference_03 { get; set; }
+
+        /// <summary>
+        /// STATUS OF THE TRANSFER
+        /// </summary>
         [Pos(4)]
         public S010 StatusoftheTransfer_04 { get; set; }
+
+        /// <summary>
+        /// MESSAGE SUBSET IDENTIFICATION
+        /// </summary>
         [Pos(5)]
         public S016 MessageSubsetIdentification_05 { get; set; }
+
+        /// <summary>
+        /// MESSAGE IMPLEMENTATION GUIDELINE IDENTIFICATION
+        /// </summary>
         [Pos(6)]
         public S017 MessageImplementationGuidelineIdentification_06 { get; set; }
+
+        /// <summary>
+        /// SCENARIO IDENTIFICATION
+        /// </summary>
         [Pos(7)]
         public S018 ScenarioIdentification_07 { get; set; }
     }

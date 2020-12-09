@@ -423,13 +423,13 @@ namespace EdiWeave.Edifact.UN.D99B
     [Segment("DGS")]
     public class DGS : I_DGS<C205, C234, C223, C235, C236>
     {
-
         /// <summary>
-        /// Dangerous goods regulations, coded
+        /// Dangerous goods regulations, code
         /// </summary>
         [DataMember]
+        [DataElement("8273", typeof(EDIFACT_ID_8273))]
         [Pos(1)]
-        public string Dangerousgoodsregulationscoded_01 { get; set; }
+        public string Dangerousgoodsregulationscode_01 { get; set; }
         /// <summary>
         /// HAZARD CODE
         /// </summary>
@@ -452,24 +452,32 @@ namespace EdiWeave.Edifact.UN.D99B
         /// Packing group, coded
         /// </summary>
         [DataMember]
+        [DataElement("8339", typeof(EDIFACT_AN))]
+        [StringLength(1,3)]
         [Pos(5)]
         public string Packinggroupcoded_05 { get; set; }
         /// <summary>
         /// EMS number
         /// </summary>
         [DataMember]
+        [DataElement("8364", typeof(EDIFACT_AN))]
+        [StringLength(1, 6)]
         [Pos(6)]
         public string EMSnumber_06 { get; set; }
         /// <summary>
         /// MFAG
         /// </summary>
         [DataMember]
+        [DataElement("8410", typeof(EDIFACT_AN))]
+        [StringLength(1, 4)]
         [Pos(7)]
         public string MFAG_07 { get; set; }
         /// <summary>
         /// Trem card number
         /// </summary>
         [DataMember]
+        [DataElement("8126", typeof(EDIFACT_AN))]
+        [StringLength(1, 10)]
         [Pos(8)]
         public string Tremcardnumber_08 { get; set; }
         /// <summary>
@@ -477,7 +485,7 @@ namespace EdiWeave.Edifact.UN.D99B
         /// </summary>
         [DataMember]
         [Pos(9)]
-        public virtual C235 HAZARDIDENTIFICATION_09 { get; set; }
+        public virtual C235 HAZARDIDENTIFICATIONPLACARDDETAILS_09 { get; set; }
         /// <summary>
         /// DANGEROUS GOODS LABEL
         /// </summary>
@@ -488,18 +496,24 @@ namespace EdiWeave.Edifact.UN.D99B
         /// Packing instruction, coded
         /// </summary>
         [DataMember]
+        [DataElement("8255", typeof(EDIFACT_AN))]
+        [StringLength(1, 3)]
         [Pos(11)]
         public string Packinginstructioncoded_11 { get; set; }
         /// <summary>
         /// Category of means of transport, coded
         /// </summary>
         [DataMember]
+        [DataElement("8325", typeof(EDIFACT_AN))]
+        [StringLength(1, 3)]
         [Pos(12)]
         public string Categoryofmeansoftransportcoded_12 { get; set; }
         /// <summary>
         /// Permission for transport, coded
         /// </summary>
         [DataMember]
+        [DataElement("8211", typeof(EDIFACT_AN))]
+        [StringLength(1, 3)]
         [Pos(13)]
         public string Permissionfortransportcoded_13 { get; set; }
     }
@@ -517,12 +531,16 @@ namespace EdiWeave.Edifact.UN.D99B
         /// Dimension qualifier
         /// </summary>
         [DataMember]
+        [Required]
+        [DataElement("6145", typeof(EDIFACT_AN))]
+        [StringLength(1,3)]
         [Pos(1)]
         public string Dimensionqualifier_01 { get; set; }
         /// <summary>
         /// DIMENSIONS
         /// </summary>
         [DataMember]
+        [Required]
         [Pos(2)]
         public virtual C211 DIMENSIONS_02 { get; set; }
     }
@@ -654,11 +672,13 @@ namespace EdiWeave.Edifact.UN.D99B
     {
 
         /// <summary>
-        /// Equipment qualifier
+        /// EQUIPMENT TYPE CODE QUALIFIER
         /// </summary>
         [DataMember]
+        [DataElement("8053", typeof(EDIFACT_AN))]
+        [StringLength(1,3)]
         [Pos(1)]
-        public string Equipmentqualifier_01 { get; set; }
+        public string Equipmenttypecodequalifier_01 { get; set; }
         /// <summary>
         /// EQUIPMENT IDENTIFICATION
         /// </summary>
@@ -675,18 +695,21 @@ namespace EdiWeave.Edifact.UN.D99B
         /// Equipment supplier, coded
         /// </summary>
         [DataMember]
+        [DataElement("8077", typeof(EDIFACT_ID_8077))]
         [Pos(4)]
         public string Equipmentsuppliercoded_04 { get; set; }
         /// <summary>
         /// Equipment status, coded
         /// </summary>
         [DataMember]
+        [DataElement("8249", typeof(EDIFACT_ID_8249))]
         [Pos(5)]
-        public string Equipmentstatuscoded_05 { get; set; }
+        public string Equipmentstatuscode_05 { get; set; }
         /// <summary>
         /// Full/empty indicator, coded
         /// </summary>
         [DataMember]
+        [DataElement("8169", typeof(EDIFACT_ID_8169))]
         [Pos(6)]
         public string Fullemptyindicatorcoded_06 { get; set; }
     }
@@ -699,11 +722,11 @@ namespace EdiWeave.Edifact.UN.D99B
     [Segment("EQN")]
     public class EQN : I_EQN<C523>
     {
-
         /// <summary>
         /// NUMBER OF UNIT DETAILS
         /// </summary>
         [DataMember]
+        [Required]
         [Pos(1)]
         public virtual C523 NUMBEROFUNITDETAILS_01 { get; set; }
     }
@@ -752,7 +775,7 @@ namespace EdiWeave.Edifact.UN.D99B
     public class FTX : I_FTX<C107, C108>
     {
         /// <summary>
-        /// Text subject qualifier
+        /// Text subject code qualifier
         /// </summary>
         [DataMember]
         [Required]
@@ -785,7 +808,7 @@ namespace EdiWeave.Edifact.UN.D99B
         [StringLength(1,3)]
         [DataElement("3453", typeof(EDIFACT_AN))]
         [Pos(5)]
-        public string Languagecoded_05 { get; set; }
+        public string Languagenamecode_05 { get; set; }
         /// <summary>
         /// Text formatting, coded
         /// </summary>
@@ -1188,13 +1211,15 @@ namespace EdiWeave.Edifact.UN.D99B
     [Segment("MEA")]
     public class MEA : I_MEA<C502, C174>
     {
-
         /// <summary>
-        /// Measurement application qualifier
+        /// MEASUREMENT ATTRIBUTE CODE
         /// </summary>
         [DataMember]
+        [Required]
+        [DataElement("6311", typeof(EDIFACT_ID_6311))]
+        [StringLength(1,3)]
         [Pos(1)]
-        public string Measurementapplicationqualifier_01 { get; set; }
+        public string Measurementattributecode_01 { get; set; }
         /// <summary>
         /// MEASUREMENT DETAILS
         /// </summary>
@@ -1208,11 +1233,12 @@ namespace EdiWeave.Edifact.UN.D99B
         [Pos(3)]
         public virtual C174 VALUERANGE_03 { get; set; }
         /// <summary>
-        /// Surface/layer indicator, coded
+        /// Surface/layer indicator, code
         /// </summary>
         [DataMember]
+        [DataElement("7383", typeof(EDIFACT_ID_7383))]
         [Pos(4)]
-        public string Surfacelayerindicatorcoded_04 { get; set; }
+        public string Surfacelayercode_04 { get; set; }
     }
 
     /// <summary>
@@ -1411,6 +1437,7 @@ namespace EdiWeave.Edifact.UN.D99B
         /// PERCENTAGE DETAILS
         /// </summary>
         [DataMember]
+        [Required]
         [Pos(1)]
         public virtual C501 PERCENTAGEDETAILS_01 { get; set; }
     }
@@ -1644,11 +1671,13 @@ namespace EdiWeave.Edifact.UN.D99B
     [Segment("RNG")]
     public class RNG : I_RNG<C280>
     {
-
         /// <summary>
         /// Range type qualifier
         /// </summary>
         [DataMember]
+        [Required]
+        [DataElement("6167", typeof(EDIFACT_AN))]
+        [StringLength(1, 3)]
         [Pos(1)]
         public string Rangetypequalifier_01 { get; set; }
         /// <summary>
@@ -2006,7 +2035,6 @@ namespace EdiWeave.Edifact.UN.D99B
     [Segment("TMD")]
     public class TMD : I_TMD<C219>
     {
-
         /// <summary>
         /// MOVEMENT TYPE
         /// </summary>
@@ -2017,12 +2045,15 @@ namespace EdiWeave.Edifact.UN.D99B
         /// Equipment plan
         /// </summary>
         [DataMember]
+        [DataElement("8332", typeof(EDIFACT_AN))]
+        [StringLength(1,26)]
         [Pos(2)]
         public string Equipmentplan_02 { get; set; }
         /// <summary>
         /// Haulage arrangements, coded
         /// </summary>
         [DataMember]
+        [DataElement("8341", typeof(EDIFACT_ID_8341))]
         [Pos(3)]
         public string Haulagearrangementscoded_03 { get; set; }
     }

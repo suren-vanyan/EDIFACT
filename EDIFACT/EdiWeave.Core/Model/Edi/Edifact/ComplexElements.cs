@@ -202,34 +202,60 @@ namespace EdiWeave.Core.Model.Edi.Edifact
     [Composite("S009")]
     public class S009
     {
-
+        /// <summary>
+        /// Message type
+        /// </summary>
         [Required]
         [StringLength(1, 6)]
-        [DataElement("0065", typeof(EDIFACT_AN))]
+        [DataElement("0065", typeof(EDIFACT_ID_0065))]
         [Pos(1)]
         public string MessageType_01 { get; set; }
+
+        /// <summary>
+        /// Message version number
+        /// </summary>
         [Required]
         [StringLength(1, 3)]
-        [DataElement("0052", typeof(EDIFACT_AN))]
+        [DataElement("0052", typeof(EDIFACT_ID_0052))]
         [Pos(2)]
         public string MessageVersionNumber_02 { get; set; }
+
+        /// <summary>
+        /// Message release number
+        /// </summary>
         [Required]
         [StringLength(1, 3)]
-        [DataElement("0054", typeof(EDIFACT_AN))]
+        [DataElement("0054", typeof(EDIFACT_ID_0054))]
         [Pos(3)]
         public string MessageReleaseNumber_03 { get; set; }
+
+        /// <summary>
+        /// Controlling agency, coded
+        /// </summary>
         [Required]
         [DataElement("0051", typeof(EDIFACT_ID_0051))]
         [Pos(4)]
         public string ControllingAgencyCoded_04 { get; set; }
+
+        /// <summary>
+        /// Association assigned code
+        /// </summary>
         [StringLength(1, 6)]
         [DataElement("0057", typeof(EDIFACT_AN))]
         [Pos(5)]
         public string AssociationAssignedCode_05 { get; set; }
+
+        /// <summary>
+        /// Code list directory version number
+        /// </summary>
         [StringLength(1, 6)]
         [DataElement("0110", typeof(EDIFACT_AN))]
         [Pos(6)]
         public string CodelistdirectoryVersionNumber_06 { get; set; }
+
+        /// <summary>
+        /// Message type sub-function identification
+        /// </summary>
         [DataElement("0113", typeof(EDIFACT_ID_0113))]
         [Pos(7)]
         public string MessagetypeSubfunctionIdentification_07 { get; set; }
@@ -290,7 +316,7 @@ namespace EdiWeave.Core.Model.Edi.Edifact
         [Pos(3)]
         public string MessageSubsetReleaseNumber_03 { get; set; }
         [StringLength(1, 3)]
-        [DataElement("0051", typeof(EDIFACT_AN))]
+        [DataElement("0051", typeof(EDIFACT_ID_0051))]
         [Pos(4)]
         public string ControllingAgencyCoded_04 { get; set; }
     }
@@ -314,7 +340,7 @@ namespace EdiWeave.Core.Model.Edi.Edifact
         [Pos(3)]
         public string MessageImplementationGuidelineReleaseNumber_03 { get; set; }
         [StringLength(1, 3)]
-        [DataElement("0051", typeof(EDIFACT_AN))]
+        [DataElement("0051", typeof(EDIFACT_ID_0051))]
         [Pos(4)]
         public string ControllingAgencyCoded_04 { get; set; }
     }
@@ -338,7 +364,7 @@ namespace EdiWeave.Core.Model.Edi.Edifact
         [Pos(3)]
         public string ScenarioReleaseNumber_03 { get; set; }
         [StringLength(1, 3)]
-        [DataElement("0051", typeof(EDIFACT_AN))]
+        [DataElement("0051", typeof(EDIFACT_ID_0051))]
         [Pos(4)]
         public string ControllingAgencyCoded_04 { get; set; }
     }
