@@ -20,9 +20,11 @@ namespace EdiWeave.Convertor
             var str = @"";
             var ab = str.Replace("\r\n\r\n", ",");
 
-            ReadBookingConfirmation();
+            //ReadBookingConfirmation();
 
-            
+            BuildBookingConfirmation();
+
+
         }
 
 
@@ -68,6 +70,7 @@ namespace EdiWeave.Convertor
             MessageErrorContext result;
             var validationResult = tSIFTMBC.IsValid(out result);
 
+            var errorContext = JsonConvert.SerializeObject(result);
 
             var model = JsonConvert.SerializeObject(tSIFTMBC, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
         }

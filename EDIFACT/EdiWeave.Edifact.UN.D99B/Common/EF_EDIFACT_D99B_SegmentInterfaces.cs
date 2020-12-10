@@ -616,7 +616,7 @@ namespace EdiWeave.Edifact.UN.D99B
         where T5 : I_C222
     {
 
-        string Transportstagequalifier_01 { get; set; }
+        string Transportstagecodequalifier_01 { get; set; }
         string Conveyancereferencenumber_02 { get; set; }
         T1 MODEOFTRANSPORT_03 { get; set; }
         T2 TRANSPORTMEANS_04 { get; set; }
@@ -674,7 +674,6 @@ namespace EdiWeave.Edifact.UN.D99B
 
     public interface I_UNS
     {
-
         string Sectionidentification_01 { get; set; }
     }
 }

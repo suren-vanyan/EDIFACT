@@ -70,7 +70,7 @@ namespace EdiWeave.Edifact.UN.D99B
         [ListCount(9)]
         public virtual List<TCC> TCC { get; set; }
         /// <summary>
-        /// GRP3 Segment Group 3: TDT-DTM-TSR-SG4-SG5
+        ///  Segment Group 3: TDT-DTM-TSR-SG4-SG5
         /// </summary>
         [DataMember]
         [Pos(12)]
@@ -84,14 +84,14 @@ namespace EdiWeave.Edifact.UN.D99B
         [ListCount(99)]
         public virtual List<Loop_NAD_IFTMBC> NADLoop { get; set; }
         /// <summary>
-        /// GRP9 Segment Group 9:  GID-HAN-TMP-RNG-TMD-LOC-FTX-PCD-SG10-GDS-
+        ///  Segment Group 9:  GID-HAN-TMP-RNG-TMD-LOC-FTX-PCD-SG10-GDS-
         /// </summary>
         [DataMember]
         [Pos(14)]
         [ListCount(999)]
         public virtual List<Loop_GID_IFTMBC> GIDLoop { get; set; }
         /// <summary>
-        /// GRP18 Segment Group 18: EQD-EQN-TMD-MEA-DIM-HAN-TMP-RNG-FTX-RFF-SG19-
+        ///  Segment Group 18: EQD-EQN-TMD-MEA-DIM-HAN-TMP-RNG-FTX-RFF-SG19-
         /// </summary>
         [DataMember]
         [Pos(15)]
@@ -419,10 +419,18 @@ namespace EdiWeave.Edifact.UN.D99B
         [DataMember]
         [Pos(3)]
         public virtual List<TSR> TSR { get; set; }
+        /// <summary>
+        /// Segment Group 4
+        /// </summary>
         [DataMember]
+        [ListCount(99)]
         [Pos(4)]
         public virtual List<Loop_LOC_IFTMBC_2> LOCLoop { get; set; }
+        /// <summary>
+        /// Segment Group 5
+        /// </summary>
         [DataMember]
+        [ListCount(9)]
         [Pos(5)]
         public virtual List<Loop_RFF_IFTMBC_2> RFFLoop { get; set; }
     }
@@ -431,22 +439,22 @@ namespace EdiWeave.Edifact.UN.D99B
     [Group(nameof(LOC))]
     public class Loop_LOC_IFTMBC_2
     {
-
         [DataMember]
         [Required]
         [Pos(1)]
         public virtual LOC LOC { get; set; }
         [DataMember]
+        [ListCount(9)]
         [Pos(2)]
-        public virtual DTM DTM { get; set; }
+        public virtual List<DTM> DTM { get; set; }
     }
 
     [DataContract]
     [Group(nameof(RFF))]
     public class Loop_RFF_IFTMBC_2
     {
-
         [DataMember]
+        [Required]
         [Pos(1)]
         public virtual RFF RFF { get; set; }
         [DataMember]

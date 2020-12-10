@@ -321,7 +321,7 @@ namespace EdiWeave.Edifact.UN.D99B
         string Codelistidentificationcode_02 { get; set; }
         string Codelistresponsibleagencycode_03 { get; set; }
         string Transportmeansidentificationname_04 { get; set; }
-        string Transportmeansnationalitycode_05 { get; set; }
+        string Nationalityofmeansoftransportcoded_05 { get; set; }
     }
 
     public interface I_C223

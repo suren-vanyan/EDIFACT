@@ -1453,7 +1453,6 @@ namespace EdiWeave.Edifact.UN.D99B
     [Composite("C220")]
     public class C220 : I_C220
     {
-
         /// <summary>
         /// Transport mode name code
         /// </summary>
@@ -1480,10 +1479,10 @@ namespace EdiWeave.Edifact.UN.D99B
     [Composite("C222")]
     public class C222 : I_C222
     {
-
         /// <summary>
         /// Transport means identification name identifier
         /// </summary>
+        [DataMember]
         [StringLength(1, 9)]
         [DataElement("8213", typeof(EDIFACT_AN))]
         [Pos(1)]
@@ -1492,6 +1491,7 @@ namespace EdiWeave.Edifact.UN.D99B
         /// <summary>
         /// Code list identification code
         /// </summary>
+        [DataMember]
         [DataElement("1131", typeof(EDIFACT_ID_1131))]
         [Pos(2)]
         public string Codelistidentificationcode_02 { get; set; }
@@ -1499,6 +1499,7 @@ namespace EdiWeave.Edifact.UN.D99B
         /// <summary>
         /// Code list responsible agency code
         /// </summary>
+        [DataMember]
         [DataElement("3055", typeof(EDIFACT_ID_3055))]
         [Pos(3)]
         public string Codelistresponsibleagencycode_03 { get; set; }
@@ -1506,6 +1507,7 @@ namespace EdiWeave.Edifact.UN.D99B
         /// <summary>
         /// Transport means identification name
         /// </summary>
+        [DataMember]
         [StringLength(1, 35)]
         [DataElement("8212", typeof(EDIFACT_AN))]
         [Pos(4)]
@@ -1514,10 +1516,11 @@ namespace EdiWeave.Edifact.UN.D99B
         /// <summary>
         /// Nationality of means of transport, coded
         /// </summary>
+        [DataMember]
         [StringLength(1, 3)]
         [DataElement("8453", typeof(EDIFACT_AN))]
         [Pos(5)]
-        public string Transportmeansnationalitycode_05 { get; set; }
+        public string Nationalityofmeansoftransportcoded_05 { get; set; }
     }
 
     /// <summary>
@@ -2251,11 +2254,11 @@ namespace EdiWeave.Edifact.UN.D99B
     [Composite("C401")]
     public class C401 : I_C401
     {
-
         /// <summary>
         /// Excess transportation reason, coded
         /// </summary>
         [DataMember]
+        [Required]
         [DataElement("8457", typeof(EDIFACT_ID_8457))]
         [Pos(1)]
         public string Excesstransportationreasoncoded_01 { get; set; }
@@ -2263,6 +2266,7 @@ namespace EdiWeave.Edifact.UN.D99B
         /// Excess transportation responsibility, coded
         /// </summary>
         [DataMember]
+        [Required]
         [DataElement("8459", typeof(EDIFACT_ID_8459))]
         [Pos(2)]
         public string Excesstransportationresponsibilitycoded_02 { get; set; }

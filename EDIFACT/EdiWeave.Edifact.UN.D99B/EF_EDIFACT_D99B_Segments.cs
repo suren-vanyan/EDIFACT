@@ -843,7 +843,6 @@ namespace EdiWeave.Edifact.UN.D99B
     [Segment("GID")]
     public class GID : I_GID<C213>
     {
-
         /// <summary>
         /// Goods item number
         /// </summary>
@@ -892,7 +891,6 @@ namespace EdiWeave.Edifact.UN.D99B
     [Segment("GIN")]
     public class GIN : I_GIN<C208, C208, C208, C208, C208>
     {
-
         /// <summary>
         /// Identity number qualifier
         /// </summary>
@@ -939,7 +937,6 @@ namespace EdiWeave.Edifact.UN.D99B
     [Segment("GIR")]
     public class GIR : I_GIR<C206, C206, C206, C206, C206>
     {
-
         /// <summary>
         /// Set identification qualifier
         /// </summary>
@@ -986,7 +983,6 @@ namespace EdiWeave.Edifact.UN.D99B
     [Segment("GOR")]
     public class GOR : I_GOR<C232, C232, C232, C232>
     {
-
         /// <summary>
         /// Transport movement, coded
         /// </summary>
@@ -1027,7 +1023,6 @@ namespace EdiWeave.Edifact.UN.D99B
     [Segment("HAN")]
     public class HAN : I_HAN<C524, C218>
     {
-
         /// <summary>
         /// HANDLING INSTRUCTIONS
         /// </summary>
@@ -1050,7 +1045,6 @@ namespace EdiWeave.Edifact.UN.D99B
     [Segment("IMD")]
     public class IMD : I_IMD<C273>
     {
-
         /// <summary>
         /// Item description type, coded
         /// </summary>
@@ -1085,7 +1079,6 @@ namespace EdiWeave.Edifact.UN.D99B
     [Segment("INP")]
     public class INP : I_INP<C849, C522, C850>
     {
-
         /// <summary>
         /// PARTIES TO INSTRUCTION
         /// </summary>
@@ -1120,7 +1113,6 @@ namespace EdiWeave.Edifact.UN.D99B
     [Segment("LIN")]
     public class LIN : I_LIN<C212, C829>
     {
-
         /// <summary>
         /// Line item number
         /// </summary>
@@ -1249,7 +1241,6 @@ namespace EdiWeave.Edifact.UN.D99B
     [Segment("MOA")]
     public class MOA : I_MOA<C516>
     {
-
         /// <summary>
         /// MONETARY AMOUNT
         /// </summary>
@@ -1345,7 +1336,6 @@ namespace EdiWeave.Edifact.UN.D99B
     [Segment("PAC")]
     public class PAC : I_PAC<C531, C202, C402, C532>
     {
-
         /// <summary>
         /// Number of packages
         /// </summary>
@@ -1386,7 +1376,6 @@ namespace EdiWeave.Edifact.UN.D99B
     [Segment("PAI")]
     public class PAI : I_PAI<C534>
     {
-
         /// <summary>
         /// PAYMENT INSTRUCTION DETAILS
         /// </summary>
@@ -1403,7 +1392,6 @@ namespace EdiWeave.Edifact.UN.D99B
     [Segment("PAT")]
     public class PAT : I_PAT<C110, C112>
     {
-
         /// <summary>
         /// Payment terms type qualifier
         /// </summary>
@@ -1432,7 +1420,6 @@ namespace EdiWeave.Edifact.UN.D99B
     [Segment("PCD")]
     public class PCD : I_PCD<C501>
     {
-
         /// <summary>
         /// PERCENTAGE DETAILS
         /// </summary>
@@ -1450,7 +1437,6 @@ namespace EdiWeave.Edifact.UN.D99B
     [Segment("PCI")]
     public class PCI : I_PCI<C210, C827>
     {
-
         /// <summary>
         /// Marking instructions, coded
         /// </summary>
@@ -1972,7 +1958,7 @@ namespace EdiWeave.Edifact.UN.D99B
         [Required]
         [DataElement("8051", typeof(EDIFACT_ID_8051))]
         [Pos(1)]
-        public string Transportstagequalifier_01 { get; set; }
+        public string Transportstagecodequalifier_01 { get; set; }
         /// <summary>
         /// Conveyance reference number
         /// </summary>
