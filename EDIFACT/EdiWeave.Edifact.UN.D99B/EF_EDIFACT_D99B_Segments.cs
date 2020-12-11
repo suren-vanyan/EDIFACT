@@ -3,10 +3,10 @@ using EdiWeave.Core.Annotations.Validation;
 using EdiWeave.Core.Model.Edi.Edifact;
 using System;
 using System.Runtime.Serialization;
-using System.Xml.Serialization;
 
-namespace EdiWeave.Edifact.UN.D99B
+namespace EDIFACT.TEMPLATES.D99B
 {
+
     /// <summary>
     /// ADJUSTMENT DETAILS
     /// </summary>
@@ -629,7 +629,6 @@ namespace EdiWeave.Edifact.UN.D99B
     [Segment("DTM")]
     public class DTM : I_DTM<C507>
     {
-
         /// <summary>
         /// DATE/TIME/PERIOD
         /// </summary>
@@ -1245,6 +1244,7 @@ namespace EdiWeave.Edifact.UN.D99B
         /// MONETARY AMOUNT
         /// </summary>
         [DataMember]
+        [Required]
         [Pos(1)]
         public virtual C516 MONETARYAMOUNT_01 { get; set; }
     }

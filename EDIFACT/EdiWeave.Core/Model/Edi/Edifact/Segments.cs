@@ -299,7 +299,6 @@ namespace EdiWeave.Core.Model.Edi.Edifact
     [Segment("UCM")]
     public class UCM
     {
-
         [StringLength(1, 14)]
         [DataElement("0062", typeof(EDIFACT_AN))]
         [Pos(1)]

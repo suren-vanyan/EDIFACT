@@ -1,6 +1,7 @@
-﻿using EdiWeave.Core.Model.Edi;
+﻿using EDIFACT.TEMPLATES.D99B;
+using EdiWeave.Core.Model.Edi;
+using EdiWeave.Core.Model.Edi.Edifact;
 using EdiWeave.Core.Model.Edi.ErrorContexts;
-using EdiWeave.Edifact.UN.D99B;
 using EdiWeave.Framework.Readers;
 using EdiWeave.Framework.Writers;
 using Newtonsoft.Json;
@@ -20,16 +21,14 @@ namespace EdiWeave.Convertor
             var str = @"";
             var ab = str.Replace("\r\n\r\n", ",");
 
-            //ReadBookingConfirmation();
+            ReadBookingConfirmation();
 
             BuildBookingConfirmation();
 
 
         }
 
-
-        
-
+     
         public static void BuildBookingConfirmation()
         {
             const string path = @"C:\Users\suren.vanyan\source\repos\EDIFACT\EDIFACT\EdiWeave.Convertor\BookingConfirmation.json";
@@ -37,7 +36,7 @@ namespace EdiWeave.Convertor
             var jModel = File.ReadAllText(path);
             JToken jtoken = JToken.Parse(jModel);
 
-            using var writer = new EdifactWriter(@"C:\Users\suren.vanyan\source\repos\EDIFACT\EDIFACT\EdiWeave.Convertor\EdifactWriter.IFTMBC.txt", false,Encoding.UTF8,"\n");
+            using var writer = new EdifactWriter(@"C:\Users\suren.vanyan\source\repos\EDIFACT\EDIFACT\EdiWeave.Convertor\EdifactWriter_IFTMBC.txt", false,Encoding.UTF8,"\n");
             writer.Write(EF_EDIFACT_D99B_IFTMBC_Builder.BuildUNB(jtoken));
             writer.Write(EF_EDIFACT_D99B_IFTMBC_Builder.BuildIFTMBC("1",jtoken));
 
@@ -55,22 +54,34 @@ namespace EdiWeave.Convertor
 
             var ediStream = CommonHelper.GenerateStreamFromString(sample);
 
-            var assembley = Assembly.Load(new AssemblyName("EdiWeave.Edifact.UN.D99B"));
-
-
-            // ACT Rules.Edifact   EdiFabric.Templates.Edifact
-            using (var ediReader = new EdifactReader(ediStream, "EdiWeave.Edifact.UN.D99B"))
+            using (var ediReader = new EdifactReader(ediStream, "EDIFACT.TEMPLATES.D99B", Encoding.UTF8,true))
             {
                 ediItems = ediReader.ReadToEnd().ToList();
             }
 
 
+            var jObject = new JObject();
+
+            var unb = ediItems.OfType<UNB>().SingleOrDefault();
             var tSIFTMBC = ediItems.OfType<TSIFTMBC>().SingleOrDefault();
+            var unz = ediItems.OfType<UNZ>().SingleOrDefault();
 
-            MessageErrorContext result;
-            var validationResult = tSIFTMBC.IsValid(out result);
+            jObject.Add("UNB", JToken.FromObject(unb, new JsonSerializer { NullValueHandling = NullValueHandling.Ignore }));
+            jObject.Add("IFTMBC", JToken.FromObject(tSIFTMBC, new JsonSerializer { NullValueHandling = NullValueHandling.Ignore }));
+            jObject.Add("UNZ", JToken.FromObject(unz,new JsonSerializer {NullValueHandling=NullValueHandling.Ignore }));
 
-            var errorContext = JsonConvert.SerializeObject(result);
+
+            if(!tSIFTMBC.IsValid(out MessageErrorContext error))
+            {
+                jObject.Add("Error", JToken.FromObject(error));
+            }
+          
+            //ToDO Right Click in the File,then select Copy Full Path and paste here
+            File.WriteAllText(@"C:\Users\suren.vanyan\source\repos\EDIFACT\EDIFACT\EdiWeave.Convertor\EdifactReader_IFTMBC", jObject.ToString());
+
+            var unberrors = unb.Validate();
+            var unzerrors = unb.Validate();
+
 
             var model = JsonConvert.SerializeObject(tSIFTMBC, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
         }

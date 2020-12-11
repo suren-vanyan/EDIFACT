@@ -4,7 +4,7 @@ using EdiWeave.Core.Model.Edi.Edifact;
 using System;
 using System.Runtime.Serialization;
 
-namespace EdiWeave.Edifact.UN.D99B
+namespace EDIFACT.TEMPLATES.D99B
 {
     /// <summary>
     /// DOCUMENT/MESSAGE NAME
@@ -547,7 +547,7 @@ namespace EdiWeave.Edifact.UN.D99B
         [StringLength(1, 35)]
         [DataElement("1004", typeof(EDIFACT_AN))]
         [Pos(1)]
-        public string Documentidentifier_01 { get; set; }
+        public string Documentmessagenumber_01 { get; set; }
         /// <summary>
         /// Version identifier
         /// </summary>
@@ -555,7 +555,7 @@ namespace EdiWeave.Edifact.UN.D99B
         [StringLength(1, 9)]
         [DataElement("1056", typeof(EDIFACT_AN))]
         [Pos(2)]
-        public string Versionidentifier_02 { get; set; }
+        public string Version_02 { get; set; }
         /// <summary>
         /// Revision identifier
         /// </summary>
@@ -563,7 +563,7 @@ namespace EdiWeave.Edifact.UN.D99B
         [StringLength(1, 6)]
         [DataElement("1060", typeof(EDIFACT_AN))]
         [Pos(3)]
-        public string Revisionidentifier_03 { get; set; }
+        public string Revisionnumber_03 { get; set; }
     }
 
     /// <summary>
@@ -1583,7 +1583,7 @@ namespace EdiWeave.Edifact.UN.D99B
         /// Equipment size and type
         /// </summary>
         [DataMember]
-        [DataElement("8154", typeof(EDIFACT_ID_3055))]
+        [DataElement("8154", typeof(EDIFACT_AN))]
         [StringLength(1,35)]
         [Pos(4)]
         public string Equipmentsizeandtypedescription_04 { get; set; }
@@ -2414,11 +2414,12 @@ namespace EdiWeave.Edifact.UN.D99B
     [Composite("C503")]
     public class C503 : I_C503
     {
-
         /// <summary>
         /// Document/message number
         /// </summary>
         [DataMember]
+        [DataElement("1004",typeof(EDIFACT_AN))]
+        [StringLength(1,35)]
         [Pos(1)]
         public string Documentmessagenumber_01 { get; set; }
         /// <summary>
@@ -2534,7 +2535,6 @@ namespace EdiWeave.Edifact.UN.D99B
     [Composite("C507")]
     public class C507 : I_C507
     {
-
         /// <summary>
         /// Date/time/period function code qualifier
         /// </summary>
@@ -2615,25 +2615,24 @@ namespace EdiWeave.Edifact.UN.D99B
     [Composite("C516")]
     public class C516 : I_C516
     {
-
         /// <summary>
         /// Monetary amount type qualifier
         /// </summary>
         [DataMember]
         [Pos(1)]
-        public string Monetaryamounttypequalifier_01 { get; set; }
+        public string Monetaryamounttypecodequalifier_01 { get; set; }
         /// <summary>
         /// Monetary amount
         /// </summary>
         [DataMember]
         [Pos(2)]
-        public string Monetaryamount_02 { get; set; }
+        public string Monetaryamountvalue_02 { get; set; }
         /// <summary>
         /// Currency, coded
         /// </summary>
         [DataMember]
         [Pos(3)]
-        public string Currencycoded_03 { get; set; }
+        public string Currencyidentificationcode_03 { get; set; }
         /// <summary>
         /// Currency qualifier
         /// </summary>
@@ -2645,7 +2644,7 @@ namespace EdiWeave.Edifact.UN.D99B
         /// </summary>
         [DataMember]
         [Pos(5)]
-        public string Statuscoded_05 { get; set; }
+        public string Statusdescriptioncoded_05 { get; set; }
     }
 
     /// <summary>

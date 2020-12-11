@@ -3,9 +3,8 @@ using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
 
-namespace EdiWeave.Edifact.UN.D99B
+namespace EDIFACT.TEMPLATES.D99B
 {
     public class EF_EDIFACT_D99B_IFTMBC_Builder
     {
@@ -146,18 +145,28 @@ namespace EdiWeave.Edifact.UN.D99B
 
             #endregion TSR
 
-            var remark = carrierBookingConfirmation.SelectToken("Remarks")?.First.SelectToken("Remark")?.First;
+            var remarks = carrierBookingConfirmation.SelectToken("Remarks"); ;
 
             #region FTX
 
-            //FTX, Free text     
             result.FTX = new List<FTX>();
-            var ftx = new FTX();
-            //AAI General information - Self explanatory.           
-            ftx.Textsubjectcodequalifier_01 = remark.SelectToken("Code")?.ToString();
-            ftx.TEXTLITERAL_04 = new C108();
-            ftx.TEXTLITERAL_04.Freetext_01 = remark.SelectToken("Text")?.ToString();
-            result.FTX.Add(ftx);
+
+            foreach (var item in remarks)
+            {
+                var remark = item.SelectToken("Remark");
+
+                foreach (var chield in remark.Children())
+                {
+                    //FTX, Free text                        
+                    var ftx = new FTX();
+                    //AAI General information - Self explanatory.           
+                    ftx.Textsubjectcodequalifier_01 = remark.SelectToken("Code")?.ToString();
+                    ftx.TEXTLITERAL_04 = new C108();
+                    ftx.TEXTLITERAL_04.Freetext_01 = remark.SelectToken("Text")?.ToString();
+                    result.FTX.Add(ftx);
+                }
+            }
+            
 
             #endregion FTX
 
@@ -395,8 +404,6 @@ namespace EdiWeave.Edifact.UN.D99B
                     nADLoop1.NAD.PARTYIDENTIFICATIONDETAILS_02.Codelistresponsibleagencycode_03 = "87";
                     nADLoop1.NAD.NAMEANDADDRESS_03 = new C058();
                     nADLoop1.NAD.NAMEANDADDRESS_03.Nameandaddressline_01 = item.SelectToken("NameLine1")?.ToString();
-
-
                 }
             }
 

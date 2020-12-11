@@ -11,7 +11,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EdiWeave.Templates", "EdiWe
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EdiWeave.Convertor", "EdiWeave.Convertor\EdiWeave.Convertor.csproj", "{0BD64F43-1758-4D10-8157-0BBA26403AF1}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EdiWeave.Edifact.UN.D99B", "EdiWeave.Edifact.UN.D99B\EdiWeave.Edifact.UN.D99B.csproj", "{5618010A-DD01-4B28-AC20-10B3EDA0E107}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EDIFACT.TEMPLATES.D99B", "EdiWeave.Edifact.UN.D99B\EDIFACT.TEMPLATES.D99B.csproj", "{5618010A-DD01-4B28-AC20-10B3EDA0E107}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

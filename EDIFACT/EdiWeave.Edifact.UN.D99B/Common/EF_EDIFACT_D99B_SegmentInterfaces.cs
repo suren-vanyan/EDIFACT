@@ -1,4 +1,4 @@
-namespace EdiWeave.Edifact.UN.D99B
+namespace EDIFACT.TEMPLATES.D99B
 {
     public interface I_AJT
     {

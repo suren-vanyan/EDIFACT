@@ -1,4 +1,4 @@
-namespace EdiWeave.Edifact.UN.D99B
+namespace EDIFACT.TEMPLATES.D99B
 {
     public interface I_C002
     {
@@ -109,9 +109,9 @@ namespace EdiWeave.Edifact.UN.D99B
 
     public interface I_C106
     {
-        string Documentidentifier_01 { get; set; }
-        string Versionidentifier_02 { get; set; }
-        string Revisionidentifier_03 { get; set; }
+        string Documentmessagenumber_01 { get; set; }
+        string Version_02 { get; set; }
+        string Revisionnumber_03 { get; set; }
     }
 
     public interface I_C107
@@ -562,12 +562,12 @@ namespace EdiWeave.Edifact.UN.D99B
     }
 
     public interface I_C516
-    {
-        string Monetaryamounttypequalifier_01 { get; set; }
-        string Monetaryamount_02 { get; set; }
-        string Currencycoded_03 { get; set; }
+    {        
+        string Monetaryamounttypecodequalifier_01 { get; set; }
+        string Monetaryamountvalue_02 { get; set; }
+        string Currencyidentificationcode_03 { get; set; }
         string Currencyqualifier_04 { get; set; }
-        string Statuscoded_05 { get; set; }
+        string Statusdescriptioncoded_05 { get; set; }
     }
 
     public interface I_C517
