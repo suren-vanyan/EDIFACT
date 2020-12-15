@@ -10,8 +10,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\EDIFACT.TEMPLATES.D99B\EDIFACT.TEMPLATES.D99B.csproj" />
     <ProjectReference Include="..\EdiWeave.Core\EdiWeave.Core.csproj" />
-    <ProjectReference Include="..\EdiWeave.Edifact.UN.D99B\EDIFACT.TEMPLATES.D99B.csproj" />
     <ProjectReference Include="..\EdiWeave.Framework\EdiWeave.Framework.csproj" />
   </ItemGroup>
 
