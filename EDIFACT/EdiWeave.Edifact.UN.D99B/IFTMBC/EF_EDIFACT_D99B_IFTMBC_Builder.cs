@@ -145,7 +145,7 @@ namespace EDIFACT.TEMPLATES.D99B
 
             #endregion TSR
 
-            var remarks = carrierBookingConfirmation.SelectToken("Remarks"); ;
+            var remarks = carrierBookingConfirmation.SelectToken("Remarks");
 
             #region FTX
 

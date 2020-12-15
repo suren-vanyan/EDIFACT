@@ -99,7 +99,7 @@ namespace EDIFACT.TEMPLATES.D99B
 
         T1 CHARGECATEGORY_01 { get; set; }
         T2 METHODOFPAYMENT_02 { get; set; }
-        string Prepaidcollectindicatorcoded_03 { get; set; }
+        string Prepaidcollectindicatorcode_03 { get; set; }
     }
 
     public interface I_CPS
@@ -126,7 +126,7 @@ namespace EDIFACT.TEMPLATES.D99B
         T1 CURRENCYDETAILS_01 { get; set; }
         T2 CURRENCYDETAILS_02 { get; set; }
         string Rateofexchange_03 { get; set; }
-        string Currencymarketexchangecoded_04 { get; set; }
+        string Exchnageratecurrencymarketidentifer_04 { get; set; }
     }
 
     public interface I_DGS<T1, T2, T3, T4, T5>
@@ -267,7 +267,7 @@ namespace EDIFACT.TEMPLATES.D99B
         where T5 : I_C208
     {
 
-        string Identitynumberqualifier_01 { get; set; }
+        string Objectidentificationcodequalifier_01 { get; set; }
         T1 IDENTITYNUMBERRANGE_02 { get; set; }
         T2 IDENTITYNUMBERRANGE_03 { get; set; }
         T3 IDENTITYNUMBERRANGE_04 { get; set; }
@@ -298,7 +298,7 @@ namespace EDIFACT.TEMPLATES.D99B
         where T4 : I_C232
     {
 
-        string Transportmovementcoded_01 { get; set; }
+        string Transportmovementcode_01 { get; set; }
         T1 GOVERNMENTACTION_02 { get; set; }
         T2 GOVERNMENTACTION_03 { get; set; }
         T3 GOVERNMENTACTION_04 { get; set; }
@@ -648,7 +648,7 @@ namespace EDIFACT.TEMPLATES.D99B
     {
 
         string Termsofdeliveryortransportfunctioncoded_01 { get; set; }
-        string Transportchargesmethodofpaymentcoded_02 { get; set; }
+        string Transportchargespaymentmethodcode_02 { get; set; }
         T1 TERMSOFDELIVERYORTRANSPORT_03 { get; set; }
     }
 

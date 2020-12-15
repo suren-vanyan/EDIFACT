@@ -307,7 +307,6 @@ namespace EDIFACT.TEMPLATES.D99B
     [Segment("CPI")]
     public class CPI : I_CPI<C229, C231>
     {
-
         /// <summary>
         /// CHARGE CATEGORY
         /// </summary>
@@ -324,8 +323,9 @@ namespace EDIFACT.TEMPLATES.D99B
         /// Prepaid/collect indicator, coded
         /// </summary>
         [DataMember]
+        [DataElement("4237", typeof(EDIFACT_ID_4237))]
         [Pos(3)]
-        public string Prepaidcollectindicatorcoded_03 { get; set; }
+        public string Prepaidcollectindicatorcode_03 { get; set; }
     }
 
     /// <summary>
@@ -388,7 +388,6 @@ namespace EDIFACT.TEMPLATES.D99B
     [Segment("CUX")]
     public class CUX : I_CUX<C504, C504>
     {
-
         /// <summary>
         /// CURRENCY DETAILS
         /// </summary>
@@ -405,14 +404,17 @@ namespace EDIFACT.TEMPLATES.D99B
         /// Rate of exchange
         /// </summary>
         [DataMember]
+        [DataElement("5402", typeof(EDIFACT_N))]
+        [StringLength(1,12)]
         [Pos(3)]
         public string Rateofexchange_03 { get; set; }
         /// <summary>
-        /// Currency market exchange, coded
+        /// EXCHANGE RATE CURRENCY MARKET IDENTIFIER
         /// </summary>
         [DataMember]
+        [DataElement("6341", typeof(EDIFACT_ID_6341))]
         [Pos(4)]
-        public string Currencymarketexchangecoded_04 { get; set; }
+        public string Exchnageratecurrencymarketidentifer_04 { get; set; }
     }
 
     /// <summary>
@@ -669,7 +671,6 @@ namespace EDIFACT.TEMPLATES.D99B
     [Segment("EQD")]
     public class EQD : I_EQD<C237, C224>
     {
-
         /// <summary>
         /// EQUIPMENT TYPE CODE QUALIFIER
         /// </summary>
@@ -891,15 +892,18 @@ namespace EDIFACT.TEMPLATES.D99B
     public class GIN : I_GIN<C208, C208, C208, C208, C208>
     {
         /// <summary>
-        /// Identity number qualifier
+        /// OBJECT IDENTIFICATION CODE QUALIFIER
         /// </summary>
         [DataMember]
+        [Required]
+        [DataElement("7405",typeof(EDIFACT_ID_7405))]
         [Pos(1)]
-        public string Identitynumberqualifier_01 { get; set; }
+        public string Objectidentificationcodequalifier_01 { get; set; }
         /// <summary>
         /// IDENTITY NUMBER RANGE
         /// </summary>
         [DataMember]
+        [Required]
         [Pos(2)]
         public virtual C208 IDENTITYNUMBERRANGE_02 { get; set; }
         /// <summary>
@@ -986,8 +990,9 @@ namespace EDIFACT.TEMPLATES.D99B
         /// Transport movement, coded
         /// </summary>
         [DataMember]
+        [DataElement("8323",typeof(EDIFACT_ID_8323))]
         [Pos(1)]
-        public string Transportmovementcoded_01 { get; set; }
+        public string Transportmovementcode_01 { get; set; }
         /// <summary>
         /// GOVERNMENT ACTION
         /// </summary>
@@ -1494,17 +1499,19 @@ namespace EDIFACT.TEMPLATES.D99B
     [Segment("PIA")]
     public class PIA : I_PIA<C212, C212, C212, C212, C212>
     {
-
         /// <summary>
         /// Product id. function qualifier
         /// </summary>
         [DataMember]
+        [Required]
+        [DataElement("4347",typeof(EDIFACT_ID_4347))]
         [Pos(1)]
         public string Productidfunctionqualifier_01 { get; set; }
         /// <summary>
         /// ITEM NUMBER IDENTIFICATION
         /// </summary>
         [DataMember]
+        [Required]
         [Pos(2)]
         public virtual C212 ITEMNUMBERIDENTIFICATION_02 { get; set; }
         /// <summary>
@@ -1541,7 +1548,6 @@ namespace EDIFACT.TEMPLATES.D99B
     [Segment("PRI")]
     public class PRI : I_PRI<C509>
     {
-
         /// <summary>
         /// PRICE INFORMATION
         /// </summary>
@@ -1552,6 +1558,7 @@ namespace EDIFACT.TEMPLATES.D99B
         /// Sub-line price change, coded
         /// </summary>
         [DataMember]
+        [DataElement("5213",typeof(EDIFACT_ID_5213))]
         [Pos(2)]
         public string Sublinepricechangecoded_02 { get; set; }
     }
@@ -2077,19 +2084,20 @@ namespace EDIFACT.TEMPLATES.D99B
     [Segment("TOD")]
     public class TOD : I_TOD<C100>
     {
-
         /// <summary>
         /// Terms of delivery or transport function, coded
         /// </summary>
         [DataMember]
+        [DataElement("4055",typeof(EDIFACT_ID_4055))]
         [Pos(1)]
         public string Termsofdeliveryortransportfunctioncoded_01 { get; set; }
         /// <summary>
-        /// Transport charges method of payment, coded
+        /// TRANSPORT CHARGES PAYMENT METHOD CODE
         /// </summary>
         [DataMember]
+        [DataElement("4215", typeof(EDIFACT_ID_4215))]
         [Pos(2)]
-        public string Transportchargesmethodofpaymentcoded_02 { get; set; }
+        public string Transportchargespaymentmethodcode_02 { get; set; }
         /// <summary>
         /// TERMS OF DELIVERY OR TRANSPORT
         /// </summary>
@@ -2158,7 +2166,6 @@ namespace EDIFACT.TEMPLATES.D99B
     [Segment("UNS")]
     public class UNS : I_UNS
     {
-
         /// <summary>
         /// Section identification
         /// </summary>

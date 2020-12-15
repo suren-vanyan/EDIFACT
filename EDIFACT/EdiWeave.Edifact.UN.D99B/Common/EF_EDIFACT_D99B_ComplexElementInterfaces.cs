@@ -100,11 +100,11 @@ namespace EDIFACT.TEMPLATES.D99B
 
     public interface I_C100
     {
-        string Termsofdeliveryortransportcoded_01 { get; set; }
-        string Codelistqualifier_02 { get; set; }
-        string Codelistresponsibleagencycoded_03 { get; set; }
-        string Termsofdeliveryortransport_04 { get; set; }
-        string Termsofdeliveryortransport_05 { get; set; }
+        string Deliveryortransporttermsdescriptioncode_01 { get; set; }
+        string Codelistidentificationcode_02 { get; set; }
+        string Codelistresponsibleagencycode_03 { get; set; }
+        string Deliveryortransporttermsdescription_04 { get; set; }
+        string Deliveryortransporttermsdescription_05 { get; set; }
     }
 
     public interface I_C106
@@ -229,8 +229,8 @@ namespace EDIFACT.TEMPLATES.D99B
 
     public interface I_C208
     {
-        string Identitynumber_01 { get; set; }
-        string Identitynumber_02 { get; set; }
+        string Objectidentifier_01 { get; set; }
+        string Objectidentifier_02 { get; set; }
     }
 
     public interface I_C210
@@ -258,9 +258,9 @@ namespace EDIFACT.TEMPLATES.D99B
     public interface I_C212
     {
         string Itemnumber_01 { get; set; }
-        string Itemnumbertypecoded_02 { get; set; }
-        string Codelistqualifier_03 { get; set; }
-        string Codelistresponsibleagencycoded_04 { get; set; }
+        string Itemtypeidentificationcoded_02 { get; set; }
+        string Codelistidentificationcode_03 { get; set; }
+        string Codelistresponsibleagencycode_04 { get; set; }
     }
 
     public interface I_C213
@@ -347,15 +347,15 @@ namespace EDIFACT.TEMPLATES.D99B
     public interface I_C229
     {
         string Chargecategorycoded_01 { get; set; }
-        string Codelistqualifier_02 { get; set; }
-        string Codelistresponsibleagencycoded_03 { get; set; }
+        string Codelistidentificationcode_02 { get; set; }
+        string Codelistresponsibleagencycode_03 { get; set; }
     }
 
     public interface I_C231
     {
-        string Transportchargesmethodofpaymentcoded_01 { get; set; }
-        string Codelistqualifier_02 { get; set; }
-        string Codelistresponsibleagencycoded_03 { get; set; }
+        string Transportchargespaymentmethodcode_01 { get; set; }
+        string Codelistidentificationcode_02 { get; set; }
+        string Codelistresponsibleagencycode_03 { get; set; }
     }
 
     public interface I_C232
@@ -526,7 +526,7 @@ namespace EDIFACT.TEMPLATES.D99B
     public interface I_C504
     {
         string Currencydetailsqualifier_01 { get; set; }
-        string Currencycoded_02 { get; set; }
+        string Currencyidentificationcode_02 { get; set; }
         string Currencyqualifier_03 { get; set; }
         string Currencyratebase_04 { get; set; }
     }
@@ -556,13 +556,13 @@ namespace EDIFACT.TEMPLATES.D99B
         string Pricequalifier_01 { get; set; }
         string Price_02 { get; set; }
         string Pricetypecoded_03 { get; set; }
-        string Pricetypequalifier_04 { get; set; }
+        string Pricespecificationcode_04 { get; set; }
         string Unitpricebasis_05 { get; set; }
-        string Measureunitqualifier_06 { get; set; }
+        string Measureunitcode_06 { get; set; }
     }
 
     public interface I_C516
-    {        
+    {
         string Monetaryamounttypecodequalifier_01 { get; set; }
         string Monetaryamountvalue_02 { get; set; }
         string Currencyidentificationcode_03 { get; set; }

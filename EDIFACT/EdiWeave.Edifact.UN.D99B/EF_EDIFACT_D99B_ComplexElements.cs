@@ -465,37 +465,43 @@ namespace EDIFACT.TEMPLATES.D99B
     [Composite("C100")]
     public class C100 : I_C100
     {
-
         /// <summary>
-        /// Terms of delivery or transport, coded
+        /// Delivery or transport terms description code
         /// </summary>
         [DataMember]
+        [DataElement("4053",typeof(EDIFACT_ID_4053))]
         [Pos(1)]
-        public string Termsofdeliveryortransportcoded_01 { get; set; }
+        public string Deliveryortransporttermsdescriptioncode_01 { get; set; }
         /// <summary>
         /// Code list qualifier
         /// </summary>
         [DataMember]
+        [DataElement("1131", typeof(EDIFACT_ID_1131))]
         [Pos(2)]
-        public string Codelistqualifier_02 { get; set; }
+        public string Codelistidentificationcode_02 { get; set; }
         /// <summary>
         /// Code list responsible agency, coded
         /// </summary>
         [DataMember]
+        [DataElement("3055", typeof(EDIFACT_ID_3055))]
         [Pos(3)]
-        public string Codelistresponsibleagencycoded_03 { get; set; }
+        public string Codelistresponsibleagencycode_03 { get; set; }
         /// <summary>
-        /// Terms of delivery or transport
+        /// Delivery or transport terms description
         /// </summary>
         [DataMember]
+        [StringLength(1,70)]
+        [DataElement("4052", typeof(EDIFACT_AN))]
         [Pos(4)]
-        public string Termsofdeliveryortransport_04 { get; set; }
+        public string Deliveryortransporttermsdescription_04 { get; set; }
         /// <summary>
-        /// Terms of delivery or transport
+        ///Delivery or transport terms description
         /// </summary>
         [DataMember]
+        [StringLength(1, 70)]
+        [DataElement("4052", typeof(EDIFACT_AN))]
         [Pos(5)]
-        public string Termsofdeliveryortransport_05 { get; set; }
+        public string Deliveryortransporttermsdescription_05 { get; set; }
     }
 
 
@@ -1079,19 +1085,22 @@ namespace EDIFACT.TEMPLATES.D99B
     [Composite("C208")]
     public class C208 : I_C208
     {
-
         /// <summary>
-        /// Identity number
+        /// Object identifier
         /// </summary>
         [DataMember]
+        [StringLength(1,35)]
+        [DataElement("7402",typeof(EDIFACT_AN))]
         [Pos(1)]
-        public string Identitynumber_01 { get; set; }
+        public string Objectidentifier_01 { get; set; }
         /// <summary>
-        /// Identity number
+        /// Object identifier
         /// </summary>
         [DataMember]
+        [StringLength(1, 35)]
+        [DataElement("7402", typeof(EDIFACT_AN))]
         [Pos(2)]
-        public string Identitynumber_02 { get; set; }
+        public string Objectidentifier_02 { get; set; }
     }
 
     /// <summary>
@@ -1215,31 +1224,36 @@ namespace EDIFACT.TEMPLATES.D99B
     [Composite("C212")]
     public class C212 : I_C212
     {
-
         /// <summary>
         /// Item number
         /// </summary>
         [DataMember]
+        [StringLength(1,35)]
+        [DataElement("7140", typeof(EDIFACT_AN))]
         [Pos(1)]
         public string Itemnumber_01 { get; set; }
         /// <summary>
-        /// Item number type, coded
+        /// Item type identification code
         /// </summary>
         [DataMember]
+        [DataElement("7143", typeof(EDIFACT_ID_7143))]
         [Pos(2)]
-        public string Itemnumbertypecoded_02 { get; set; }
+        public string Itemtypeidentificationcoded_02 { get; set; }
         /// <summary>
-        /// Code list qualifier
+        /// Code list identification code
         /// </summary>
         [DataMember]
+        [DataElement("1131", typeof(EDIFACT_ID_1131))]
         [Pos(3)]
-        public string Codelistqualifier_03 { get; set; }
+        public string Codelistidentificationcode_03 { get; set; }
+
         /// <summary>
-        /// Code list responsible agency, coded
+        /// Code list responsible agency, code
         /// </summary>
         [DataMember]
+        [DataElement("3055", typeof(EDIFACT_ID_3055))]
         [Pos(4)]
-        public string Codelistresponsibleagencycoded_04 { get; set; }
+        public string Codelistresponsibleagencycode_04 { get; set; }
     }
 
     /// <summary>
@@ -1627,20 +1641,24 @@ namespace EDIFACT.TEMPLATES.D99B
         /// Charge category, coded
         /// </summary>
         [DataMember]
+        [Required]
+        [DataElement("5237",typeof(EDIFACT_ID_5237))]
         [Pos(1)]
         public string Chargecategorycoded_01 { get; set; }
         /// <summary>
-        /// Code list qualifier
+        /// Code list identification code
         /// </summary>
         [DataMember]
+        [DataElement("1131", typeof(EDIFACT_ID_1131))]
         [Pos(2)]
-        public string Codelistqualifier_02 { get; set; }
+        public string Codelistidentificationcode_02 { get; set; }
         /// <summary>
-        /// Code list responsible agency, coded
+        /// Code list responsible agency, code
         /// </summary>
         [DataMember]
+        [DataElement("3055", typeof(EDIFACT_ID_3055))]
         [Pos(3)]
-        public string Codelistresponsibleagencycoded_03 { get; set; }
+        public string Codelistresponsibleagencycode_03 { get; set; }
     }
 
     /// <summary>
@@ -1653,23 +1671,26 @@ namespace EDIFACT.TEMPLATES.D99B
     {
 
         /// <summary>
-        /// Transport charges method of payment, coded
+        /// Transport charges payment method code
         /// </summary>
         [DataMember]
+        [DataElement("4215", typeof(EDIFACT_ID_4215))]
         [Pos(1)]
-        public string Transportchargesmethodofpaymentcoded_01 { get; set; }
+        public string Transportchargespaymentmethodcode_01 { get; set; }
         /// <summary>
-        /// Code list qualifier
+        /// Code list identification code
         /// </summary>
         [DataMember]
+        [DataElement("1131", typeof(EDIFACT_ID_1131))]
         [Pos(2)]
-        public string Codelistqualifier_02 { get; set; }
+        public string Codelistidentificationcode_02 { get; set; }
         /// <summary>
-        /// Code list responsible agency, coded
+        /// Code list responsible agency, code
         /// </summary>
         [DataMember]
+        [DataElement("3055", typeof(EDIFACT_ID_3055))]
         [Pos(3)]
-        public string Codelistresponsibleagencycoded_03 { get; set; }
+        public string Codelistresponsibleagencycode_03 { get; set; }
     }
 
     /// <summary>
@@ -1680,29 +1701,32 @@ namespace EDIFACT.TEMPLATES.D99B
     [Composite("C232")]
     public class C232 : I_C232
     {
-
         /// <summary>
         /// Government agency, coded
         /// </summary>
         [DataMember]
+        [DataElement("9415",typeof(EDIFACT_ID_9415))]
         [Pos(1)]
         public string Governmentagencycoded_01 { get; set; }
         /// <summary>
         /// Government involvement, coded
         /// </summary>
         [DataMember]
+        [DataElement("9411", typeof(EDIFACT_ID_9411))]
         [Pos(2)]
         public string Governmentinvolvementcoded_02 { get; set; }
         /// <summary>
         /// Government action, coded
         /// </summary>
         [DataMember]
+        [DataElement("9417", typeof(EDIFACT_ID_9417))]
         [Pos(3)]
         public string Governmentactioncoded_03 { get; set; }
         /// <summary>
         /// Government procedure, coded
         /// </summary>
         [DataMember]
+        [DataElement("9353", typeof(EDIFACT_ID_9353))]
         [Pos(4)]
         public string Governmentprocedurecoded_04 { get; set; }
     }
@@ -2341,7 +2365,7 @@ namespace EDIFACT.TEMPLATES.D99B
         /// Percentage
         /// </summary>
         [DataMember]
-        [DataElement("5282", typeof(EDIFACT_AN))]
+        [DataElement("5482", typeof(EDIFACT_N))]
         [StringLength(1,10)]
         [Pos(2)]
         public string Percentage_02 { get; set; }
@@ -2349,7 +2373,7 @@ namespace EDIFACT.TEMPLATES.D99B
         /// Percentage basis identification code
         /// </summary>
         [DataMember]
-        [DataElement("5282", typeof(EDIFACT_ID_5249))]
+        [DataElement("5249", typeof(EDIFACT_ID_5249))]
         [Pos(3)]
         public string Percentagebasisidentificationcode_03 { get; set; }
         /// <summary>
@@ -2450,29 +2474,35 @@ namespace EDIFACT.TEMPLATES.D99B
     [Composite("C504")]
     public class C504 : I_C504
     {
-
         /// <summary>
         /// Currency details qualifier
         /// </summary>
         [DataMember]
+        [Required]
+        [DataElement("6347",typeof(EDIFACT_ID_6347))]
         [Pos(1)]
         public string Currencydetailsqualifier_01 { get; set; }
         /// <summary>
-        /// Currency, coded
+        /// Currency identification code
         /// </summary>
         [DataMember]
+        [StringLength(1,3)]
+        [DataElement("6345", typeof(EDIFACT_AN))]
         [Pos(2)]
-        public string Currencycoded_02 { get; set; }
+        public string Currencyidentificationcode_02 { get; set; }
         /// <summary>
         /// Currency qualifier
         /// </summary>
         [DataMember]
+        [DataElement("6343", typeof(EDIFACT_ID_6343))]
         [Pos(3)]
         public string Currencyqualifier_03 { get; set; }
         /// <summary>
         /// Currency rate base
         /// </summary>
         [DataMember]
+        [StringLength(1,4)]
+        [DataElement("6348", typeof(EDIFACT_N))]
         [Pos(4)]
         public string Currencyratebase_04 { get; set; }
     }
@@ -2568,43 +2598,52 @@ namespace EDIFACT.TEMPLATES.D99B
     [Composite("C509")]
     public class C509 : I_C509
     {
-
         /// <summary>
         /// Price qualifier
         /// </summary>
         [DataMember]
+        [Required]
+        [DataElement("5125", typeof(EDIFACT_ID_5125))]
         [Pos(1)]
         public string Pricequalifier_01 { get; set; }
         /// <summary>
         /// Price
         /// </summary>
         [DataMember]
+        [StringLength(1,15)]
+        [DataElement("5118", typeof(EDIFACT_N))]
         [Pos(2)]
         public string Price_02 { get; set; }
         /// <summary>
         /// Price type, coded
         /// </summary>
         [DataMember]
+        [DataElement("5375", typeof(EDIFACT_ID_5375))]
         [Pos(3)]
         public string Pricetypecoded_03 { get; set; }
         /// <summary>
         /// Price type qualifier
         /// </summary>
         [DataMember]
+        [DataElement("5387", typeof(EDIFACT_ID_5387))]
         [Pos(4)]
-        public string Pricetypequalifier_04 { get; set; }
+        public string Pricespecificationcode_04 { get; set; }
         /// <summary>
         /// Unit price basis
         /// </summary>
         [DataMember]
+        [StringLength(1,9)]
+        [DataElement("5284", typeof(EDIFACT_N))]
         [Pos(5)]
         public string Unitpricebasis_05 { get; set; }
         /// <summary>
         /// Measure unit qualifier
         /// </summary>
         [DataMember]
+        [StringLength(1,3)]
+        [DataElement("6411", typeof(EDIFACT_AN))]
         [Pos(6)]
-        public string Measureunitqualifier_06 { get; set; }
+        public string Measureunitcode_06 { get; set; }
     }
 
     /// <summary>
@@ -2619,30 +2658,38 @@ namespace EDIFACT.TEMPLATES.D99B
         /// Monetary amount type qualifier
         /// </summary>
         [DataMember]
+        [Required]
+        [DataElement("5025", typeof(EDIFACT_ID_5025))]
         [Pos(1)]
         public string Monetaryamounttypecodequalifier_01 { get; set; }
         /// <summary>
         /// Monetary amount
         /// </summary>
         [DataMember]
+        [DataElement("5004", typeof(EDIFACT_N))]
+        [StringLength(1,35)]
         [Pos(2)]
         public string Monetaryamountvalue_02 { get; set; }
         /// <summary>
         /// Currency, coded
         /// </summary>
         [DataMember]
+        [DataElement("6345", typeof(EDIFACT_AN))]
+        [StringLength(1, 3)]
         [Pos(3)]
         public string Currencyidentificationcode_03 { get; set; }
         /// <summary>
         /// Currency qualifier
         /// </summary>
         [DataMember]
+        [DataElement("6343", typeof(EDIFACT_ID_6343))]
         [Pos(4)]
         public string Currencyqualifier_04 { get; set; }
         /// <summary>
         /// Status, coded
         /// </summary>
         [DataMember]
+        [DataElement("4405", typeof(EDIFACT_ID_4405))]
         [Pos(5)]
         public string Statusdescriptioncoded_05 { get; set; }
     }
@@ -2664,14 +2711,14 @@ namespace EDIFACT.TEMPLATES.D99B
         [Pos(1)]
         public string Locationnamecode_01 { get; set; }
         /// <summary>
-        /// Location name code
+        /// Code list identification code
         /// </summary>
         [DataMember]
         [DataElement("1131", typeof(EDIFACT_ID_1131))]
         [Pos(2)]
         public string Codelistidentificationcode_02 { get; set; }
         /// <summary>
-        /// Location name code
+        /// Code list responsible agency code
         /// </summary>
         [DataMember]
         [DataElement("3055", typeof(EDIFACT_ID_3055))]
@@ -2788,8 +2835,7 @@ namespace EDIFACT.TEMPLATES.D99B
         /// Unit type code qualifier
         /// </summary>
         [DataMember]
-        [DataElement("6353", typeof(EDIFACT_AN))]
-        [StringLength(1,3)]
+        [DataElement("6353", typeof(EDIFACT_ID_6353))]
         [Pos(2)]
         public string Unittypecodequalifier_02 { get; set; }
     }

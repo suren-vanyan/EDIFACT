@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CarrierBookingRequest>
+  <MessageFunctionCode>9</MessageFunctionCode>
+  <SendFrom>Cargoo</SendFrom>
+  <SendTo>
+    <Carrier>OOLU</Carrier>
+    <EdiPartner>cargosmart-edi</EdiPartner>
+  </SendTo>
+  <TrgId>C2020113038</TrgId>
+  <MessageId>BRC2020113038</MessageId>
+  <EarliestDepartureDate>2020-12-17</EarliestDepartureDate>
+  <CSAOceanExport>41885</CSAOceanExport>
+  <BookingUser>
+    <Name>Mahmoud Nada</Name>
+    <Email>mahmoud.nada@commodity.ch</Email>
+    <Company>Access World (Mozambique)</Company>
+    <CompanyId>996</CompanyId>
+    <EdiPartnerId>CACC000008</EdiPartnerId>
+    <CargooPartyId>CACC000008</CargooPartyId>
+  </BookingUser>
+  <References>
+    <Order>
+      <Value>SUPP22280</Value>
+      <Value> GC33044</Value>
+    </Order>
+    <CarrierBookingNumbers />
+    <EdiPartnerReferences />
+  </References>
+  <Contract>GC78032</Contract>
+  <Comment />
+  <PlaceOfReceiptCode>MZBEW</PlaceOfReceiptCode>
+  <PlaceOfReceiptName>Beira</PlaceOfReceiptName>
+  <PlaceOfDeliveryCode>CNWHG</PlaceOfDeliveryCode>
+  <PlaceOfDeliveryName>Wuhan Pt</PlaceOfDeliveryName>
+  <TransportMove>30</TransportMove>
+  <Items>
+    <Item>
+      <xBookingItem>74156</xBookingItem>
+      <CommodityId>Metals</CommodityId>
+      <CommodityText>Copper</CommodityText>
+      <NoPkgs>1</NoPkgs>
+      <Volume>0.000</Volume>
+      <Weight>22000.00</Weight>
+      <WeightNetto>0.00</WeightNetto>
+      <PackageType>VR</PackageType>
+      <HSCode />
+    </Item>
+  </Items>
+  <Containers>
+    <Container>
+      <ContainerUnit>22GP</ContainerUnit>
+      <Count>1</Count>
+      <TemperatureValue />
+      <TemperatureUnit />
+      <TemperatureComment />
+      <GenSetFlag />
+      <VentSetting />
+      <HandlingInstruction />
+      <Probes />
+      <EquipmentOwner>2</EquipmentOwner>
+      <Measurements>
+        <Measurement>
+          <MeasurementCode>AAL</MeasurementCode>
+          <MeasurementUnit>KGM</MeasurementUnit>
+          <MeasurementValue>22000.00</MeasurementValue>
+        </Measurement>
+      </Measurements>
+    </Container>
+  </Containers>
+  <Addresses>
+    <Address>
+      <AddressFunction>FW</AddressFunction>
+      <NameLine1>Access World (Mozambique)</NameLine1>
+      <AddressLine1>Cornelder de Moambique</AddressLine1>
+      <AddressLine2>Lda Shed 16, Porto de Beira</AddressLine2>
+      <AddressLine3 />
+      <ZipCode />
+      <City>Beira</City>
+      <Country>MZ</Country>
+      <ContactPhone>+258 84 552 4945</ContactPhone>
+      <ContactEmail />
+      <EdiPartnerId>CACC000008</EdiPartnerId>
+      <CargooPartyId>CACC000008</CargooPartyId>
+      <Charges>
+        <Charge>
+          <ChargeType>10</ChargeType>
+          <ChargeValue>P</ChargeValue>
+          <ChargePlace />
+          <ChargePlaceCode />
+        </Charge>
+      </Charges>
+    </Address>
+    <Address>
+      <AddressFunction>FP</AddressFunction>
+      <NameLine1>Commodity Supplies AG (Main)</NameLine1>
+      <AddressLine1>Roosstrasse 53</AddressLine1>
+      <AddressLine2 />
+      <AddressLine3 />
+      <ZipCode>8832</ZipCode>
+      <City>Wollerau</City>
+      <Country>CH</Country>
+      <ContactPhone>+41 44 807 44 44</ContactPhone>
+      <ContactEmail>ashot.arakeljan@commodity.ch</ContactEmail>
+      <CargooPartyId>CCOM000002</CargooPartyId>
+      <Charges>
+        <Charge>
+          <ChargeType>4</ChargeType>
+          <ChargeValue>C</ChargeValue>
+          <ChargePlace />
+          <ChargePlaceCode />
+        </Charge>
+      </Charges>
+    </Address>
+    <Address>
+      <AddressFunction>CZ</AddressFunction>
+      <NameLine1>Access World (Mozambique)</NameLine1>
+      <AddressLine1>Cornelder de Moambique</AddressLine1>
+      <AddressLine2>Lda Shed 16, Porto de Beira</AddressLine2>
+      <AddressLine3 />
+      <ZipCode />
+      <City>Beira</City>
+      <Country>MZ</Country>
+      <ContactPhone>+258 84 552 4945</ContactPhone>
+      <ContactEmail />
+      <EdiPartnerId>CACC000008</EdiPartnerId>
+      <CargooPartyId>CACC000008</CargooPartyId>
+      <Charges />
+    </Address>
+    <Address>
+      <AddressFunction>CN</AddressFunction>
+      <NameLine1>Glencore International AG</NameLine1>
+      <AddressLine1>Baarermattstrasse 3</AddressLine1>
+      <AddressLine2 />
+      <AddressLine3 />
+      <ZipCode>6341</ZipCode>
+      <City>Baar</City>
+      <Country>CH</Country>
+      <ContactPhone />
+      <ContactEmail>thomas.nyffenegger@commodity.ch</ContactEmail>
+      <CargooPartyId>CGLE000001</CargooPartyId>
+      <Charges>
+        <Charge>
+          <ChargeType>7</ChargeType>
+          <ChargeValue>C</ChargeValue>
+          <ChargePlace />
+          <ChargePlaceCode />
+        </Charge>
+      </Charges>
+    </Address>
+  </Addresses>
+  <Transports>
+    <Transport>
+      <TransportType>Mother</TransportType>
+      <LoadingCode>MZBEW</LoadingCode>
+      <LoadingName>Beira</LoadingName>
+      <DestinationCode>CNWHG</DestinationCode>
+      <DestinationName>Wuhan Pt</DestinationName>
+      <CarrierCode>OOLU</CarrierCode>
+      <CarrierName>OOCL</CarrierName>
+      <Vessel />
+      <VoyageNo />
+      <ETS>2020-12-17</ETS>
+      <ETA />
+    </Transport>
+  </Transports>
+</CarrierBookingRequest>

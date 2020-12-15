@@ -221,6 +221,7 @@ namespace EDIFACT.TEMPLATES.D99B
     public class Loop_DGS_IFTMBC_2
     {
         [DataMember]
+        [Required]
         [Pos(1)]
         public virtual DGS DGS { get; set; }
         [DataMember]
@@ -228,6 +229,7 @@ namespace EDIFACT.TEMPLATES.D99B
         [Pos(2)]
         public virtual List<FTX> FTX { get; set; }
         [DataMember]
+        [ListCount(9)]
         [Pos(3)]
         public virtual List<Loop_CTA_IFTMBC> CTALoop { get; set; }
     }

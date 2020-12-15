@@ -11,6 +11,7 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
+using System.Xml;
 
 namespace EdiWeave.Convertor
 {
@@ -18,13 +19,11 @@ namespace EdiWeave.Convertor
     {
         static void Main(string[] args)
         {
-            var str = @"";
+            var str ="";
             var ab = str.Replace("\r\n\r\n", ",");
 
-            ReadBookingConfirmation();
-
-            BuildBookingConfirmation();
-
+            //ReadBookingConfirmation();
+            BuildBookingRequest();
 
         }
 
@@ -44,9 +43,29 @@ namespace EdiWeave.Convertor
         }
 
 
+        public static void BuildBookingRequest()
+        {
+            const string path = @"C:\Users\suren.vanyan\source\repos\EDIFACT\EDIFACT\EdiWeave.Convertor\BookingRequest\BR_COMSUP_CARGOSMART.xml";
+
+            var model = File.ReadAllText(path);
+
+            using var writer = new EdifactWriter(@"C:\Users\suren.vanyan\source\repos\EDIFACT\EDIFACT\EdiWeave.Convertor\BookingRequest\EdifactWriter_BR_IFTMBF.txt", false, Encoding.UTF8, "\n");
+
+            XmlDocument doc = new XmlDocument();
+            doc.LoadXml(model);
+            var jsonModel = JToken.Parse(JsonConvert.SerializeXmlNode(doc));
+
+            writer.Write(EF_EDIFACT_D99B_IFTMBF_Builder.BuildUNA(jsonModel));
+            writer.Write(EF_EDIFACT_D99B_IFTMBF_Builder.BuildUNB(jsonModel));
+            writer.Write(EF_EDIFACT_D99B_IFTMBF_Builder.BuildIFTMBC("1", jsonModel));
+
+
+        }
+
+
         public static void ReadBookingConfirmation()
         {
-            const string path = @"C:\Users\suren.vanyan\source\repos\EDIFACT\EDIFACT\EdiWeave.Convertor\Edifact_IFTMBC_D98B.txt";
+            const string path = @"C:\Users\suren.vanyan\source\repos\EDIFACT\EDIFACT\EdiWeave.Convertor\BookingConfirmation\Edifact_IFTMBC_D98B.txt";
 
             var sample = File.ReadAllText(path);
 
@@ -77,7 +96,7 @@ namespace EdiWeave.Convertor
             }
           
             //ToDO Right Click in the File,then select Copy Full Path and paste here
-            File.WriteAllText(@"C:\Users\suren.vanyan\source\repos\EDIFACT\EDIFACT\EdiWeave.Convertor\EdifactReader_IFTMBC", jObject.ToString());
+            File.WriteAllText(@"C:\Users\suren.vanyan\source\repos\EDIFACT\EDIFACT\EdiWeave.Convertor\BookingConfirmation\EdifactReader_IFTMBC.json", jObject.ToString());
 
             var unberrors = unb.Validate();
             var unzerrors = unb.Validate();
