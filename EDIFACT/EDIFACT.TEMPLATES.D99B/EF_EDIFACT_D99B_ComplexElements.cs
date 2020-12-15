@@ -1371,24 +1371,30 @@ namespace EDIFACT.TEMPLATES.D99B
         /// Sealing party, coded
         /// </summary>
         [DataMember]
+        [DataElement("9303", typeof(EDIFACT_ID_9303))]
         [Pos(1)]
         public string Sealingpartycoded_01 { get; set; }
         /// <summary>
-        /// Code list qualifier
+        /// Code list identification code
         /// </summary>
         [DataMember]
+        [DataElement("1131", typeof(EDIFACT_ID_1131))]
         [Pos(2)]
-        public string Codelistqualifier_02 { get; set; }
+        public string Codelistidentificationcode_02 { get; set; }
+
         /// <summary>
-        /// Code list responsible agency, coded
+        /// Code list responsible agency, code
         /// </summary>
         [DataMember]
+        [DataElement("3055", typeof(EDIFACT_ID_3055))]
         [Pos(3)]
-        public string Codelistresponsibleagencycoded_03 { get; set; }
+        public string Codelistresponsibleagencycode_03 { get; set; }
         /// <summary>
         /// Sealing party
         /// </summary>
         [DataMember]
+        [StringLength(1,35)]
+        [DataElement("9302", typeof(EDIFACT_AN))]
         [Pos(4)]
         public string Sealingparty_04 { get; set; }
     }

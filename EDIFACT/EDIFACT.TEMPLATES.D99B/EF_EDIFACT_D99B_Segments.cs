@@ -653,8 +653,10 @@ namespace EDIFACT.TEMPLATES.D99B
         /// Equipment qualifier
         /// </summary>
         [DataMember]
+        [Required]
+        [DataElement("8053",typeof(EDIFACT_ID_8053))]
         [Pos(1)]
-        public string Equipmentqualifier_01 { get; set; }
+        public string Equipmenttypecodequalifier_01 { get; set; }
         /// <summary>
         /// EQUIPMENT IDENTIFICATION
         /// </summary>
@@ -1735,11 +1737,12 @@ namespace EDIFACT.TEMPLATES.D99B
     [Segment("SEL")]
     public class SEL : I_SEL<C215>
     {
-
         /// <summary>
         /// Seal number
         /// </summary>
         [DataMember]
+        [StringLength(1,10)]
+        [DataElement("9308",typeof(EDIFACT_AN))]
         [Pos(1)]
         public string Sealnumber_01 { get; set; }
         /// <summary>
@@ -1752,8 +1755,15 @@ namespace EDIFACT.TEMPLATES.D99B
         /// Seal condition, coded
         /// </summary>
         [DataMember]
+        [DataElement("4517", typeof(EDIFACT_ID_4517))]
         [Pos(3)]
         public string Sealconditioncoded_03 { get; set; }
+        /// <summary>
+        /// IDENTITY NUMBER RANGE
+        /// </summary>
+        [DataMember]
+        [Pos(4)]
+        public virtual C208 IDENTITYNUMBERRANGE_04 { get; set; }
     }
 
     /// <summary>

@@ -290,8 +290,8 @@ namespace EDIFACT.TEMPLATES.D99B
     public interface I_C215
     {
         string Sealingpartycoded_01 { get; set; }
-        string Codelistqualifier_02 { get; set; }
-        string Codelistresponsibleagencycoded_03 { get; set; }
+        string Codelistidentificationcode_02 { get; set; }
+        string Codelistresponsibleagencycode_03 { get; set; }
         string Sealingparty_04 { get; set; }
     }
 

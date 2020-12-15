@@ -81,6 +81,16 @@ namespace EDIFACT.TEMPLATES.D99B
     }
 
     /// <summary>
+    /// Response type, coded
+    /// </summary>
+    [Serializable()]
+    [DataContract()]
+    [EdiCodes(",1,2,3,4,")]
+    public class EDIFACT_ID_4517
+    {
+    }
+
+    /// <summary>
     /// Contact function, coded
     /// </summary>
     [Serializable()]
@@ -828,6 +838,20 @@ namespace EDIFACT.TEMPLATES.D99B
     {
     }
 
+
+    /// <summary>
+    /// EQUIPMENT TYPE CODE QUALIFIER
+    /// </summary>
+    [Serializable()]
+    [DataContract()]
+    [EdiCodes(@",AA,AB,AD,AE,AG,AH,AI,AJ,AK,AL,AM,AN,AO,AP,BL,
+               BPN,BPY,BR,BX,CH,CN,DPA,EFP,EYP,FPN,FPR,FSU,LAR,
+               LU,MPA,PA,PBP,PFP,PL,PPA,PST,RF,RG,RGF,RO,RR,SCA,
+               SCB,SCC,SFA,SPP,STR,SW,TE,TP,TS,TSU,UL,,")]
+    public class EDIFACT_ID_8053
+    {
+    }
+
     /// <summary>
     /// Government agency, coded
     /// </summary>
@@ -865,6 +889,16 @@ namespace EDIFACT.TEMPLATES.D99B
     [DataContract()]
     [EdiCodes(@",1,2,3,4,5,6,7,8,9,10,11,12,13,")]
     public class EDIFACT_ID_9353
+    {
+    }
+
+    /// <summary>
+    /// Sealing party, coded
+    /// </summary>
+    [Serializable()]
+    [DataContract()]
+    [EdiCodes(@",AA,AB,AC,CA,CU,SH,TO")]
+    public class EDIFACT_ID_9303
     {
     }
 }

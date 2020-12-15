@@ -194,7 +194,7 @@ namespace EDIFACT.TEMPLATES.D99B
         where T1 : I_C237
     {
 
-        string Equipmentqualifier_01 { get; set; }
+        string Equipmenttypecodequalifier_01 { get; set; }
         T1 EQUIPMENTIDENTIFICATION_02 { get; set; }
     }
 
