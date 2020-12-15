@@ -17,7 +17,7 @@ namespace EDIFACT.TEMPLATES.D99B
 
             return new UNA()
             {
-                ComponentDataElement = ' ',
+                ComponentDataElement = ':',
                 DecimalNotation = '.',
                 DataElement = '+',
                 ReleaseIndicator = '?',
@@ -316,7 +316,6 @@ namespace EDIFACT.TEMPLATES.D99B
             tDTLoop1.LOCLoop = new List<Loop_LOC_IFTMBF>();
 
 
-            //+++++++++++++++++++
             var lOCLoop3 = new Loop_LOC_IFTMBF();
 
             lOCLoop3.LOC = new LOC();
@@ -357,60 +356,254 @@ namespace EDIFACT.TEMPLATES.D99B
             tDTLoop1.LOCLoop.Add(lOCLoop4);
 
 
+            var lOCLoop5 = new Loop_LOC_IFTMBF();
+
+            lOCLoop5.LOC = new LOC();
+            //Place / port of loading
+            lOCLoop5.LOC.Locationfunctioncodequalifier_01 = "9";
+            lOCLoop5.LOC.LOCATIONIDENTIFICATION_02 = new C517();
+            lOCLoop5.LOC.LOCATIONIDENTIFICATION_02.Locationnamecode_01 = "MZBEW";
+            //139 (Port) -  A location having facilities for means of transport to load or discharge cargo.
+            lOCLoop5.LOC.LOCATIONIDENTIFICATION_02.Codelistidentificationcode_02 = "139";
+            //6 UN / ECE(United Nations - Economic Commission for Europe)
+            lOCLoop5.LOC.LOCATIONIDENTIFICATION_02.Codelistresponsibleagencycode_03 = "6";
+            lOCLoop5.LOC.LOCATIONIDENTIFICATION_02.Locationname_04 = "Beira";
+
+            lOCLoop5.DTM = new List<DTM>();
+            var dtm3 = new DTM();
+            dtm3.DATETIMEPERIOD_01 = new C507();
+            dtm3.DATETIMEPERIOD_01.Dateortimeorperiodfunctioncodequalifier_01 = "133";
+            dtm3.DATETIMEPERIOD_01.Dateortimeorperiodvalue_02 = "20201217";
+            dtm3.DATETIMEPERIOD_01.Dateortimeorperiodformatcode_03 = "102";
+            lOCLoop5.DTM.Add(dtm3);
+            tDTLoop1.LOCLoop.Add(lOCLoop5);
+
+
+            var lOCLoop6 = new Loop_LOC_IFTMBF();
+
+            lOCLoop6.LOC = new LOC();
+            //Place / port of loading
+            lOCLoop6.LOC.Locationfunctioncodequalifier_01 = "11";
+            lOCLoop6.LOC.LOCATIONIDENTIFICATION_02 = new C517();
+            lOCLoop6.LOC.LOCATIONIDENTIFICATION_02.Locationnamecode_01 = "CNWHG";
+            //139 (Port) -  A location having facilities for means of transport to load or discharge cargo.
+            lOCLoop6.LOC.LOCATIONIDENTIFICATION_02.Codelistidentificationcode_02 = "139";
+            //6 UN / ECE(United Nations - Economic Commission for Europe)
+            lOCLoop6.LOC.LOCATIONIDENTIFICATION_02.Codelistresponsibleagencycode_03 = "6";
+            lOCLoop6.LOC.LOCATIONIDENTIFICATION_02.Locationname_04 = "Wuhan Pt";
+            tDTLoop1.LOCLoop.Add(lOCLoop6);
+
             result.TDTLoop.Add(tDTLoop1);
 
             #endregion TDTLoop 
 
 
-            //#region NADLoop Segment Group 6: NAD-LOC-SG7-SG8
+            #region NADLoop 
 
-            //result.NADLoop = new List<Loop_NAD_IFTMBC>();
-
-            //var addresses = carrierBookingConfirmation.SelectToken("Addresses") as JArray;
-
-            //var nADLoop1 = new Loop_NAD_IFTMBC();
+            result.NADLoop = new List<Loop_NAD_IFTMBF>();
 
 
-            //foreach (var address in addresses)
-            //{
-            //    var chieldRef = address.SelectToken("Address");
-            //    foreach (var item in chieldRef.Children())
-            //    {
-            //        nADLoop1.NAD = new NAD();
-            //        nADLoop1.NAD.Partyqualifier_01 = item.SelectToken("AddressFunction")?.ToString();
-            //        nADLoop1.NAD.PARTYIDENTIFICATIONDETAILS_02 = new C082();
-            //        nADLoop1.NAD.PARTYIDENTIFICATIONDETAILS_02.Partyidentifier_01 = transport.SelectToken("CarrierCode")?.ToString();
-            //        nADLoop1.NAD.PARTYIDENTIFICATIONDETAILS_02.Codelistidentificationcode_02 = "160";
-            //        nADLoop1.NAD.PARTYIDENTIFICATIONDETAILS_02.Codelistresponsibleagencycode_03 = "87";
-            //        nADLoop1.NAD.NAMEANDADDRESS_03 = new C058();
-            //        nADLoop1.NAD.NAMEANDADDRESS_03.Nameandaddressline_01 = item.SelectToken("NameLine1")?.ToString();
-            //    }
-            //}
+
+            var nADLoop1 = new Loop_NAD_IFTMBF();
+            nADLoop1.NAD = new NAD();
+            nADLoop1.NAD.Partyqualifier_01 = "CA";
+            nADLoop1.NAD.PARTYIDENTIFICATIONDETAILS_02 = new C082();
+            nADLoop1.NAD.PARTYIDENTIFICATIONDETAILS_02.Partyidentifier_01 = "OOLU";
+            nADLoop1.NAD.PARTYIDENTIFICATIONDETAILS_02.Codelistidentificationcode_02 = "160";
+            nADLoop1.NAD.PARTYIDENTIFICATIONDETAILS_02.Codelistresponsibleagencycode_03 = "86";
+            result.NADLoop.Add(nADLoop1);
 
 
-            //#region SG7: CTA-COM
+            var nADLoop2 = new Loop_NAD_IFTMBF();
+            nADLoop2.NAD = new NAD();
+            nADLoop2.NAD.Partyqualifier_01 = "BK";
+            nADLoop2.NAD.PARTYIDENTIFICATIONDETAILS_02 = new C082();
+            nADLoop2.NAD.PARTYIDENTIFICATIONDETAILS_02.Partyidentifier_01 = "CACC000008";
+            nADLoop2.NAD.PARTYIDENTIFICATIONDETAILS_02.Codelistidentificationcode_02 = "160";
+            nADLoop2.NAD.PARTYIDENTIFICATIONDETAILS_02.Codelistresponsibleagencycode_03 = "86";
 
-            //#endregion SG7: CTA-COM
+            nADLoop2.NAD.PARTYNAME_04 = new C080();
+            nADLoop2.NAD.PARTYNAME_04.Partyname_01 = "Access World (Mozambique)";
+            nADLoop2.NAD.PARTYNAME_04.Partyname_02 = "Mahmoud Nada";
 
-            //#region SG8: TSR-RFF-LOC-TPL-FTX
+            nADLoop2.CTALoop = new List<Loop_CTA_IFTMBF>();
+            var ctaLoop = new Loop_CTA_IFTMBF();
+            ctaLoop.CTA = new CTA();
+            ctaLoop.CTA.ContactFunctionCode_01 = "IC";
+            ctaLoop.CTA.DEPARTMENTOREMPLOYEEDETAILS_02 = new C056();
+            ctaLoop.CTA.DEPARTMENTOREMPLOYEEDETAILS_02.Departmentoremployee_02 = "Mahmoud Nada";            
 
-            //#endregion SG8: TSR-RFF-LOC-TPL-FTX
+            ctaLoop.COM = new List<COM>();
+            var com = new COM();
+            com.COMMUNICATIONCONTACT_01 = new C076();
+            com.COMMUNICATIONCONTACT_01.CommunicationNumber_01 = "mahmoud.nada@commodity.ch";
+            com.COMMUNICATIONCONTACT_01.CommunicationChannelQualifier_02 = "EM";
+            ctaLoop.COM.Add(com);
+            nADLoop2.CTALoop.Add(ctaLoop);
 
-            //result.NADLoop.Add(nADLoop1);
-            //#endregion NADLoop Segment Group 6: NAD-LOC-SG7-SG8
+            result.NADLoop.Add(nADLoop2);
 
-            //#region GIDLoop Segment Group 9: GID-HAN-TMP-RNG-TMD-LOC-FTX-PCD-SG10-GDS-SG11-SG12-SG13-SG14-SG15
+            var nADLoop3 = new Loop_NAD_IFTMBF();
+            nADLoop3.NAD = new NAD();
+            nADLoop3.NAD.Partyqualifier_01 = "FW";
+            nADLoop3.NAD.PARTYIDENTIFICATIONDETAILS_02 = new C082();
+            nADLoop3.NAD.PARTYIDENTIFICATIONDETAILS_02.Partyidentifier_01 = "CACC000008";
+            nADLoop3.NAD.PARTYIDENTIFICATIONDETAILS_02.Codelistidentificationcode_02 = "160";
+            nADLoop3.NAD.PARTYIDENTIFICATIONDETAILS_02.Codelistresponsibleagencycode_03 = "86";
 
-            //result.GIDLoop = new List<Loop_GID_IFTMBC>();
-            //var gIDLoop1 = new Loop_GID_IFTMBC();
+            nADLoop3.NAD.PARTYNAME_04 = new C080();
+            nADLoop3.NAD.PARTYNAME_04.Partyname_01 = "Access World (Mozambique)";
 
-            //gIDLoop1.GID = new GID();
+            nADLoop3.NAD.STREET_05 = new C059();
+            nADLoop3.NAD.STREET_05.Streetandnumberpobox_01 = "Cornelder de Mocambique";
+            nADLoop3.NAD.STREET_05.Streetandnumberpobox_02 = "Lda Shed 16, Porto de Beira";
+
+            nADLoop3.NAD.Cityname_06 = "Beira";
+            nADLoop3.NAD.Countrynamecode_09 = "MZ";
+            result.NADLoop.Add(nADLoop3);
+
+            var nADLoop4 = new Loop_NAD_IFTMBF();
+            nADLoop4.NAD = new NAD();
+            nADLoop4.NAD.Partyqualifier_01 = "CZ";
+            nADLoop4.NAD.PARTYIDENTIFICATIONDETAILS_02 = new C082();
+            nADLoop4.NAD.PARTYIDENTIFICATIONDETAILS_02.Partyidentifier_01 = "CACC000008";
+            nADLoop4.NAD.PARTYIDENTIFICATIONDETAILS_02.Codelistidentificationcode_02 = "160";
+            nADLoop4.NAD.PARTYIDENTIFICATIONDETAILS_02.Codelistresponsibleagencycode_03 = "86";
+                   
+            nADLoop4.NAD.PARTYNAME_04 = new C080();
+            nADLoop4.NAD.PARTYNAME_04.Partyname_01 = "Access World (Mozambique)";
+                   
+            nADLoop4.NAD.STREET_05 = new C059();
+            nADLoop4.NAD.STREET_05.Streetandnumberpobox_01 = "Cornelder de Mocambique";
+            nADLoop4.NAD.STREET_05.Streetandnumberpobox_02 = "Lda Shed 16, Porto de Beira";
+                   
+            nADLoop4.NAD.Cityname_06 = "Beira";
+            nADLoop4.NAD.Countrynamecode_09 = "MZ";
+            result.NADLoop.Add(nADLoop4);
+
+            var nADLoop5 = new Loop_NAD_IFTMBF();
+            nADLoop5.NAD = new NAD();
+            nADLoop5.NAD.Partyqualifier_01 = "CN";
+            nADLoop5.NAD.PARTYIDENTIFICATIONDETAILS_02 = new C082();
+            nADLoop5.NAD.PARTYIDENTIFICATIONDETAILS_02.Partyidentifier_01 = "CGLE000001";
+            nADLoop5.NAD.PARTYIDENTIFICATIONDETAILS_02.Codelistidentificationcode_02 = "160";
+            nADLoop5.NAD.PARTYIDENTIFICATIONDETAILS_02.Codelistresponsibleagencycode_03 = "86";
+
+            nADLoop5.NAD.PARTYNAME_04 = new C080();
+            nADLoop5.NAD.PARTYNAME_04.Partyname_01 = "Glencore International AG";
+
+            nADLoop5.NAD.STREET_05 = new C059();
+            nADLoop5.NAD.STREET_05.Streetandnumberpobox_01 = "Baarermattstrasse 3";
+ 
+            nADLoop5.NAD.Cityname_06 = "Baar";
+            nADLoop5.NAD.Postcodeidentification_08 = "6341";
+            nADLoop5.NAD.Countrynamecode_09 = "CH";
+            result.NADLoop.Add(nADLoop5);
+
+            #endregion NADLoop 
+
+            #region GIDLoop 
+
+            result.GIDLoop = new List<Loop_GID_IFTMBF>();
+            
+            var gIDLoop1 = new Loop_GID_IFTMBF();
+            gIDLoop1.GID = new GID();
+            gIDLoop1.GID.Goodsitemnumber_01 = "1";
+            gIDLoop1.GID.NUMBERANDTYPEOFPACKAGES_02 = new C213();
+            gIDLoop1.GID.NUMBERANDTYPEOFPACKAGES_02.Numberofpackages_01 = "1";
+            gIDLoop1.GID.NUMBERANDTYPEOFPACKAGES_02.Packagetypedescriptioncode_02 = "VR";
+            gIDLoop1.GID.NUMBERANDTYPEOFPACKAGES_02.Codelistidentificationcode_03 = "67";
+            gIDLoop1.GID.NUMBERANDTYPEOFPACKAGES_02.Codelistresponsibleagencycode_04 = "6";
+
+            gIDLoop1.FTX = new List<FTX>();
+            var ftx2 = new FTX();
+            ftx2.Textsubjectcodequalifier_01 = "AAA";
+            ftx2.TEXTLITERAL_04 = new C108();
+            ftx2.TEXTLITERAL_04.Freetext_01 = "Copper";
+            gIDLoop1.FTX.Add(ftx2);
+
+            gIDLoop1.MEALoop = new List<Loop_MEA_IFTMBF>();
+
+            var mEALoop1 = new Loop_MEA_IFTMBF();
+            mEALoop1.MEA = new MEA();
+            mEALoop1.MEA.Measurementattributecode_01 = "WT";
+            mEALoop1.MEA.MEASUREMENTDETAILS_02 = new C502();
+            mEALoop1.MEA.MEASUREMENTDETAILS_02.Measuredattributecode_01 = "G";
+
+            mEALoop1.MEA.VALUERANGE_03 = new C174();
+            mEALoop1.MEA.VALUERANGE_03.Measurementunitcode_01 = "KGM";
+            mEALoop1.MEA.VALUERANGE_03.Measurementvalue_02 = "22000.00";
+            gIDLoop1.MEALoop.Add(mEALoop1);
+
+            var mEALoop2 = new Loop_MEA_IFTMBF();
+            mEALoop2.MEA = new MEA();
+            mEALoop2.MEA.Measurementattributecode_01 = "VOL";
+            mEALoop2.MEA.MEASUREMENTDETAILS_02 = new C502();
+            mEALoop2.MEA.MEASUREMENTDETAILS_02.Measuredattributecode_01 = "AAW";
+                   
+            mEALoop2.MEA.VALUERANGE_03 = new C174();
+            mEALoop2.MEA.VALUERANGE_03.Measurementunitcode_01 = "MTQ";
+            mEALoop2.MEA.VALUERANGE_03.Measurementvalue_02 = "0.000";
+            gIDLoop1.MEALoop.Add(mEALoop2);
+
+            var mEALoop3 = new Loop_MEA_IFTMBF();
+            mEALoop3.MEA = new MEA();
+            mEALoop3.MEA.Measurementattributecode_01 = "WT";
+            mEALoop3.MEA.MEASUREMENTDETAILS_02 = new C502();
+            mEALoop3.MEA.MEASUREMENTDETAILS_02.Measuredattributecode_01 = "N";
+                   
+            mEALoop3.MEA.VALUERANGE_03 = new C174();
+            mEALoop3.MEA.VALUERANGE_03.Measurementunitcode_01 = "KGM";
+            mEALoop3.MEA.VALUERANGE_03.Measurementvalue_02 = "0.00";
+            gIDLoop1.MEALoop.Add(mEALoop3);
+
+            result.GIDLoop.Add(gIDLoop1);
+
+            #endregion GIDLoop 
 
 
-            //#endregion GIDLoop Segment Group 9: GID-HAN-TMP-RNG-TMD-LOC-FTX-PCD-SG10-GDS-SG11-SG12-SG13-SG14-SG15
+            #region EQDLoop
 
+            #endregion EQDLoop
+
+            result.EQDLoop = new List<Loop_EQD_IFTMBF>();
+
+            var eQDLoop = new Loop_EQD_IFTMBF();
+            eQDLoop.EQD = new EQD();
+            eQDLoop.EQD.Equipmenttypecodequalifier_01 = "CN";
+            eQDLoop.EQD.EQUIPMENTSIZEANDTYPE_03 = new C224();
+            eQDLoop.EQD.EQUIPMENTSIZEANDTYPE_03.Equipmentsizeandtypedescriptioncode_01 = "22G0";
+            eQDLoop.EQD.EQUIPMENTSIZEANDTYPE_03.Codelistidentificationcode_02 = "102";
+            eQDLoop.EQD.EQUIPMENTSIZEANDTYPE_03.Codelistresponsibleagencycode_03 = "5";
+
+            eQDLoop.EQD.Equipmentsuppliercoded_04 = "2";
+
+            eQDLoop.EQN = new EQN();
+            eQDLoop.EQN.NUMBEROFUNITDETAILS_01 = new C523();
+            eQDLoop.EQN.NUMBEROFUNITDETAILS_01.Numberofunits_01 = "1";
+            eQDLoop.EQN.NUMBEROFUNITDETAILS_01.Unittypecodequalifier_02 = "2";
+
+            eQDLoop.TMD = new TMD();
+            eQDLoop.TMD.MOVEMENTTYPE_01 = new C219();
+            eQDLoop.TMD.MOVEMENTTYPE_01.Movementtypedescriptioncode_01 = "3";
+            eQDLoop.TMD.MOVEMENTTYPE_01.Movementtypedescription_02 = "FCL-FCL";
+
+            eQDLoop.TMD.Haulagearrangementscoded_03 = "MM";
+            result.EQDLoop.Add(eQDLoop);
             return result;
 
+        }
+
+        public static UNZ BuildUNZ(JToken input)
+        {
+
+            JToken carrierBookingRequest = input.SelectToken("CarrierBookingRequest");
+
+            return new UNZ
+            {
+                InterchangeControlCount_1 = "1",
+                InterchangeControlReference_2 = "2650"
+            };
         }
     }
 }

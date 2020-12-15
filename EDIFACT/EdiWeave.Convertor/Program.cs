@@ -19,30 +19,13 @@ namespace EdiWeave.Convertor
     {
         static void Main(string[] args)
         {
-            var str ="";
-            var ab = str.Replace("\r\n\r\n", ",");
 
-            //ReadBookingConfirmation();
+            ReadBookingConfirmation();
             BuildBookingRequest();
 
         }
 
      
-        public static void BuildBookingConfirmation()
-        {
-            const string path = @"C:\Users\suren.vanyan\source\repos\EDIFACT\EDIFACT\EdiWeave.Convertor\BookingConfirmation.json";
-
-            var jModel = File.ReadAllText(path);
-            JToken jtoken = JToken.Parse(jModel);
-
-            using var writer = new EdifactWriter(@"C:\Users\suren.vanyan\source\repos\EDIFACT\EDIFACT\EdiWeave.Convertor\EdifactWriter_IFTMBC.txt", false,Encoding.UTF8,"\n");
-            writer.Write(EF_EDIFACT_D99B_IFTMBC_Builder.BuildUNB(jtoken));
-            writer.Write(EF_EDIFACT_D99B_IFTMBC_Builder.BuildIFTMBC("1",jtoken));
-
-
-        }
-
-
         public static void BuildBookingRequest()
         {
             const string path = @"C:\Users\suren.vanyan\source\repos\EDIFACT\EDIFACT\EdiWeave.Convertor\BookingRequest\BR_COMSUP_CARGOSMART.xml";
@@ -58,6 +41,7 @@ namespace EdiWeave.Convertor
             writer.Write(EF_EDIFACT_D99B_IFTMBF_Builder.BuildUNA(jsonModel));
             writer.Write(EF_EDIFACT_D99B_IFTMBF_Builder.BuildUNB(jsonModel));
             writer.Write(EF_EDIFACT_D99B_IFTMBF_Builder.BuildIFTMBC("1", jsonModel));
+            writer.Write(EF_EDIFACT_D99B_IFTMBF_Builder.BuildUNZ(jsonModel));
 
 
         }
@@ -104,5 +88,20 @@ namespace EdiWeave.Convertor
 
             var model = JsonConvert.SerializeObject(tSIFTMBC, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
         }
+
+
+        //public static void BuildBookingConfirmation()
+        //{
+        //    const string path = @"C:\Users\suren.vanyan\source\repos\EDIFACT\EDIFACT\EdiWeave.Convertor\BookingConfirmation.json";
+
+        //    var jModel = File.ReadAllText(path);
+        //    JToken jtoken = JToken.Parse(jModel);
+
+        //    using var writer = new EdifactWriter(@"C:\Users\suren.vanyan\source\repos\EDIFACT\EDIFACT\EdiWeave.Convertor\EdifactWriter_IFTMBC.txt", false,Encoding.UTF8,"\n");
+        //    writer.Write(EF_EDIFACT_D99B_IFTMBC_Builder.BuildUNB(jtoken));
+        //    writer.Write(EF_EDIFACT_D99B_IFTMBC_Builder.BuildIFTMBC("1",jtoken));
+
+
+        //}
     }
 }
