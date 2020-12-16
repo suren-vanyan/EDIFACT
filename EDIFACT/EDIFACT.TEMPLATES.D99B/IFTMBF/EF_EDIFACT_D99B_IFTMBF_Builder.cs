@@ -65,6 +65,7 @@ namespace EDIFACT.TEMPLATES.D99B
                 // Interchange control reference
                 // Must be incremented with every interchange
                 InterchangeControlReference_5 = "2650",
+                
             };
         }
 
@@ -75,8 +76,6 @@ namespace EDIFACT.TEMPLATES.D99B
         public static TSIFTMBF BuildIFTMBC(string controlNumber, JToken model)
         {
             var result = new TSIFTMBF();
-
-            var carrierBookingConfirmation = model.SelectToken("CarrierBookingConfirmation");
 
             #region UNH
 

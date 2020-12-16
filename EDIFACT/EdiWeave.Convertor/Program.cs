@@ -19,131 +19,26 @@ namespace EdiWeave.Convertor
     {
         static void Main(string[] args)
         {
-            var str = @"AA
-
-AB
-
-AD
-
-AE
-
-AG
-
-AH
-
-AI
-
-AJ
-
-AK
-
-AL
-
-AM
-
-AN
-
-AO
-
-AP
-
-BL
-
-BPN
-
-BPY
-
-BR
-
-BX
-
-CH
-
-CN
-
-DPA
-
-EFP
-
-EYP
-
-FPN
-
-FPR
-
-FSU
-
-LAR
-
-LU
-
-MPA
-
-PA
-
-PBP
-
-PFP
-
-PL
-
-PPA
-
-PST
-
-RF
-
-RG
-
-RGF
-
-RO
-
-RR
-
-SCA
-
-SCB
-
-SCC
-
-SFA
-
-SPP
-
-STR
-
-SW
-
-TE
-
-TP
-
-TS
-
-TSU
-
-UL
-
-";
+            var str ="";
             var res = str.Replace("\r\n\r\n", ",");
-            ReadBookingConfirmation();
-            BuildBookingRequest();
+            //ReadBookingConfirmation();
+            //BuildBookingRequest();
+            ReadBookingRequest();
 
         }
 
      
         public static void BuildBookingRequest()
         {
-            const string path = @"C:\Users\suren.vanyan\source\repos\EDIFACT\EDIFACT\EdiWeave.Convertor\BookingRequest\BR_COMSUP_CARGOSMART.xml";
+            const string path = @"C:\Users\suren.vanyan\source\repos\EDIFACT\EDIFACT\EdiWeave.Convertor\BookingRequest\BookingRequest.xml";
 
             var model = File.ReadAllText(path);
 
-            using var writer = new EdifactWriter(@"C:\Users\suren.vanyan\source\repos\EDIFACT\EDIFACT\EdiWeave.Convertor\BookingRequest\EdifactWriter_BR_IFTMBF.txt", false, Encoding.UTF8, "\n");
+            using var writer = new EdifactWriter(@"C:\Users\suren.vanyan\source\repos\EDIFACT\EDIFACT\EdiWeave.Convertor\BookingRequest\EDIWriter-BookingRequest.txt", false, Encoding.UTF8, "\n");
 
             XmlDocument doc = new XmlDocument();
             doc.LoadXml(model);
-            var jsonModel = JToken.Parse(JsonConvert.SerializeXmlNode(doc));
+            var jsonModel = JToken.Parse(JsonConvert.SerializeXmlNode(doc)).SelectToken("CarrierBookingRequest");
 
             writer.Write(EF_EDIFACT_D99B_IFTMBF_Builder.BuildUNA(jsonModel));
             writer.Write(EF_EDIFACT_D99B_IFTMBF_Builder.BuildUNB(jsonModel));
@@ -197,18 +92,46 @@ UL
         }
 
 
-        //public static void BuildBookingConfirmation()
-        //{
-        //    const string path = @"C:\Users\suren.vanyan\source\repos\EDIFACT\EDIFACT\EdiWeave.Convertor\BookingConfirmation.json";
+        private static void ReadBookingRequest()
+        {
+            const string path = @"C:\Users\suren.vanyan\source\repos\EDIFACT\EDIFACT\EdiWeave.Convertor\BookingRequest\EDI-BookingRequest.txt";
 
-        //    var jModel = File.ReadAllText(path);
-        //    JToken jtoken = JToken.Parse(jModel);
+            var sample = File.ReadAllText(path);
 
-        //    using var writer = new EdifactWriter(@"C:\Users\suren.vanyan\source\repos\EDIFACT\EDIFACT\EdiWeave.Convertor\EdifactWriter_IFTMBC.txt", false,Encoding.UTF8,"\n");
-        //    writer.Write(EF_EDIFACT_D99B_IFTMBC_Builder.BuildUNB(jtoken));
-        //    writer.Write(EF_EDIFACT_D99B_IFTMBC_Builder.BuildIFTMBC("1",jtoken));
+            List<EdiItem> ediItems;
+
+            var ediStream = CommonHelper.GenerateStreamFromString(sample);
+
+            using (var ediReader = new EdifactReader(ediStream, "EDIFACT.TEMPLATES.D99B", Encoding.UTF8, true))
+            {
+                ediItems = ediReader.ReadToEnd().ToList();
+            }
 
 
-        //}
+            var jObject = new JObject();
+
+            var unb = ediItems.OfType<UNB>().SingleOrDefault();
+            var tSiftmbf = ediItems.OfType<TSIFTMBF>().SingleOrDefault();
+            var unz = ediItems.OfType<UNZ>().SingleOrDefault();
+
+            jObject.Add("UNB", JToken.FromObject(unb, new JsonSerializer { NullValueHandling = NullValueHandling.Ignore }));
+            jObject.Add("IFTMBF", JToken.FromObject(tSiftmbf, new JsonSerializer { NullValueHandling = NullValueHandling.Ignore }));
+            jObject.Add("UNZ", JToken.FromObject(unz, new JsonSerializer { NullValueHandling = NullValueHandling.Ignore }));
+
+
+            if (!tSiftmbf.IsValid(out MessageErrorContext error))
+            {
+                jObject.Add("Error", JToken.FromObject(error));
+            }
+
+            //ToDO Right Click in the File,then select Copy Full Path and paste here
+            File.WriteAllText(@"C:\Users\suren.vanyan\source\repos\EDIFACT\EDIFACT\EdiWeave.Convertor\BookingRequest\EDIReader-BookingRequest.json", jObject.ToString());
+
+            var unberrors = unb.Validate();
+            var unzerrors = unb.Validate();
+
+
+            var model = JsonConvert.SerializeObject(tSiftmbf, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+        }
     }
 }
