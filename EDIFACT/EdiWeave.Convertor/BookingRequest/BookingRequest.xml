@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CarrierBookingRequest>
+  <MessageFunctionCode>9</MessageFunctionCode>
+  <SendFrom>Cargoo</SendFrom>
+  <SendTo>
+    <Carrier>MAEU</Carrier>
+    <EdiPartner>apmm-edi</EdiPartner>
+  </SendTo>
+  <TrgId>C2020121640</TrgId>
+  <MessageId>BRC2020121640</MessageId>
+  <EarliestDepartureDate>2021-01-11</EarliestDepartureDate>
+  <LatestArrivalDate>2021-02-26T00:00:00</LatestArrivalDate>
+  <CSAOceanExport>317658</CSAOceanExport>
+  <BookingUser>
+    <Name>Evelyn Delota</Name>
+    <Email>sea.export@stamm.com.ph</Email>
+    <Company>Stamm International</Company>
+    <CompanyId>502</CompanyId>
+    <EdiPartnerId>428180702ST</EdiPartnerId>
+    <CargooPartyId>CSTA000002</CargooPartyId>
+  </BookingUser>
+  <References>
+    <Order>
+      <Value>112365356-LAMPE00106</Value>
+      <Value> 112365356-LAMPE00106</Value>
+    </Order>
+    <CarrierBookingNumbers />
+    <EdiPartnerReferences />
+  </References>
+  <Contract>297949961</Contract>
+  <Comment />
+  <PlaceOfReceiptCode>PHCEB</PlaceOfReceiptCode>
+  <PlaceOfReceiptName>Cebu</PlaceOfReceiptName>
+  <PlaceOfDeliveryCode>DELEJ</PlaceOfDeliveryCode>
+  <PlaceOfDeliveryName>Leipzig</PlaceOfDeliveryName>
+  <TransportMove>28</TransportMove>
+  <Items>
+    <Item>
+      <xBookingItem>188067</xBookingItem>
+      <CommodityId>FAK</CommodityId>
+      <CommodityText>
+        Furniture
+        10689221 Holz Leuchten/R.G8P.MBSNA01CFC -;- 10689339 Frame/W.R4R.LGYLGY11 -;- 10689340 Frame/W.R4Q.LGYLGY11 -;- 10689417 Rope/W.TX3.M01A600 -;- 10687453 Z.70E.A611 -;- 11680607 Kawa/C.B51.NAWJCL
+      </CommodityText>
+      <NoPkgs>520</NoPkgs>
+      <Volume>0.000</Volume>
+      <Weight>14000.00</Weight>
+      <PackageType>CT</PackageType>
+      <HSCode />
+    </Item>
+  </Items>
+  <Containers>
+    <Container>
+      <ContainerUnit>42GP</ContainerUnit>
+      <Count>1</Count>
+      <TemperatureValue />
+      <TemperatureUnit />
+      <TemperatureComment />
+      <GenSetFlag />
+      <VentSetting />
+      <HandlingInstruction />
+      <Probes />
+      <EquipmentOwner>2</EquipmentOwner>
+      <Measurements>
+        <Measurement>
+          <MeasurementCode>AAL</MeasurementCode>
+          <MeasurementUnit>KGM</MeasurementUnit>
+          <MeasurementValue>2775.00</MeasurementValue>
+        </Measurement>
+      </Measurements>
+    </Container>
+  </Containers>
+  <Addresses>
+    <Address>
+      <AddressFunction>CZ</AddressFunction>
+      <NameLine1>Stamm International</NameLine1>
+      <AddressLine1>2/F Room 201, Lilang's Center</AddressLine1>
+      <AddressLine2>Airport Road, Pajo Street</AddressLine2>
+      <AddressLine3 />
+      <ZipCode />
+      <City>Lapu Lapu City</City>
+      <Country>PH</Country>
+      <ContactPhone />
+      <ContactEmail />
+      <EdiPartnerId>428180702ST</EdiPartnerId>
+      <CargooPartyId>CSTA000002</CargooPartyId>
+      <Charges>
+        <Charge>
+          <ChargeType>11</ChargeType>
+          <ChargeValue>C</ChargeValue>
+          <ChargePlace />
+          <ChargePlaceCode />
+        </Charge>
+      </Charges>
+    </Address>
+    <Address>
+      <AddressFunction>CN</AddressFunction>
+      <NameLine1>Commodity Supplies AG</NameLine1>
+      <AddressLine1>Roosstrasse 53</AddressLine1>
+      <AddressLine2 />
+      <AddressLine3 />
+      <ZipCode>8832</ZipCode>
+      <City>Wollerau</City>
+      <Country>CH</Country>
+      <ContactPhone />
+      <ContactEmail>cargoo3@commodity.ch</ContactEmail>
+      <EdiPartnerId>1283386</EdiPartnerId>
+      <CargooPartyId>CCOM000001</CargooPartyId>
+      <Charges>
+        <Charge>
+          <ChargeType>4</ChargeType>
+          <ChargeValue>C</ChargeValue>
+          <ChargePlace />
+          <ChargePlaceCode />
+        </Charge>
+        <Charge>
+          <ChargeType>7</ChargeType>
+          <ChargeValue>C</ChargeValue>
+          <ChargePlace />
+          <ChargePlaceCode />
+        </Charge>
+      </Charges>
+    </Address>
+    <Address>
+      <AddressFunction>NI</AddressFunction>
+      <NameLine1>Commodity Supplies AG</NameLine1>
+      <AddressLine1>Roosstrasse 53</AddressLine1>
+      <AddressLine2 />
+      <AddressLine3 />
+      <ZipCode>8832</ZipCode>
+      <City>Wollerau</City>
+      <Country>CH</Country>
+      <ContactPhone />
+      <ContactEmail>cargoo3@commodity.ch</ContactEmail>
+      <EdiPartnerId>1283386</EdiPartnerId>
+      <CargooPartyId>CCOM000001</CargooPartyId>
+      <Charges />
+    </Address>
+    <Address>
+      <AddressFunction>FP</AddressFunction>
+      <NameLine1>Commodity Supplies AG</NameLine1>
+      <AddressLine1>Roosstrasse 53</AddressLine1>
+      <AddressLine2 />
+      <AddressLine3 />
+      <ZipCode>8832</ZipCode>
+      <City>Wollerau</City>
+      <Country>CH</Country>
+      <ContactPhone />
+      <ContactEmail>cargoo3@commodity.ch</ContactEmail>
+      <EdiPartnerId>1283386</EdiPartnerId>
+      <CargooPartyId>CCOM000001</CargooPartyId>
+      <Charges>
+        <Charge>
+          <ChargeType>10</ChargeType>
+          <ChargeValue>P</ChargeValue>
+          <ChargePlace />
+          <ChargePlaceCode />
+        </Charge>
+      </Charges>
+    </Address>
+  </Addresses>
+  <Transports>
+    <Transport>
+      <TransportType>Truck</TransportType>
+      <LoadingCode>PHCEB</LoadingCode>
+      <LoadingName>Cebu</LoadingName>
+      <DestinationCode>PHCEB</DestinationCode>
+      <DestinationName>Cebu</DestinationName>
+      <CarrierCode>MAEU</CarrierCode>
+      <CarrierName>Maersk Line</CarrierName>
+      <ETS>2021-01-11</ETS>
+      <ETA>2021-01-15</ETA>
+    </Transport>
+    <Transport>
+      <TransportType>Mother</TransportType>
+      <LoadingCode>PHCEB</LoadingCode>
+      <LoadingName>Cebu</LoadingName>
+      <DestinationCode>DELEJ</DestinationCode>
+      <DestinationName>Leipzig</DestinationName>
+      <CarrierCode>MAEU</CarrierCode>
+      <CarrierName>Maersk Line</CarrierName>
+      <Vessel>PROSPER</Vessel>
+      <ImoNumber>9117181</ImoNumber>
+      <VoyageNo>101N</VoyageNo>
+      <ETS>2021-01-11</ETS>
+      <ETA>2021-02-26</ETA>
+    </Transport>
+  </Transports>
+</CarrierBookingRequest>

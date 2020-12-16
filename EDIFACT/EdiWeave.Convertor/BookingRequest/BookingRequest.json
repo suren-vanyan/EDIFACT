@@ -1,0 +1,391 @@
+{
+	"cargooReference": "C2020121640",
+	"shipmentPlanId": 317658,
+	"type": 0,
+	"userName": "Evelyn Delota",
+	"userEmail": "sea.export@stamm.com.ph",
+	"serviceProviderReference": null,
+	"bookingNumber": null,
+	"bookingProviderCode": "apmm-edi",
+	"bookingUserCompanyId": 502,
+	"bookingUserCompanyName": "Stamm International",
+	"bookingUserAlias": "CSTA000002",
+	"bookingUserEdiPartnerId": "428180702ST",
+	"carrierCode": "MAEU",
+	"carrierOfficeLocationUnlocode": null,
+	"rateContractNumber": "297949961",
+	"placeOfReceipt": {
+		"type": 2,
+		"code": "PHCEB",
+		"name": "Cebu",
+		"country": {
+			"code": "PH",
+			"name": "Philippines"
+		},
+		"subDivision": null
+	},
+	"portOfLoading": {
+		"code": "PHCEB",
+		"name": "Cebu",
+		"country": {
+			"code": "PH",
+			"name": "Philippines"
+		},
+		"subDivision": null
+	},
+	"portOfDischarge": {
+		"code": "DELEJ",
+		"name": "Leipzig",
+		"country": {
+			"code": "DE",
+			"name": "Germany"
+		},
+		"subDivision": {
+			"code": "SN",
+			"name": "Sachsen"
+		}
+	},
+	"finalDestination": {
+		"type": 1,
+		"code": "DELEJ",
+		"name": "Leipzig",
+		"country": {
+			"code": "DE",
+			"name": "Germany"
+		},
+		"subDivision": {
+			"code": "SN",
+			"name": "Sachsen"
+		}
+	},
+	"movementType": 0,
+	"estimatedTimeDeparture": "2021-01-11T00:00:00",
+	"items": [
+		{
+			"id": 188067,
+			"hsCode": null,
+			"commodityCode": "999999",
+			"articleDescription": "Furniture\n10689221 Holz Leuchten/R.G8P.MBSNA01CFC -;- 10689339 Frame/W.R4R.LGYLGY11 -;- 10689340 Frame/W.R4Q.LGYLGY11 -;- 10689417 Rope/W.TX3.M01A600 -;- 10687453 Z.70E.A611 -;- 11680607 Kawa/C.B51.NAWJCL",
+			"pieces": null,
+			"packageType": "CT",
+			"packages": 520,
+			"netWeight": null,
+			"grossWeight": 14000.00,
+			"volume": 0.000
+		}
+	],
+	"transportPlan": {
+		"service": null,
+		"vgmCutOff": null,
+		"carrierCode": null,
+		"cargoCutOff": null,
+		"documentCutOff": null,
+		"preCarriage": [],
+		"mainCarriage": [
+			{
+				"sequenceNumber": 1,
+				"from": {
+					"description": null,
+					"code": "PHCEB",
+					"name": "Cebu",
+					"country": {
+						"code": "PH",
+						"name": "Philippines"
+					},
+					"subDivision": null
+				},
+				"to": {
+					"description": null,
+					"code": "HKHKG",
+					"name": "Hong Kong",
+					"country": {
+						"code": "HK",
+						"name": "Hong Kong"
+					},
+					"subDivision": null
+				},
+				"etd": "2021-01-11T00:00:00Z",
+				"atd": null,
+				"eta": "2021-01-15T00:00:00Z",
+				"ata": null,
+				"transportMode": 1,
+				"transportMean": {
+					"code": 50,
+					"identification": "9117181",
+					"name": "PROSPER"
+				},
+				"conveyanceReferenceNumber": "101N"
+			},
+			{
+				"sequenceNumber": 2,
+				"from": {
+					"description": null,
+					"code": "HKHKG",
+					"name": "Hong Kong",
+					"country": {
+						"code": "HK",
+						"name": "Hong Kong"
+					},
+					"subDivision": null
+				},
+				"to": {
+					"description": null,
+					"code": "MYTPP",
+					"name": "Tanjung Pelepas",
+					"country": {
+						"code": "MY",
+						"name": "Malaysia"
+					},
+					"subDivision": {
+						"code": "01",
+						"name": "Johor"
+					}
+				},
+				"etd": "2021-01-19T00:00:00Z",
+				"atd": null,
+				"eta": "2021-01-22T00:00:00Z",
+				"ata": null,
+				"transportMode": 1,
+				"transportMean": {
+					"code": 50,
+					"identification": "9858723",
+					"name": "MAERSK XIAMEN"
+				},
+				"conveyanceReferenceNumber": "102W"
+			},
+			{
+				"sequenceNumber": 3,
+				"from": {
+					"description": null,
+					"code": "MYTPP",
+					"name": "Tanjung Pelepas",
+					"country": {
+						"code": "MY",
+						"name": "Malaysia"
+					},
+					"subDivision": {
+						"code": "01",
+						"name": "Johor"
+					}
+				},
+				"to": {
+					"description": null,
+					"code": "DEBRV",
+					"name": "Bremerhaven",
+					"country": {
+						"code": "DE",
+						"name": "Germany"
+					},
+					"subDivision": {
+						"code": "HB",
+						"name": "Bremen"
+					}
+				},
+				"etd": "2021-01-30T00:00:00Z",
+				"atd": null,
+				"eta": "2021-02-22T00:00:00Z",
+				"ata": null,
+				"transportMode": 1,
+				"transportMean": {
+					"code": 50,
+					"identification": "9632155",
+					"name": "METTE MAERSK"
+				},
+				"conveyanceReferenceNumber": "102W"
+			}
+		],
+		"onCarriage": [
+			{
+				"sequenceNumber": 1,
+				"from": {
+					"description": null,
+					"code": "DEBRV",
+					"name": "Bremerhaven",
+					"country": {
+						"code": "DE",
+						"name": "Germany"
+					},
+					"subDivision": {
+						"code": "HB",
+						"name": "Bremen"
+					}
+				},
+				"to": {
+					"description": null,
+					"code": "DELEJ",
+					"name": "Leipzig",
+					"country": {
+						"code": "DE",
+						"name": "Germany"
+					},
+					"subDivision": {
+						"code": "SN",
+						"name": "Sachsen"
+					}
+				},
+				"etd": "2021-02-24T00:00:00Z",
+				"atd": null,
+				"eta": "2021-02-26T00:00:00Z",
+				"ata": null,
+				"transportMode": 2,
+				"transportMean": {
+					"code": 10,
+					"identification": null,
+					"name": null
+				},
+				"conveyanceReferenceNumber": null
+			}
+		]
+	},
+	"containers": [
+		{
+			"type": "42GP",
+			"count": 1,
+			"soc": false,
+			"weight": 2775.0,
+			"addresses": null,
+			"references": null,
+			"remarks": null,
+			"reefer": null,
+			"haulage": {
+				"id": null,
+				"type": 1,
+				"haulageInstructions": null,
+				"loadFrom": null,
+				"loadTo": null,
+				"releaseDate": null,
+				"loadRef": "",
+				"releaseDepot": null,
+				"businessPartner": null,
+				"name": "",
+				"email": "",
+				"phone": "",
+				"locationName": null,
+				"countryCode": null,
+				"city": null
+			}
+		}
+	],
+	"parties": [
+		{
+			"type": "CZ",
+			"name": "Stamm International",
+			"alias": "CSTA000002",
+			"ediPartnerId": "428180702ST",
+			"address": {
+				"countryCode": "PH",
+				"stateCode": "CEB",
+				"city": "Lapu Lapu City",
+				"zip": "",
+				"lines": [ "2/F Room 201, Lilang's Center", "Airport Road, Pajo Street" ],
+				"emails": [],
+				"phones": [],
+				"remarks": ""
+			},
+			"charges": [
+				{
+					"type": 11,
+					"value": 67,
+					"chargePlace": null
+				}
+			]
+		},
+		{
+			"type": "CN",
+			"name": "Commodity Supplies AG",
+			"alias": "CCOM000001",
+			"ediPartnerId": "1283386",
+			"address": {
+				"countryCode": "CH",
+				"stateCode": "SZ",
+				"city": "Wollerau",
+				"zip": "8832",
+				"lines": [ "Roosstrasse 53" ],
+				"emails": [ "cargoo3@commodity.ch" ],
+				"phones": [],
+				"remarks": ""
+			},
+			"charges": [
+				{
+					"type": 4,
+					"value": 67,
+					"chargePlace": null
+				},
+				{
+					"type": 7,
+					"value": 67,
+					"chargePlace": null
+				}
+			]
+		},
+		{
+			"type": "NI",
+			"name": "Commodity Supplies AG",
+			"alias": "CCOM000001",
+			"ediPartnerId": "1283386",
+			"address": {
+				"countryCode": "CH",
+				"stateCode": "SZ",
+				"city": "Wollerau",
+				"zip": "8832",
+				"lines": [ "Roosstrasse 53" ],
+				"emails": [ "cargoo3@commodity.ch" ],
+				"phones": [],
+				"remarks": ""
+			},
+			"charges": []
+		},
+		{
+			"type": "FP",
+			"name": "Commodity Supplies AG",
+			"alias": "CCOM000001",
+			"ediPartnerId": "1283386",
+			"address": {
+				"countryCode": "CH",
+				"stateCode": "SZ",
+				"city": "Wollerau",
+				"zip": "8832",
+				"lines": [ "Roosstrasse 53" ],
+				"emails": [ "cargoo3@commodity.ch" ],
+				"phones": [],
+				"remarks": ""
+			},
+			"charges": [
+				{
+					"type": 10,
+					"value": 80,
+					"chargePlace": null
+				}
+			]
+		}
+	],
+	"orderReferences": [
+		{
+			"code": null,
+			"value": "112365356-LAMPE00106"
+		},
+		{
+			"code": null,
+			"value": " 112365356-LAMPE00106"
+		}
+	],
+	"instructionsToShipper": null,
+	"bookingComments": null,
+	"carrierSelection": {
+		"carrierCode": "MAEU",
+		"contractNumber": "297949961",
+		"vessel": "PROSPER",
+		"voyage": "101N",
+		"etd": "2021-01-11T00:00:00Z",
+		"isScheduleRelated": false,
+		"sequenceNumber": 1,
+		"selected": true,
+		"isManualRow": true,
+		"carrierSelectionTransportPlans": [
+			{
+				"preferred": false,
+				"hashId": "28E3D894"
+			}
+		]
+	}
+}

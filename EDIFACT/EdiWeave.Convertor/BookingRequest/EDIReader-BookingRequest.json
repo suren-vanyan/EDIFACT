@@ -1,0 +1,523 @@
+{
+  "UNB": {
+    "SYNTAXIDENTIFIER_1": {
+      "SyntaxIdentifier_1": "UNOC",
+      "SyntaxVersionNumber_2": "3"
+    },
+    "INTERCHANGESENDER_2": {
+      "InterchangeSenderIdentification_1": "COMSUP",
+      "IdentificationCodeQualifier_2": "ZZZ"
+    },
+    "INTERCHANGERECIPIENT_3": {
+      "InterchangeRecipientIdentification_1": "MAEU",
+      "IdentificationCodeQualifier_2": "ZZZ"
+    },
+    "DATEANDTIMEOFPREPARATION_4": {
+      "Date_1": "201216",
+      "Time_2": "0505"
+    },
+    "InterchangeControlReference_5": "22733"
+  },
+  "IFTMBF": {
+    "UNH": {
+      "MessageReferenceNumber_01": "36852120",
+      "MessageIdentifier_02": {
+        "MessageType_01": "IFTMBF",
+        "MessageVersionNumber_02": "D",
+        "MessageReleaseNumber_03": "99B",
+        "ControllingAgencyCoded_04": "UN"
+      }
+    },
+    "BGM": {
+      "DOCUMENTMESSAGENAME_01": {
+        "Documentnamecode_01": "335"
+      },
+      "DOCUMENTMESSAGEIDENTIFICATION_02": {
+        "Documentmessagenumber_01": "C2020121640"
+      },
+      "MessageFunctionCode_03": "9"
+    },
+    "CTA": {
+      "ContactFunctionCode_01": "IC",
+      "DEPARTMENTOREMPLOYEEDETAILS_02": {
+        "Departmentoremployee_02": "EVELYN DELOTA"
+      }
+    },
+    "COM": [
+      {
+        "COMMUNICATIONCONTACT_01": {
+          "CommunicationNumber_01": "SEA.EXPORT@STAMM.COM.PH",
+          "CommunicationChannelQualifier_02": "EM"
+        }
+      }
+    ],
+    "DTM": [
+      {
+        "DATETIMEPERIOD_01": {
+          "Dateortimeorperiodfunctioncodequalifier_01": "137",
+          "Dateortimeorperiodvalue_02": "202012160505",
+          "Dateortimeorperiodformatcode_03": "203"
+        }
+      }
+    ],
+    "TSR": [
+      {
+        "CONTRACTANDCARRIAGECONDITION_01": {
+          "Contractandcarriageconditioncode_01": "28"
+        }
+      }
+    ],
+    "RFFLoop": [
+      {
+        "RFF": {
+          "REFERENCE_01": {
+            "Referencefunctioncodequalifier_01": "CT",
+            "Referenceidentifier_02": "297949961"
+          }
+        }
+      },
+      {
+        "RFF": {
+          "REFERENCE_01": {
+            "Referencefunctioncodequalifier_01": "AGE",
+            "Referenceidentifier_02": "C2020121640"
+          }
+        }
+      },
+      {
+        "RFF": {
+          "REFERENCE_01": {
+            "Referencefunctioncodequalifier_01": "ON",
+            "Referenceidentifier_02": "112365356-LAMPE00106"
+          }
+        }
+      }
+    ],
+    "TDTLoop": [
+      {
+        "TDT": {
+          "Transportstagecodequalifier_01": "10",
+          "MODEOFTRANSPORT_03": {
+            "Transportmodenamecode_01": "3"
+          },
+          "CARRIER_05": {
+            "Carrieridentification_01": "MAEU"
+          }
+        },
+        "LOCLoop": [
+          {
+            "LOC": {
+              "Locationfunctioncodequalifier_01": "88",
+              "LOCATIONIDENTIFICATION_02": {
+                "Locationnamecode_01": "PHCEB",
+                "Codelistidentificationcode_02": "139",
+                "Codelistresponsibleagencycode_03": "6",
+                "Locationname_04": "CEBU"
+              }
+            },
+            "DTM": [
+              {
+                "DATETIMEPERIOD_01": {
+                  "Dateortimeorperiodfunctioncodequalifier_01": "133",
+                  "Dateortimeorperiodvalue_02": "20210111",
+                  "Dateortimeorperiodformatcode_03": "102"
+                }
+              }
+            ]
+          },
+          {
+            "LOC": {
+              "Locationfunctioncodequalifier_01": "9",
+              "LOCATIONIDENTIFICATION_02": {
+                "Locationnamecode_01": "PHCEB",
+                "Codelistidentificationcode_02": "139",
+                "Codelistresponsibleagencycode_03": "6",
+                "Locationname_04": "CEBU"
+              }
+            },
+            "DTM": [
+              {
+                "DATETIMEPERIOD_01": {
+                  "Dateortimeorperiodfunctioncodequalifier_01": "133",
+                  "Dateortimeorperiodvalue_02": "20210111",
+                  "Dateortimeorperiodformatcode_03": "102"
+                }
+              }
+            ]
+          },
+          {
+            "LOC": {
+              "Locationfunctioncodequalifier_01": "11",
+              "LOCATIONIDENTIFICATION_02": {
+                "Locationnamecode_01": "PHCEB",
+                "Codelistidentificationcode_02": "139",
+                "Codelistresponsibleagencycode_03": "6",
+                "Locationname_04": "CEBU"
+              }
+            },
+            "DTM": [
+              {
+                "DATETIMEPERIOD_01": {
+                  "Dateortimeorperiodfunctioncodequalifier_01": "132",
+                  "Dateortimeorperiodvalue_02": "20210115",
+                  "Dateortimeorperiodformatcode_03": "102"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "TDT": {
+          "Transportstagecodequalifier_01": "20",
+          "Conveyancereferencenumber_02": "101N",
+          "MODEOFTRANSPORT_03": {
+            "Transportmodenamecode_01": "1"
+          },
+          "CARRIER_05": {
+            "Carrieridentification_01": "MAEU"
+          },
+          "TRANSPORTIDENTIFICATION_08": {
+            "Transportmeansidentificationnameidentifier_01": "9117181",
+            "Transportmeansidentificationname_04": "PROSPER"
+          }
+        },
+        "LOCLoop": [
+          {
+            "LOC": {
+              "Locationfunctioncodequalifier_01": "7",
+              "LOCATIONIDENTIFICATION_02": {
+                "Locationnamecode_01": "DELEJ",
+                "Codelistidentificationcode_02": "139",
+                "Codelistresponsibleagencycode_03": "6",
+                "Locationname_04": "LEIPZIG"
+              }
+            },
+            "DTM": [
+              {
+                "DATETIMEPERIOD_01": {
+                  "Dateortimeorperiodfunctioncodequalifier_01": "132",
+                  "Dateortimeorperiodvalue_02": "20210226",
+                  "Dateortimeorperiodformatcode_03": "102"
+                }
+              }
+            ]
+          },
+          {
+            "LOC": {
+              "Locationfunctioncodequalifier_01": "9",
+              "LOCATIONIDENTIFICATION_02": {
+                "Locationnamecode_01": "PHCEB",
+                "Codelistidentificationcode_02": "139",
+                "Codelistresponsibleagencycode_03": "6",
+                "Locationname_04": "CEBU"
+              }
+            },
+            "DTM": [
+              {
+                "DATETIMEPERIOD_01": {
+                  "Dateortimeorperiodfunctioncodequalifier_01": "133",
+                  "Dateortimeorperiodvalue_02": "20210111",
+                  "Dateortimeorperiodformatcode_03": "102"
+                }
+              }
+            ]
+          },
+          {
+            "LOC": {
+              "Locationfunctioncodequalifier_01": "11",
+              "LOCATIONIDENTIFICATION_02": {
+                "Locationnamecode_01": "DELEJ",
+                "Codelistidentificationcode_02": "139",
+                "Codelistresponsibleagencycode_03": "6",
+                "Locationname_04": "LEIPZIG"
+              }
+            },
+            "DTM": [
+              {
+                "DATETIMEPERIOD_01": {
+                  "Dateortimeorperiodfunctioncodequalifier_01": "132",
+                  "Dateortimeorperiodvalue_02": "20210226",
+                  "Dateortimeorperiodformatcode_03": "102"
+                }
+              }
+            ]
+          },
+          {
+            "LOC": {
+              "Locationfunctioncodequalifier_01": "197",
+              "LOCATIONIDENTIFICATION_02": {
+                "Locationnamecode_01": "PHCEB",
+                "Codelistidentificationcode_02": "181",
+                "Codelistresponsibleagencycode_03": "6",
+                "Locationname_04": "CEBU"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "NADLoop": [
+      {
+        "NAD": {
+          "Partyqualifier_01": "BA",
+          "PARTYIDENTIFICATIONDETAILS_02": {
+            "Partyidentifier_01": "428180702ST",
+            "Codelistidentificationcode_02": "160",
+            "Codelistresponsibleagencycode_03": "87"
+          },
+          "PARTYNAME_04": {
+            "Partyname_01": "STAMM INTERNATIONAL",
+            "Partyname_02": "EVELYN DELOTA"
+          }
+        },
+        "CTALoop": [
+          {
+            "CTA": {
+              "ContactFunctionCode_01": "IC",
+              "DEPARTMENTOREMPLOYEEDETAILS_02": {
+                "Departmentoremployee_02": "EVELYN DELOTA"
+              }
+            },
+            "COM": [
+              {
+                "COMMUNICATIONCONTACT_01": {
+                  "CommunicationNumber_01": "SEA.EXPORT@STAMM.COM.PH",
+                  "CommunicationChannelQualifier_02": "EM"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "NAD": {
+          "Partyqualifier_01": "CZ",
+          "PARTYIDENTIFICATIONDETAILS_02": {
+            "Partyidentifier_01": "428180702ST",
+            "Codelistidentificationcode_02": "160",
+            "Codelistresponsibleagencycode_03": "87"
+          },
+          "PARTYNAME_04": {
+            "Partyname_01": "STAMM INTERNATIONAL"
+          },
+          "STREET_05": {
+            "Streetandnumberpobox_01": "2/F ROOM 201, LILANG'S CENTER",
+            "Streetandnumberpobox_02": "AIRPORT ROAD, PAJO STREET",
+            "Streetandnumberpobox_03": "LAPU LAPU CITY",
+            "Streetandnumberpobox_04": "PH"
+          }
+        },
+        "CPILoop": [
+          {
+            "CPI": {
+              "CHARGECATEGORY_01": {
+                "Chargecategorycoded_01": "11"
+              },
+              "Prepaidcollectindicatorcode_03": "C"
+            }
+          }
+        ]
+      },
+      {
+        "NAD": {
+          "Partyqualifier_01": "CN",
+          "PARTYIDENTIFICATIONDETAILS_02": {
+            "Partyidentifier_01": "1283386",
+            "Codelistidentificationcode_02": "160",
+            "Codelistresponsibleagencycode_03": "87"
+          },
+          "PARTYNAME_04": {
+            "Partyname_01": "COMMODITY SUPPLIES AG"
+          },
+          "STREET_05": {
+            "Streetandnumberpobox_01": "ROOSSTRASSE 53",
+            "Streetandnumberpobox_02": "8832 WOLLERAU",
+            "Streetandnumberpobox_03": "CH"
+          }
+        },
+        "CPILoop": [
+          {
+            "CPI": {
+              "CHARGECATEGORY_01": {
+                "Chargecategorycoded_01": "4"
+              },
+              "Prepaidcollectindicatorcode_03": "C"
+            }
+          },
+          {
+            "CPI": {
+              "CHARGECATEGORY_01": {
+                "Chargecategorycoded_01": "7"
+              },
+              "Prepaidcollectindicatorcode_03": "C"
+            }
+          }
+        ]
+      },
+      {
+        "NAD": {
+          "Partyqualifier_01": "NI",
+          "PARTYIDENTIFICATIONDETAILS_02": {
+            "Partyidentifier_01": "1283386",
+            "Codelistidentificationcode_02": "160",
+            "Codelistresponsibleagencycode_03": "87"
+          },
+          "PARTYNAME_04": {
+            "Partyname_01": "COMMODITY SUPPLIES AG"
+          },
+          "STREET_05": {
+            "Streetandnumberpobox_01": "ROOSSTRASSE 53",
+            "Streetandnumberpobox_02": "8832 WOLLERAU",
+            "Streetandnumberpobox_03": "CH"
+          }
+        }
+      },
+      {
+        "NAD": {
+          "Partyqualifier_01": "IV",
+          "PARTYIDENTIFICATIONDETAILS_02": {
+            "Partyidentifier_01": "1283386",
+            "Codelistidentificationcode_02": "160",
+            "Codelistresponsibleagencycode_03": "87"
+          },
+          "PARTYNAME_04": {
+            "Partyname_01": "COMMODITY SUPPLIES AG"
+          },
+          "STREET_05": {
+            "Streetandnumberpobox_01": "ROOSSTRASSE 53",
+            "Streetandnumberpobox_02": "8832 WOLLERAU",
+            "Streetandnumberpobox_03": "CH"
+          }
+        },
+        "CPILoop": [
+          {
+            "CPI": {
+              "CHARGECATEGORY_01": {
+                "Chargecategorycoded_01": "10"
+              },
+              "Prepaidcollectindicatorcode_03": "P"
+            }
+          }
+        ]
+      }
+    ],
+    "GIDLoop": [
+      {
+        "GID": {
+          "Goodsitemnumber_01": "1",
+          "NUMBERANDTYPEOFPACKAGES_02": {
+            "Numberofpackages_01": "520",
+            "Packagetypedescriptioncode_02": "CT",
+            "Codelistidentificationcode_03": "67",
+            "Codelistresponsibleagencycode_04": "6"
+          }
+        },
+        "FTX": [
+          {
+            "Textsubjectcodequalifier_01": "AAA",
+            "TEXTLITERAL_04": {
+              "Freetext_01": "FURNITURE 10689221 HOLZ LEUCHTEN/R.G8P.MBSNA01CFC -;- 10689339 FRAME/W.R4R.LGYLGY11 -;- 10689340 FRAME/W.R4Q.LGYLGY11 -;- 10689417 ROPE/W.TX3.M01A600 -;- 10687453 Z.70E.A611 -;- 11680607 KAWA/C.B51.NAWJCL"
+            }
+          }
+        ],
+        "MEALoop": [
+          {
+            "MEA": {
+              "Measurementattributecode_01": "AAE",
+              "MEASUREMENTDETAILS_02": {
+                "Measuredattributecode_01": "G"
+              },
+              "VALUERANGE_03": {
+                "Measurementunitcode_01": "KGM",
+                "Measurementvalue_02": "14000.00"
+              }
+            }
+          },
+          {
+            "MEA": {
+              "Measurementattributecode_01": "AAE",
+              "MEASUREMENTDETAILS_02": {
+                "Measuredattributecode_01": "AAW"
+              },
+              "VALUERANGE_03": {
+                "Measurementunitcode_01": "MTQ",
+                "Measurementvalue_02": "0.000"
+              }
+            }
+          }
+        ],
+        "SGPLoop": [
+          {
+            "SGP": {
+              "EQUIPMENTIDENTIFICATION_01": {
+                "Equipmentidentificationnumber_01": "1"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "EQDLoop": [
+      {
+        "EQD": {
+          "Equipmenttypecodequalifier_01": "CN",
+          "EQUIPMENTIDENTIFICATION_02": {
+            "Equipmentidentificationnumber_01": "1",
+            "Codelistidentificationcode_02": "230"
+          },
+          "EQUIPMENTSIZEANDTYPE_03": {
+            "Equipmentsizeandtypedescriptioncode_01": "42G1",
+            "Codelistidentificationcode_02": "102",
+            "Codelistresponsibleagencycode_03": "5"
+          },
+          "Equipmentsuppliercoded_04": "2"
+        },
+        "EQN": {
+          "NUMBEROFUNITDETAILS_01": {
+            "Numberofunits_01": "1",
+            "Unittypecodequalifier_02": "2"
+          }
+        }
+      }
+    ],
+    "UNT": {
+      "NumberofSegmentsinaMessage_01": "43",
+      "MessageReferenceNumber_02": "36852120"
+    }
+  },
+  "UNZ": {
+    "InterchangeControlCount_1": "1",
+    "InterchangeControlReference_2": "22733"
+  },
+  "Error": {
+    "Name": "IFTMBF",
+    "ControlNumber": "36852120",
+    "Version": "D99B",
+    "MessagePart": 0,
+    "Codes": [],
+    "Errors": [
+      {
+        "Name": "EQD",
+        "Position": 41,
+        "Value": null,
+        "SpecType": "EDIFACT.TEMPLATES.D99B.EQD, EDIFACT.TEMPLATES.D99B, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "Codes": [],
+        "Errors": [
+          {
+            "Name": "8155",
+            "Position": 3,
+            "Code": 4,
+            "Value": "42G1",
+            "ComponentPosition": 1,
+            "RepetitionPosition": 0,
+            "Message": null
+          }
+        ],
+        "Message": null
+      }
+    ],
+    "HasErrors": true,
+    "Message": null
+  }
+}
