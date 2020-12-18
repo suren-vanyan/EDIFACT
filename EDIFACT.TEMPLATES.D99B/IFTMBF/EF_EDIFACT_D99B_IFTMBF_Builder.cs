@@ -34,6 +34,7 @@ namespace EDIFACT.TEMPLATES.D99B
 
             return new UNB
             {
+                
                 SYNTAXIDENTIFIER_1 = new S001
                 {
                     // Syntax Identifier
@@ -102,8 +103,7 @@ namespace EDIFACT.TEMPLATES.D99B
 
             #endregion BGM
 
-
-
+            
             #region CTA
             //Contact information            
             result.CTA = new CTA();
