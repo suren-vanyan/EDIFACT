@@ -2183,4 +2183,21 @@ namespace EDIFACT.TEMPLATES.D99B
         [Pos(1)]
         public string Sectionidentification_01 { get; set; }
     }
+
+    /// <summary>
+    ///  APPLICATION ERROR
+    /// </summary>
+    [Serializable()]
+    [DataContract()]
+    [Segment("UNS")]
+    public class ERC : I_ERC<C901>
+    {
+        /// <summary>
+        /// Section identification
+        /// </summary>
+        [DataMember]
+        [Required]
+        [Pos(1)]
+        public C901 APPLICATIONERRORDETAIL_01 { get; set; }
+    }
 }
