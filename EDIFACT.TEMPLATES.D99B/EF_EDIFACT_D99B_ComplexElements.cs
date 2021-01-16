@@ -3546,4 +3546,37 @@ namespace EDIFACT.TEMPLATES.D99B
         [Pos(4)]
         public string Changereason_04 { get; set; }
     }
+
+    /// <summary>
+    /// REASON FOR CHANGE
+    /// </summary>
+    [Serializable()]
+    [DataContract()]
+    [Composite("C901")]
+    public class C901 : I_C901
+    {
+
+        /// <summary>
+        /// Change reason, coded
+        /// </summary>
+        [DataMember]
+        [Required]
+        [DataElement("9321", typeof(EDIFACT_AN))]
+        [Pos(1)]
+        public string Applicationerroridentification_01 { get; set; }
+        /// <summary>
+        /// Code list identification code
+        /// </summary>
+        [DataMember]
+        [DataElement("1131", typeof(EDIFACT_ID_1131))]
+        [Pos(2)]
+        public string Codelistidentificationcode_02 { get; set; }
+        /// <summary>
+        /// Code list responsible agency, code
+        /// </summary>
+        [DataMember]
+        [DataElement("3055", typeof(EDIFACT_ID_3055))]
+        [Pos(3)]
+        public string Codelistresponsibleagencycode_03 { get; set; }
+    }
 }

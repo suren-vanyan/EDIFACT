@@ -760,4 +760,13 @@ namespace EDIFACT.TEMPLATES.D99B
         string Codelistresponsibleagencycoded_03 { get; set; }
         string Changereason_04 { get; set; }
     }
+
+    public interface I_C901
+    {
+        string Applicationerroridentification_01 { get; set; }
+
+        string Codelistidentificationcode_02 { get; set; }
+
+        string Codelistresponsibleagencycode_03 { get; set; }
+    }
 }

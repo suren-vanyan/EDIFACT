@@ -1,0 +1,115 @@
+{
+  "UNB": {
+    "SYNTAXIDENTIFIER_1": {
+      "SyntaxIdentifier_1": "UNOA",
+      "SyntaxVersionNumber_2": "1"
+    },
+    "INTERCHANGESENDER_2": {
+      "InterchangeSenderIdentification_1": "MAEU",
+      "IdentificationCodeQualifier_2": "ZZZ"
+    },
+    "INTERCHANGERECIPIENT_3": {
+      "InterchangeRecipientIdentification_1": "COMSUP",
+      "IdentificationCodeQualifier_2": "ZZZ"
+    },
+    "DATEANDTIMEOFPREPARATION_4": {
+      "Date_1": "210117",
+      "Time_2": "1339"
+    },
+    "InterchangeControlReference_5": "25207"
+  },
+  "APERAK": {
+    "UNH": {
+      "MessageReferenceNumber_01": "1",
+      "MessageIdentifier_02": {
+        "MessageType_01": "APERAK",
+        "MessageVersionNumber_02": "D",
+        "MessageReleaseNumber_03": "99B",
+        "ControllingAgencyCoded_04": "UN"
+      }
+    },
+    "BGM": {
+      "DOCUMENTMESSAGENAME_01": {
+        "Documentnamecode_01": "23"
+      },
+      "DOCUMENTMESSAGEIDENTIFICATION_02": {
+        "Documentmessagenumber_01": "C2021010769"
+      },
+      "MessageFunctionCode_03": "9",
+      "ResponseTypeCode_04": "AP"
+    },
+    "DTM": [
+      {
+        "DATETIMEPERIOD_01": {
+          "Dateortimeorperiodfunctioncodequalifier_01": "137",
+          "Dateortimeorperiodvalue_02": "202101171339",
+          "Dateortimeorperiodformatcode_03": "203"
+        }
+      }
+    ],
+    "NADLoop": [
+      {
+        "NAD": {
+          "Partyqualifier_01": "CA",
+          "PARTYIDENTIFICATIONDETAILS_02": {
+            "Partyidentifier_01": "MAEU",
+            "Codelistresponsibleagencycode_03": "87"
+          },
+          "PARTYNAME_04": {
+            "Partyname_01": "MAERSK"
+          }
+        }
+      }
+    ]
+  },
+  "UNZ": {
+    "InterchangeControlCount_1": "1",
+    "InterchangeControlReference_2": "25207"
+  },
+  "Error": {
+    "Name": "APERAK",
+    "ControlNumber": "1",
+    "Version": "D99B",
+    "MessagePart": 0,
+    "Codes": [
+      1
+    ],
+    "Errors": [
+      {
+        "Name": "CTA",
+        "Position": 5,
+        "Value": null,
+        "SpecType": "EdiWeave.Core.Model.Edi.InstanceContext, EdiWeave.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "Codes": [
+          1
+        ],
+        "Errors": [],
+        "Message": null
+      },
+      {
+        "Name": "COM",
+        "Position": 5,
+        "Value": null,
+        "SpecType": "EdiWeave.Core.Model.Edi.InstanceContext, EdiWeave.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "Codes": [
+          1
+        ],
+        "Errors": [],
+        "Message": null
+      },
+      {
+        "Name": "UNT",
+        "Position": 5,
+        "Value": "UNT+5+1",
+        "SpecType": null,
+        "Codes": [
+          0
+        ],
+        "Errors": [],
+        "Message": null
+      }
+    ],
+    "HasErrors": true,
+    "Message": null
+  }
+}

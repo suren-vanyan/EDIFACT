@@ -6,6 +6,7 @@ using EdiWeave.Framework.Readers;
 using EdiWeave.Framework.Writers;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -19,15 +20,11 @@ namespace EdiWeave.Convertor
     {
         static void Main(string[] args)
         {
-            var str ="";
-            var res = str.Replace("\r\n\r\n", ",");
-            //ReadBookingConfirmation();
-            //BuildBookingRequest();
-            ReadBookingRequest();
-
+            //ReadAperak();
+            RmSpecChar("Fürther Straße 30", 70);
         }
 
-     
+
         public static void BuildBookingRequest()
         {
             const string path = @"C:\Users\suren.vanyan\source\repos\EDIFACT\EDIFACT\EdiWeave.Convertor\BookingRequest\BookingRequest.xml";
@@ -49,9 +46,71 @@ namespace EdiWeave.Convertor
         }
 
 
+        private static string RmSpecChar(string currentText, int maxLength)
+        {
+            if (string.IsNullOrWhiteSpace(currentText)) return currentText;
+
+            currentText = currentText.Replace("\n", " ");
+
+
+            currentText = Encoding.ASCII.GetString(Encoding.Convert(
+            Encoding.ASCII,
+            Encoding.GetEncoding(
+              Encoding.ASCII.EncodingName,
+              new EncoderReplacementFallback(string.Empty),
+              new DecoderExceptionFallback()
+              ), Encoding.ASCII.GetBytes(currentText)));
+
+            if (maxLength > 0 && currentText.Length > maxLength)
+            {
+                currentText = currentText.Substring(0, maxLength);
+            }
+            return currentText;
+        }
+
+        public static void ReadAperak()
+        {
+            const string path = @"C:\Users\suren.vanyan\source\repos\EDIFACT\EdiWeave.Convertor\APERAK\aperak.txt";
+
+            var sample = File.ReadAllText(path);
+
+            List<EdiItem> ediItems;
+
+            var ediStream = CommonHelper.GenerateStreamFromString(sample);
+
+            using (var ediReader = new EdifactReader(ediStream, "EDIFACT.TEMPLATES.D99B", Encoding.UTF8, true))
+            {
+                ediItems = ediReader.ReadToEnd().ToList();
+            }
+
+            var jObject = new JObject();
+
+            var unb = ediItems.OfType<UNB>().SingleOrDefault();
+            var TSAPERAK = ediItems.OfType<TSAPERAK>().SingleOrDefault();
+            var unz = ediItems.OfType<UNZ>().SingleOrDefault();
+
+            jObject.Add("UNB", JToken.FromObject(unb, new JsonSerializer { NullValueHandling = NullValueHandling.Ignore }));
+            jObject.Add("APERAK", JToken.FromObject(TSAPERAK, new JsonSerializer { NullValueHandling = NullValueHandling.Ignore }));
+            jObject.Add("UNZ", JToken.FromObject(unz, new JsonSerializer { NullValueHandling = NullValueHandling.Ignore }));
+
+
+            if (!TSAPERAK.IsValid(out MessageErrorContext error))
+            {
+                jObject.Add("Error", JToken.FromObject(error));
+            }
+
+            //ToDO Right Click in the File,then select Copy Full Path and paste here
+            File.WriteAllText(@"C:\Users\suren.vanyan\source\repos\EDIFACT\EdiWeave.Convertor\APERAK\EdifactReader_APERAK.json", jObject.ToString());
+
+            var unberrors = unb.Validate();
+            var unzerrors = unb.Validate();
+
+
+        }
+
         public static void ReadBookingConfirmation()
         {
-            const string path = @"C:\Users\suren.vanyan\source\repos\EDIFACT\EDIFACT\EdiWeave.Convertor\BookingConfirmation\Edifact_IFTMBC_D98B.txt";
+            const string path = @"C:\Users\suren.vanyan\source\repos\EDIFACT\EdiWeave.Convertor\BookingRequest\80795149.txt";
 
             var sample = File.ReadAllText(path);
 
@@ -63,7 +122,6 @@ namespace EdiWeave.Convertor
             {
                 ediItems = ediReader.ReadToEnd().ToList();
             }
-
 
             var jObject = new JObject();
 
@@ -82,7 +140,7 @@ namespace EdiWeave.Convertor
             }
           
             //ToDO Right Click in the File,then select Copy Full Path and paste here
-            File.WriteAllText(@"C:\Users\suren.vanyan\source\repos\EDIFACT\EDIFACT\EdiWeave.Convertor\BookingConfirmation\EdifactReader_IFTMBC.json", jObject.ToString());
+            File.WriteAllText(@"C:\Users\suren.vanyan\source\repos\EDIFACT\EdiWeave.Convertor\BookingRequest\EdifactReader_IFTMBC.json", jObject.ToString());
 
             var unberrors = unb.Validate();
             var unzerrors = unb.Validate();
@@ -94,7 +152,7 @@ namespace EdiWeave.Convertor
 
         private static void ReadBookingRequest()
         {
-            const string path = @"C:\Users\suren.vanyan\source\repos\EDIFACT\EDIFACT\EdiWeave.Convertor\BookingRequest\EDI-BookingRequest.txt";
+            const string path = @"C:\Users\suren.vanyan\source\repos\EDIFACT\EdiWeave.Convertor\BookingRequest\81310593.txt";
 
             var sample = File.ReadAllText(path);
 
@@ -125,7 +183,7 @@ namespace EdiWeave.Convertor
             }
 
             //ToDO Right Click in the File,then select Copy Full Path and paste here
-            File.WriteAllText(@"C:\Users\suren.vanyan\source\repos\EDIFACT\EDIFACT\EdiWeave.Convertor\BookingRequest\EDIReader-BookingRequest.json", jObject.ToString());
+            File.WriteAllText(@"C:\Users\suren.vanyan\source\repos\EDIFACT\EdiWeave.Convertor\BookingRequest\EdifactReader_IFTMBF.json", jObject.ToString());
 
             var unberrors = unb.Validate();
             var unzerrors = unb.Validate();

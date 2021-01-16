@@ -676,4 +676,9 @@ namespace EDIFACT.TEMPLATES.D99B
     {
         string Sectionidentification_01 { get; set; }
     }
+
+    public interface I_ERC<T1>
+    {
+        T1 APPLICATIONERRORDETAIL_01 { get; set; }
+    }
 }
